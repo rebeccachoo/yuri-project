@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const valleySans = localFont({
+  variable: "--font-valley-sans",
+  src: [
+    { path: "./fonts/valley-sans/ValleySans-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/valley-sans/ValleySans-Medium.ttf", weight: "500", style: "normal" },
+    { path: "./fonts/valley-sans/ValleySans-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "./fonts/valley-sans/ValleySans-Bold.ttf", weight: "700", style: "normal" },
+    { path: "./fonts/valley-sans/ValleySans-ExtraBold.ttf", weight: "800", style: "normal" },
+  ],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -27,7 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${valleySans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white text-zinc-950 dark:bg-black dark:text-zinc-50">
         <Navbar />
