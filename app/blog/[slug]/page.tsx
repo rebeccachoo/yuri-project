@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getBlogPostBySlug, getBlogSlugs, blogPosts } from "@/data/blog";
+import { getBlogPostBySlug, getBlogSlugs, getBlogPosts } from "@/lib/content/blog";
 import { getAccentClasses } from "@/components/colors";
 import BlogCard from "@/components/BlogCard";
 
-export function generateStaticParams() {
-  return getBlogSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  const slugs = await getBlogSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata(
   props: PageProps<"/blog/[slug]">
 ): Promise<Metadata> {
   const { slug } = await props.params;
-  const post = getBlogPostBySlug(slug);
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     return { title: "Article not found" };
@@ -35,14 +36,15 @@ function formatDate(dateString: string): string {
 
 export default async function BlogDetailPage(props: PageProps<"/blog/[slug]">) {
   const { slug } = await props.params;
-  const post = getBlogPostBySlug(slug);
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();
   }
 
   const accent = getAccentClasses(post.accentColor);
-  const related = blogPosts
+  const allPosts = await getBlogPosts();
+  const related = allPosts
     .filter((p) => p.category === post.category && p.slug !== post.slug)
     .slice(0, 3);
 

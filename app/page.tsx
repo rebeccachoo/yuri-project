@@ -1,12 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { impactStats } from "@/data/impact";
-import { partners } from "@/data/partners";
+import { getPartners } from "@/lib/content/partners";
 import ImpactStats from "@/components/ImpactStats";
 import PartnerGrid from "@/components/PartnerGrid";
 import Reveal from "@/components/Reveal";
 
-export default function Home() {
+export default async function Home() {
+  const partners = await getPartners();
+
   return (
     <div className="flex flex-1 flex-col">
       <section className="relative isolate flex h-screen min-h-140 items-center overflow-hidden">

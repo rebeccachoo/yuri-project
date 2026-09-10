@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getVolunteerBySlug, getVolunteerSlugs } from "@/data/volunteers";
+import { getVolunteerBySlug, getVolunteerSlugs } from "@/lib/content/volunteers";
 
-export function generateStaticParams() {
-  return getVolunteerSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  const slugs = await getVolunteerSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata(
   props: PageProps<"/volunteer/[slug]">
 ): Promise<Metadata> {
   const { slug } = await props.params;
-  const opportunity = getVolunteerBySlug(slug);
+  const opportunity = await getVolunteerBySlug(slug);
 
   if (!opportunity) {
     return { title: "Opportunity not found" };
@@ -27,7 +28,7 @@ export default async function VolunteerDetailPage(
   props: PageProps<"/volunteer/[slug]">
 ) {
   const { slug } = await props.params;
-  const opportunity = getVolunteerBySlug(slug);
+  const opportunity = await getVolunteerBySlug(slug);
 
   if (!opportunity) {
     notFound();

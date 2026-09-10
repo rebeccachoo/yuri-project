@@ -1,34 +1,24 @@
 "use server";
 
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import {
-  SESSION_COOKIE_NAME,
-  createSessionToken,
-  verifyAdminPassword,
-} from "@/lib/auth";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
 
 export async function login(formData: FormData) {
-  const password = formData.get("password");
+  const email = String(formData.get("email") ?? "").trim();
+  const password = String(formData.get("password") ?? "");
 
-  if (typeof password !== "string" || !verifyAdminPassword(password)) {
-    redirect("/admin/login?error=1");
+  const supabase = await createSupabaseServerClient();
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+
+  if (error) {
+    redirect(`/admin/login?error=${encodeURIComponent(error.message)}`);
   }
-
-  const cookieStore = await cookies();
-  cookieStore.set(SESSION_COOKIE_NAME, createSessionToken(), {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
-    path: "/",
-    maxAge: 60 * 60 * 8, // 8 hours
-  });
 
   redirect("/admin");
 }
 
 export async function logout() {
-  const cookieStore = await cookies();
-  cookieStore.delete(SESSION_COOKIE_NAME);
+  const supabase = await createSupabaseServerClient();
+  await supabase.auth.signOut();
   redirect("/admin/login");
 }

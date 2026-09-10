@@ -61,3 +61,5 @@ const fallback: AccentClasses = accentMap.navy;
 export function getAccentClasses(color: string): AccentClasses {
   return accentMap[color] ?? fallback;
 }
+
+export const accentColorNames = Object.keys(accentMap);

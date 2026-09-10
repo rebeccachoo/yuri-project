@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { BlogPost } from "@/data/blog";
+import type { BlogPost } from "@/lib/content/blog";
 import { getAccentClasses } from "@/components/colors";
 
 function formatDate(dateString: string): string {

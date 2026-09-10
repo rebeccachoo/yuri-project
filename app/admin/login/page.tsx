@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 
 export default async function AdminLoginPage(props: PageProps<"/admin/login">) {
   const { error } = await props.searchParams;
+  const errorMessage = typeof error === "string" ? error : undefined;
 
   return (
     <div className="mx-auto flex min-h-[60vh] w-full max-w-sm flex-1 flex-col justify-center px-6 py-16">
@@ -15,6 +16,19 @@ export default async function AdminLoginPage(props: PageProps<"/admin/login">) {
         Admin Login
       </h1>
       <form action={login} className="mt-6 space-y-4">
+        <div>
+          <label htmlFor="email" className="text-sm font-bold text-navy-deep">
+            Email
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            autoFocus
+            className="mt-1 w-full rounded-lg border border-navy/20 bg-white px-4 py-2.5 text-sm text-navy-deep focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue"
+          />
+        </div>
         <div>
           <label htmlFor="password" className="text-sm font-bold text-navy-deep">
             Password
@@ -24,12 +38,11 @@ export default async function AdminLoginPage(props: PageProps<"/admin/login">) {
             name="password"
             type="password"
             required
-            autoFocus
             className="mt-1 w-full rounded-lg border border-navy/20 bg-white px-4 py-2.5 text-sm text-navy-deep focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue"
           />
         </div>
-        {error && (
-          <p className="text-sm font-semibold text-rose-600">Incorrect password.</p>
+        {errorMessage && (
+          <p className="text-sm font-semibold text-rose-600">{errorMessage}</p>
         )}
         <button
           type="submit"

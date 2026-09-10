@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { volunteerOpportunities } from "@/data/volunteers";
+import { getVolunteerOpportunities } from "@/lib/content/volunteers";
 import VolunteerBrowser from "@/components/VolunteerBrowser";
 
 export const metadata: Metadata = {
@@ -8,7 +8,9 @@ export const metadata: Metadata = {
     "Disability-inclusive volunteer opportunities across New Jersey, collected by Every Kid Can.",
 };
 
-export default function VolunteerPage() {
+export default async function VolunteerPage() {
+  const opportunities = await getVolunteerOpportunities();
+
   return (
     <div className="flex-1">
       <div className="bg-navy">
@@ -24,7 +26,7 @@ export default function VolunteerPage() {
       </div>
 
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <VolunteerBrowser opportunities={volunteerOpportunities} />
+        <VolunteerBrowser opportunities={opportunities} />
       </div>
     </div>
   );

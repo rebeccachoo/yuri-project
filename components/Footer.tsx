@@ -61,7 +61,12 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-6 py-4 text-xs text-white/40">
-        <p className="mx-auto max-w-6xl">© {new Date().getFullYear()} Every Kid Can. All rights reserved.</p>
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2">
+          <p>© {new Date().getFullYear()} Every Kid Can. All rights reserved.</p>
+          <Link href="/admin" className="hover:text-white/70">
+            Admin Log In
+          </Link>
+        </div>
       </div>
     </footer>
   );

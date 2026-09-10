@@ -1,0 +1,64 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { requireAdminSession } from "@/lib/require-admin";
+import { getSupabaseAdminClient } from "@/lib/supabase/admin";
+import DeleteButton from "@/components/admin/DeleteButton";
+import { deletePartner } from "./actions";
+
+export const metadata: Metadata = { title: "Admin — Partners", robots: { index: false } };
+
+export default async function AdminPartnersPage() {
+  await requireAdminSession();
+
+  const supabase = getSupabaseAdminClient();
+  const { data } = await supabase
+    .from("partners")
+    .select("*")
+    .order("created_at", { ascending: true });
+
+  return (
+    <div className="mx-auto w-full max-w-4xl flex-1 px-6 py-16">
+      <Link href="/admin" className="text-sm font-bold text-accent-blue hover:underline">
+        ← Admin
+      </Link>
+      <div className="mt-2 flex items-center justify-between">
+        <h1 className="text-2xl font-extrabold uppercase tracking-tight text-navy-deep">
+          Partners
+        </h1>
+        <Link
+          href="/admin/partners/new"
+          className="rounded-full bg-accent px-4 py-2 text-sm font-bold text-navy-deep transition-colors hover:bg-cream"
+        >
+          + New
+        </Link>
+      </div>
+
+      <div className="mt-8 space-y-4">
+        {(data ?? []).map((item) => (
+          <div
+            key={item.id}
+            className="flex items-center justify-between rounded-2xl border border-navy/10 bg-white p-4"
+          >
+            <div>
+              <p className="font-bold text-navy-deep">{item.name}</p>
+              <p className="text-sm text-navy-deep/60">{item.website || "No website set"}</p>
+            </div>
+            <div className="flex items-center gap-4">
+              <Link
+                href={`/admin/partners/${item.id}/edit`}
+                className="text-sm font-bold text-accent-blue hover:underline"
+              >
+                Edit
+              </Link>
+              <form action={deletePartner}>
+                <input type="hidden" name="id" value={item.id} />
+                <DeleteButton />
+              </form>
+            </div>
+          </div>
+        ))}
+        {(data ?? []).length === 0 && <p className="text-navy-deep/50">No partners yet.</p>}
+      </div>
+    </div>
+  );
+}

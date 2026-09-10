@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Partner } from "@/data/partners";
+import type { Partner } from "@/lib/content/partners";
 
 export default function PartnerGrid({ partners }: { partners: Partner[] }) {
   return (

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-import { SESSION_COOKIE_NAME, isValidSessionToken } from "@/lib/auth";
+import Link from "next/link";
+import { requireAdminSession } from "@/lib/require-admin";
 import { logout } from "./actions";
 
 export const metadata: Metadata = {
@@ -9,15 +8,26 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function AdminPage() {
-  // Proxy already gates this route, but a Server Function or Route Handler
-  // should never trust Proxy alone — check the session here too.
-  const cookieStore = await cookies();
-  const token = cookieStore.get(SESSION_COOKIE_NAME)?.value;
+const sections = [
+  {
+    href: "/admin/volunteers",
+    label: "Volunteer Opportunities",
+    description: "Add, edit, or remove listings on the Volunteer Bulletin.",
+  },
+  {
+    href: "/admin/blog",
+    label: "Blog",
+    description: "Add, edit, or remove blog posts.",
+  },
+  {
+    href: "/admin/partners",
+    label: "Partners",
+    description: "Add, edit, or remove partner organizations.",
+  },
+];
 
-  if (!isValidSessionToken(token)) {
-    redirect("/admin/login");
-  }
+export default async function AdminPage() {
+  const user = await requireAdminSession();
 
   return (
     <div className="mx-auto w-full max-w-3xl flex-1 px-6 py-16">
@@ -31,13 +41,25 @@ export default async function AdminPage() {
           </button>
         </form>
       </div>
+      <p className="mt-2 text-sm text-navy-deep/50">Signed in as {user.email}</p>
       <p className="mt-4 text-navy-deep/70">
-        You&apos;re logged in. This gate doesn&apos;t have a content editor wired up
-        yet — for now, keep editing volunteers, blog posts, partners, and other
-        content directly in the <code>data/*.ts</code> files. Editing UI that writes
-        back to those files would need somewhere to persist the changes (a database
-        or a writable server), which this site intentionally doesn&apos;t have.
+        Changes here go straight to Supabase and show up on the live site right away.
+        Pillars, team, impact stats, and awards still live in the{" "}
+        <code>data/*.ts</code> files and aren&apos;t editable here.
       </p>
+
+      <div className="mt-8 space-y-4">
+        {sections.map((section) => (
+          <Link
+            key={section.href}
+            href={section.href}
+            className="block rounded-2xl border border-navy/10 bg-white p-6 transition-colors hover:border-accent-blue"
+          >
+            <p className="text-lg font-bold text-navy-deep">{section.label}</p>
+            <p className="mt-1 text-sm text-navy-deep/60">{section.description}</p>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { VolunteerOpportunity } from "@/data/volunteers";
+import type { VolunteerOpportunity } from "@/lib/content/volunteers";
 
 export default function VolunteerCard({ opportunity }: { opportunity: VolunteerOpportunity }) {
   return (

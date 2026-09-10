@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { VolunteerOpportunity } from "@/data/volunteers";
+import type { VolunteerOpportunity } from "@/lib/content/volunteers";
 import VolunteerCard from "@/components/VolunteerCard";
 
 export default function VolunteerBrowser({
