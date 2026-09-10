@@ -39,12 +39,12 @@ export default function Navbar() {
               </svg>
             </Link>
             {pillarsOpen && (
-              <div className="absolute left-0 top-full w-56 rounded-xl border border-white/10 bg-plum py-2 shadow-xl">
+              <div className="absolute left-0 top-full w-56 rounded-xl border border-ink/10 bg-plum py-2 shadow-xl">
                 {pillars.map((pillar) => (
                   <Link
                     key={pillar.slug}
                     href={`/pillars?tab=${pillar.slug}`}
-                    className="block px-4 py-2 text-sm text-mist/70 hover:bg-white/5 hover:text-gold"
+                    className="block px-4 py-2 text-sm text-mist/70 hover:bg-ink/5 hover:text-gold"
                   >
                     {pillar.navLabel}
                   </Link>
@@ -63,7 +63,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/how-to-help"
-            className="rounded-full bg-linear-to-r from-flame-start via-flame-mid to-flame-end px-4 py-2 font-semibold text-ink transition-opacity hover:opacity-90"
+            className="rounded-full bg-gold px-4 py-2 font-semibold text-ink transition-opacity hover:opacity-90"
           >
             How to Help
           </Link>
@@ -87,7 +87,7 @@ export default function Navbar() {
       </div>
 
       {mobileOpen && (
-        <nav className="flex flex-col gap-1 border-t border-white/10 px-6 py-4 text-sm font-medium tracking-wide text-mist/80 lg:hidden">
+        <nav className="flex flex-col gap-1 border-t border-ink/10 bg-base px-6 py-4 text-sm font-medium tracking-wide text-mist/80 lg:hidden">
           <Link href="/pillars" className="py-2 hover:text-gold" onClick={() => setMobileOpen(false)}>
             Our Pillars
           </Link>
@@ -103,7 +103,7 @@ export default function Navbar() {
           <Link
             href="/how-to-help"
             onClick={() => setMobileOpen(false)}
-            className="mt-2 w-fit rounded-full bg-linear-to-r from-flame-start via-flame-mid to-flame-end px-4 py-2 font-semibold text-ink"
+            className="mt-2 w-fit rounded-full bg-gold px-4 py-2 font-semibold text-ink"
           >
             How to Help
           </Link>

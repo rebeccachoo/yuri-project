@@ -47,7 +47,7 @@ export default async function VolunteerDetailPage(
         {opportunity.title}
       </h1>
 
-      <dl className="mt-6 grid grid-cols-1 gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 sm:grid-cols-3">
+      <dl className="mt-6 grid grid-cols-1 gap-4 rounded-2xl border border-ink/10 bg-plum p-6 sm:grid-cols-3">
         <div>
           <dt className="text-xs font-semibold uppercase tracking-wide text-mist/50">
             Location
@@ -75,7 +75,7 @@ export default async function VolunteerDetailPage(
           href={opportunity.applyUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-block rounded-full bg-linear-to-r from-flame-start via-flame-mid to-flame-end px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
+          className="mt-8 inline-block rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
         >
           Apply for this opportunity
         </a>

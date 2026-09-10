@@ -16,7 +16,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group flex flex-col rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-white/25 hover:bg-white/10"
+      className="group flex flex-col rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm transition-colors hover:border-ink/20 hover:shadow-md"
     >
       <span className={`w-fit rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-wide ${accent.badge}`}>
         {post.category}

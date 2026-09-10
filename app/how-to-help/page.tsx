@@ -28,7 +28,7 @@ export default function HowToHelpPage() {
               Every donation goes directly toward sensory resources, program
               costs, and community events across New Jersey.
             </p>
-            <div className="mt-6 w-fit rounded-2xl border border-white/10 bg-linear-to-br from-flame-start/20 via-flame-mid/15 to-flame-end/10 p-6">
+            <div className="mt-6 w-fit rounded-2xl border border-ink/10 bg-linear-to-br from-flame-start/25 via-flame-mid/20 to-flame-end/20 p-6 shadow-sm">
               <p className="text-xs font-semibold uppercase tracking-widest text-gold">Donate</p>
               <p className="mt-2 text-mist">via Zelle</p>
             </div>
@@ -56,7 +56,7 @@ export default function HowToHelpPage() {
             </p>
             <a
               href="mailto:everykidcanplay@gmail.com?subject=Newsletter%20Signup&body=Hi%20Every%20Kid%20Can%2C%20please%20add%20me%20to%20your%20volunteer%20newsletter!"
-              className="mt-6 inline-block rounded-full bg-linear-to-r from-flame-start via-flame-mid to-flame-end px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
+              className="mt-6 inline-block rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
             >
               Subscribe
             </a>

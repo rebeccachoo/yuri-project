@@ -29,8 +29,8 @@ export default function BlogBrowser({
             onClick={() => setCategory(cat)}
             className={`rounded-full border px-3.5 py-1.5 text-sm font-semibold transition-colors ${
               category === cat
-                ? "border-transparent bg-linear-to-r from-flame-start via-flame-mid to-flame-end text-ink"
-                : "border-white/15 bg-white/5 text-mist/70 hover:border-white/30"
+                ? "border-transparent bg-gold text-ink"
+                : "border-ink/15 bg-plum text-mist/70 shadow-sm hover:border-ink/30"
             }`}
           >
             {cat}
@@ -49,7 +49,7 @@ export default function BlogBrowser({
           ))}
         </div>
       ) : (
-        <div className="mt-4 rounded-2xl border border-dashed border-white/15 p-10 text-center text-sm text-mist/50">
+        <div className="mt-4 rounded-2xl border border-dashed border-ink/15 p-10 text-center text-sm text-mist/50">
           No articles in this category yet.
         </div>
       )}

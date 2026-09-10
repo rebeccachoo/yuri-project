@@ -3,7 +3,7 @@ import type { VolunteerOpportunity } from "@/lib/content/volunteers";
 
 export default function VolunteerCard({ opportunity }: { opportunity: VolunteerOpportunity }) {
   return (
-    <div className="flex flex-col rounded-2xl border border-white/10 bg-white/5 p-6">
+    <div className="flex flex-col rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm">
       <p className="text-xs font-semibold uppercase tracking-wide text-gold">
         {opportunity.organizationName}
       </p>
@@ -25,7 +25,7 @@ export default function VolunteerCard({ opportunity }: { opportunity: VolunteerO
       </dl>
       <Link
         href={`/volunteer/${opportunity.slug}`}
-        className="mt-4 w-fit rounded-full bg-linear-to-r from-flame-start via-flame-mid to-flame-end px-4 py-2 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
+        className="mt-4 w-fit rounded-full bg-gold px-4 py-2 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
       >
         View Opportunity
       </Link>

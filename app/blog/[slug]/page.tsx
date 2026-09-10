@@ -79,7 +79,7 @@ export default async function BlogDetailPage(props: PageProps<"/blog/[slug]">) {
       </div>
 
       {related.length > 0 && (
-        <div className="mt-16 border-t border-white/10 pt-10">
+        <div className="mt-16 border-t border-ink/10 pt-10">
           <h2 className="font-serif text-xl font-semibold tracking-tight text-mist">
             More in {post.category}
           </h2>

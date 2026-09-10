@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-ink text-mist">
+    <footer className="border-t border-ink/10 bg-plum text-mist">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:grid-cols-3">
         <div>
           <p className="flex items-center gap-2 font-serif text-lg font-semibold tracking-tight">
@@ -60,7 +60,7 @@ export default function Footer() {
           </nav>
         </div>
       </div>
-      <div className="border-t border-white/10 px-6 py-4 text-xs text-mist/30">
+      <div className="border-t border-ink/10 px-6 py-4 text-xs text-mist/40">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2">
           <p>© {new Date().getFullYear()} Every Kid Can. All rights reserved.</p>
           <Link href="/admin" className="hover:text-mist/60">

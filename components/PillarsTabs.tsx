@@ -29,8 +29,8 @@ export default function PillarsTabs({ pillars }: { pillars: Pillar[] }) {
             onClick={() => selectTab(p.slug)}
             className={`cursor-pointer rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
               p.slug === activeSlug
-                ? "border-transparent bg-linear-to-r from-flame-start via-flame-mid to-flame-end text-ink"
-                : "border-white/20 bg-transparent text-mist/70 hover:border-white/40"
+                ? "border-transparent bg-gold text-ink"
+                : "border-ink/20 bg-transparent text-mist/70 hover:border-ink/40"
             }`}
           >
             {p.navLabel}
@@ -48,7 +48,7 @@ export default function PillarsTabs({ pillars }: { pillars: Pillar[] }) {
         {pillar.activities.map((activity, index) => (
           <div
             key={activity.slug}
-            className="grid gap-8 rounded-2xl border border-white/10 bg-white/5 p-6 sm:grid-cols-2 sm:items-center"
+            className="grid gap-8 rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm sm:grid-cols-2 sm:items-center"
           >
             <ImageCarousel images={activity.images} label={activity.title} />
             <div>

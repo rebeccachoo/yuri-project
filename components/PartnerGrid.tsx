@@ -18,12 +18,12 @@ export default function PartnerGrid({ partners }: { partners: Partner[] }) {
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-linear-to-br from-flame-start via-flame-mid to-flame-end text-[10px] font-bold text-ink">
               {partner.monogram}
             </span>
-            <span className="text-sm font-semibold text-ink">{partner.name}</span>
+            <span className="text-sm font-semibold text-slate-800">{partner.name}</span>
           </>
         );
 
         const className =
-          "flex items-center gap-2 rounded-2xl border border-transparent bg-white px-5 py-3 shadow-lg";
+          "flex items-center gap-2 rounded-2xl border border-ink/10 bg-white px-5 py-3 shadow-sm";
 
         return partner.website ? (
           <a

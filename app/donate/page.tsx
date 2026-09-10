@@ -56,7 +56,7 @@ export default function DonatePage() {
           </Reveal>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            <Reveal className="rounded-2xl border border-white/10 bg-white/5 p-8">
+            <Reveal className="rounded-2xl border border-ink/10 bg-plum p-8 shadow-sm">
               <span className="w-fit rounded-full bg-sky-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-sky-800">
                 Sensory Inclusion
               </span>
@@ -75,7 +75,7 @@ export default function DonatePage() {
               </p>
             </Reveal>
 
-            <Reveal delay={150} className="rounded-2xl border border-white/10 bg-white/5 p-8">
+            <Reveal delay={150} className="rounded-2xl border border-ink/10 bg-plum p-8 shadow-sm">
               <span className="w-fit rounded-full bg-violet-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-violet-800">
                 Social Inclusion
               </span>
@@ -112,7 +112,7 @@ export default function DonatePage() {
                 href="https://instagram.com/_everykidcan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-white/25 hover:bg-white/10"
+                className="group block rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm transition-colors hover:border-ink/20 hover:bg-plum-light"
               >
                 <p className="text-xs font-semibold uppercase tracking-widest text-gold">
                   Instagram
@@ -123,14 +123,14 @@ export default function DonatePage() {
             <Reveal delay={100}>
               <a
                 href="mailto:everykidcanplay@gmail.com"
-                className="group block rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-white/25 hover:bg-white/10"
+                className="group block rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm transition-colors hover:border-ink/20 hover:bg-plum-light"
               >
                 <p className="text-xs font-semibold uppercase tracking-widest text-gold">Email</p>
                 <p className="mt-2 text-mist">everykidcanplay@gmail.com</p>
               </a>
             </Reveal>
             <Reveal delay={200}>
-              <div className="rounded-2xl border border-white/10 bg-linear-to-br from-flame-start/20 via-flame-mid/15 to-flame-end/10 p-6">
+              <div className="rounded-2xl border border-ink/10 bg-linear-to-br from-flame-start/25 via-flame-mid/20 to-flame-end/20 p-6 shadow-sm">
                 <p className="text-xs font-semibold uppercase tracking-widest text-gold">Donate</p>
                 <p className="mt-2 text-mist">via Zelle</p>
               </div>

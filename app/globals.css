@@ -5,16 +5,21 @@
   --font-serif: var(--font-fraunces);
   --font-mono: var(--font-geist-mono);
 
-  /* Deep cosmic-gradient palette, sampled from the reference site. */
-  --color-ink: #100b24; /* deepest bg (footer) */
-  --color-plum: #1b1338; /* mid dark panel bg */
-  --color-plum-light: #2a2151; /* lighter panel / gradient top stop */
-  --color-plum-muted: #362b5e; /* decorative numerals, subtle borders */
-  --color-mist: #f3effc; /* primary light text on dark bg */
-  --color-gold: #d9a066; /* eyebrow labels, small accents */
-  --color-flame-start: #ff6fa8;
-  --color-flame-mid: #ff6a3d;
-  --color-flame-end: #ffc864;
+  /* Dark, atmospheric nonprofit palette — deep indigo base with denim
+     blue / dusty blue glows and a muted coral warm accent. Token names
+     kept from earlier themes (ink, plum, mist, gold, flame-*) so
+     components don't need per-file color-name changes, only the hex
+     values shift. */
+  --color-base: #22283e; /* page base — deep indigo */
+  --color-ink: #f5f6f8; /* primary (near-white) text / text-on-bright-button */
+  --color-mist: #e6e9ef; /* body copy base (soft cool off-white) */
+  --color-plum: #2b3550; /* solid card / dropdown surface — lifted indigo */
+  --color-plum-light: #37456b; /* secondary surface, slightly lighter */
+  --color-plum-muted: #778ead; /* decorative numerals — dusty denim blue */
+  --color-gold: #c77b72; /* eyebrow labels, small accents (muted coral) */
+  --color-flame-start: #3e5375; /* denim blue */
+  --color-flame-mid: #778ead; /* dusty blue */
+  --color-flame-end: #c77b72; /* muted coral */
 
   /* Kept only for /admin (internal dashboard, deliberately not part of the
      public-site redesign) — not used anywhere on the public site anymore. */
@@ -28,17 +33,17 @@
 body {
   color: var(--color-mist);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  background-color: var(--color-ink);
+  background-color: var(--color-base);
   background-image:
-    radial-gradient(62% 46% at 10% 4%, rgba(255, 111, 168, 0.24), rgba(0, 0, 0, 0) 62%),
-    radial-gradient(56% 42% at 96% 10%, rgba(255, 138, 61, 0.22), rgba(0, 0, 0, 0) 58%),
-    radial-gradient(64% 52% at 46% 106%, rgba(124, 58, 237, 0.3), rgba(0, 0, 0, 0) 62%),
-    linear-gradient(175deg, rgb(42, 33, 81) 0%, rgb(27, 19, 56) 55%, rgb(16, 11, 36) 100%);
+    radial-gradient(62% 52% at 10% 6%, rgba(62, 83, 117, 0.42), rgba(62, 83, 117, 0.12) 45%, rgba(34, 40, 62, 0) 78%),
+    radial-gradient(56% 48% at 92% 4%, rgba(119, 142, 173, 0.32), rgba(119, 142, 173, 0.1) 45%, rgba(34, 40, 62, 0) 76%),
+    radial-gradient(60% 52% at 88% 92%, rgba(50, 65, 95, 0.34), rgba(50, 65, 95, 0.08) 45%, rgba(34, 40, 62, 0) 78%),
+    radial-gradient(46% 38% at 6% 96%, rgba(199, 123, 114, 0.16), rgba(199, 123, 114, 0.05) 45%, rgba(34, 40, 62, 0) 70%);
   /* Pin the gradient to the viewport instead of stretching it across the
      whole (much taller) scrollable page — otherwise the glow only shows up
-     near the very top/bottom and the middle of every page reads as flat,
-     inconsistent black. A fixed viewport-sized backdrop keeps it identical
-     everywhere, including right behind the header. */
+     near the very top/bottom and the middle of every page reads as flat.
+     A fixed viewport-sized backdrop keeps it identical everywhere,
+     including right behind the header. */
   background-attachment: fixed;
   background-size: 100% 100vh;
   background-repeat: no-repeat;

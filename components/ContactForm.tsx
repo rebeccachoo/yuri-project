@@ -33,7 +33,7 @@ export default function ContactForm() {
           required
           value={name}
           onChange={(event) => setName(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-sm text-mist placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50"
+          className="mt-1 w-full rounded-lg border border-ink/15 bg-plum px-4 py-2.5 text-sm text-mist shadow-sm placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50"
         />
       </div>
 
@@ -47,7 +47,7 @@ export default function ContactForm() {
           required
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-sm text-mist placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50"
+          className="mt-1 w-full rounded-lg border border-ink/15 bg-plum px-4 py-2.5 text-sm text-mist shadow-sm placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50"
         />
       </div>
 
@@ -61,13 +61,13 @@ export default function ContactForm() {
           rows={5}
           value={message}
           onChange={(event) => setMessage(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-sm text-mist placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50"
+          className="mt-1 w-full rounded-lg border border-ink/15 bg-plum px-4 py-2.5 text-sm text-mist shadow-sm placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50"
         />
       </div>
 
       <button
         type="submit"
-        className="rounded-full bg-linear-to-r from-flame-start via-flame-mid to-flame-end px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
+        className="rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
       >
         Send Message
       </button>
