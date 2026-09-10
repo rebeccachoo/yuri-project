@@ -74,39 +74,70 @@ export default async function Home() {
       </section>
 
       <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-6 py-20 text-center">
-          <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
-              Who We Are
-            </span>
-            <h2 className="mx-auto mt-4 max-w-2xl font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
-              Learn About Every Kid Can
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-mist/70">
-              Every Kid Can is a 501(c)(3) youth-led organization focused on
-              empowering individuals with disabilities. By mobilizing community
-              resources and donations, we work to remove physical, social, and
-              financial barriers to participation in everyday activities —
-              rooted in reducing stigma, promoting inclusion, and ensuring every
-              child has the opportunity to thrive.
-            </p>
-          </Reveal>
-          {/* <Reveal
-            delay={100}
-            className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
-          >
-            {teamMembers.map((member) => (
-              <TeamMemberCard key={member.slug} member={member} />
-            ))}
-          </Reveal>
-          <Reveal delay={150}>
-            <Link
-              href="/about"
-              className="mt-8 inline-block text-sm font-semibold text-gold hover:underline"
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="grid items-center gap-16 lg:grid-cols-2">
+            <Reveal>
+              <div className="relative mx-auto w-full max-w-70">
+                <div className="absolute inset-0 -z-10 scale-125 rounded-full bg-linear-to-br from-flame-start/30 via-flame-mid/25 to-flame-end/20 blur-3xl" />
+                <Image
+                  src="/images/ekc_logo.png"
+                  alt="Every Kid Can logo — two children riding a winged, smiling star"
+                  width={390}
+                  height={414}
+                  className="w-full"
+                />
+              </div>
+              <div className="mt-10 grid gap-8 sm:grid-cols-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                    The Wings
+                  </p>
+                  <p className="mt-2 text-sm text-mist/70">
+                    Symbolize freedom, empowerment, and the ability to overcome
+                    challenges.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                    The Children
+                  </p>
+                  <p className="mt-2 text-sm text-mist/70">
+                    Highlights inclusivity and diversity, and the importance of
+                    fun and empowerment.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                    The Star
+                  </p>
+                  <p className="mt-2 text-sm text-mist/70">
+                    Represents each child&apos;s potential to shine and reach
+                    their goals.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal
+              delay={150}
+              className="rounded-2xl border border-ink/10 bg-plum p-8 shadow-sm sm:p-10"
             >
-              Learn more about us →
-            </Link>
-          </Reveal> */}
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+                About Every Kid Can
+              </span>
+              <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
+                Empowering Children Through Activity and Opportunity
+              </h2>
+              <p className="mt-4 text-mist/70">
+                Welcome to Every Kid Can! We are dedicated to providing
+                specialized packages and kits designed for children with
+                disabilities, ensuring they have access to the sports equipment
+                they need. Our mission is to empower every child to enjoy sports
+                and the benefits of physical activity. Join us in making
+                activities accessible for all kids!
+              </p>
+            </Reveal>
+          </div>
         </div>
       </section>
 
