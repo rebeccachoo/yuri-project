@@ -2,10 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { impactStats } from "@/data/impact";
 import { galleryImages } from "@/data/gallery";
+import { teamMembers } from "@/data/team";
 import { getPartners } from "@/lib/content/partners";
 import ImpactStats from "@/components/ImpactStats";
 import PartnerGrid from "@/components/PartnerGrid";
 import GalleryCarousel from "@/components/GalleryCarousel";
+import TeamMemberCard from "@/components/TeamMemberCard";
 import Reveal from "@/components/Reveal";
 
 export default async function Home() {
@@ -48,8 +50,8 @@ export default async function Home() {
             delay={150}
             className="relative mx-auto w-full max-w-lg lg:order-1"
           >
-            <div className="absolute inset-0 -z-10 scale-110 rounded-[63%_37%_54%_46%/43%_65%_35%_57%] bg-linear-to-br from-flame-start/40 via-flame-mid/30 to-flame-end/20 blur-3xl" />
-            <div className="relative aspect-square overflow-hidden rounded-[63%_37%_54%_46%/43%_65%_35%_57%] border-4 border-white/10 shadow-2xl">
+            <div className="animate-blob-drift absolute inset-0 -z-10 scale-110 bg-linear-to-br from-flame-start/40 via-flame-mid/30 to-flame-end/20 blur-3xl" />
+            <div className="animate-blob-drift relative aspect-square overflow-hidden border border-white/25 shadow-2xl">
               <Image
                 src="/images/hero.jpg"
                 alt="Every Kid Can volunteers performing music for veterans at a community event"
@@ -68,6 +70,43 @@ export default async function Home() {
               </p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 py-20 text-center">
+          <Reveal>
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+              Who We Are
+            </span>
+            <h2 className="mx-auto mt-4 max-w-2xl font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
+              Learn About Every Kid Can
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-mist/70">
+              Every Kid Can is a 501(c)(3) youth-led organization focused on
+              empowering individuals with disabilities. By mobilizing community
+              resources and donations, we work to remove physical, social, and
+              financial barriers to participation in everyday activities —
+              rooted in reducing stigma, promoting inclusion, and ensuring every
+              child has the opportunity to thrive.
+            </p>
+          </Reveal>
+          {/* <Reveal
+            delay={100}
+            className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          >
+            {teamMembers.map((member) => (
+              <TeamMemberCard key={member.slug} member={member} />
+            ))}
+          </Reveal>
+          <Reveal delay={150}>
+            <Link
+              href="/about"
+              className="mt-8 inline-block text-sm font-semibold text-gold hover:underline"
+            >
+              Learn more about us →
+            </Link>
+          </Reveal> */}
         </div>
       </section>
 
@@ -92,8 +131,15 @@ export default async function Home() {
             </p>
           </Reveal>
 
-          <Reveal delay={150} className="relative">
-            <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl border border-ink/10 shadow-2xl">
+          <Reveal delay={150} className="relative mx-auto w-full max-w-lg">
+            <div
+              className="animate-blob-drift absolute inset-0 -z-10 scale-110 bg-linear-to-br from-flame-start/40 via-flame-mid/30 to-flame-end/20 blur-3xl"
+              style={{ animationDelay: "-3s, -2s" }}
+            />
+            <div
+              className="animate-blob-drift relative aspect-square w-full overflow-hidden border border-white/25 shadow-2xl"
+              style={{ animationDelay: "-3s, -2s" }}
+            >
               <Image
                 src="/images/barrier.jpg"
                 alt="A teacher helping a student in a wheelchair in a general education classroom"
@@ -130,6 +176,98 @@ export default async function Home() {
           </Reveal>
           <div className="mt-14">
             <ImpactStats stats={impactStats} />
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <Reveal className="text-center">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+              Take Action
+            </span>
+            <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
+              Get Involved
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-mist/70">
+              A few ways to jump in, whatever you have to give.
+            </p>
+          </Reveal>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                title: "DONATE TO SUPPORT OUR MISSION",
+                href: "/donate#give",
+                icon: (
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                ),
+                text: "Your donation helps us continue our efforts in providing inclusive activity package for children with disabilities.",
+              },
+              {
+                title: "JOIN THE TEAM!",
+                href: "/volunteer",
+                icon: (
+                  <>
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </>
+                ),
+                text: "Join our team of dedicated volunteers and make a difference in the lives of children with disabilities.",
+              },
+              {
+                title: "HELP US BUILD OUR BASKETS",
+                href: "/pillars?tab=sensory-inclusion",
+                icon: (
+                  <>
+                    <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+                    <path d="m3.3 7 8.7 5 8.7-5" />
+                    <path d="M12 22V12" />
+                  </>
+                ),
+                text: "Make a direct impact by sponsoring a child's baskets, allowing them to participate in exclusive activities.",
+              },
+              {
+                title: "CONTACT US!",
+                href: "/how-to-help",
+                icon: (
+                  <>
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </>
+                ),
+                text: "Get in touch with us to learn more about our programs and how you can support Every Kid Can.",
+              },
+            ].map((item, index) => (
+              <Reveal key={item.title} delay={index * 100}>
+                <Link
+                  href={item.href}
+                  className="group flex h-full flex-col gap-6 rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm transition-colors hover:border-ink/20 hover:bg-plum-light"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                    className="h-7 w-7 text-gold"
+                  >
+                    {item.icon}
+                  </svg>
+                  <div>
+                    <p className="font-serif text-2xl font-semibold uppercase leading-snug tracking-tight text-mist">
+                      {item.title}
+                    </p>
+                    <p className="mt-2 text-xl leading-snug tracking-tight text-mist/80">
+                      {item.text}
+                    </p>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>

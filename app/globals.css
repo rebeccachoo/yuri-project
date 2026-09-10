@@ -48,3 +48,41 @@ body {
   background-size: 100% 100vh;
   background-repeat: no-repeat;
 }
+
+/* Slow organic drift for the blob-shaped index images — the border-radius
+   morphs between a few blob variations while the shape gently floats, so
+   it reads as alive rather than a static cutout. */
+@keyframes blob-morph {
+  0%,
+  100% {
+    border-radius: 63% 37% 54% 46% / 43% 65% 35% 57%;
+  }
+  33% {
+    border-radius: 47% 53% 63% 37% / 57% 41% 59% 43%;
+  }
+  66% {
+    border-radius: 55% 45% 40% 60% / 38% 58% 42% 62%;
+  }
+}
+
+@keyframes blob-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1.5deg);
+  }
+}
+
+.animate-blob-drift {
+  animation:
+    blob-morph 16s ease-in-out infinite,
+    blob-float 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob-drift {
+    animation: none;
+  }
+}

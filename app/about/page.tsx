@@ -30,12 +30,14 @@ export default function AboutPage() {
             Our Mission
           </h2>
           <p className="mt-4 text-mist/70">
-            Every Kid Can is a 501(c)(3) youth-led organization focused on empowering
-            individuals with disabilities. By mobilizing community resources and donations,
-            we work to remove physical, social, and financial barriers to participation in
-            everyday activities. Our mission is rooted in reducing stigma, promoting
-            inclusion, and ensuring every child has the opportunity to thrive. Join us in
-            making a difference and helping every child discover their potential!
+            Every Kid Can is a 501(c)(3) youth-led organization focused on
+            empowering individuals with disabilities. By mobilizing community
+            resources and donations, we work to remove physical, social, and
+            financial barriers to participation in everyday activities. Our
+            mission is rooted in reducing stigma, promoting inclusion, and
+            ensuring every child has the opportunity to thrive. Join us in
+            making a difference and helping every child discover their
+            potential!
           </p>
         </section>
       </div>
@@ -46,7 +48,8 @@ export default function AboutPage() {
             Our Team
           </h2>
           <p className="mt-2 max-w-2xl text-mist/60">
-            Every Kid Can is led by a youth team, each directing one of our program areas.
+            Every Kid Can is led by a youth team, each directing one of our
+            program areas.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {teamMembers.map((member) => (
