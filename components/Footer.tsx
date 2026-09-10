@@ -54,6 +54,9 @@ export default function Footer() {
             <Link href="/about" className="hover:text-accent">
               About Us
             </Link>
+            <Link href="/how-to-help" className="hover:text-accent">
+              How to Help
+            </Link>
           </nav>
         </div>
       </div>

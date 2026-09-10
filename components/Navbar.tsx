@@ -62,10 +62,10 @@ export default function Navbar() {
             ABOUT US
           </Link>
           <Link
-            href="/donate"
+            href="/how-to-help"
             className="rounded-full bg-accent px-4 py-2 text-navy-deep transition-colors hover:bg-cream"
           >
-            DONATE
+            HOW TO HELP
           </Link>
         </nav>
 
@@ -101,11 +101,11 @@ export default function Navbar() {
             ABOUT US
           </Link>
           <Link
-            href="/donate"
+            href="/how-to-help"
             onClick={() => setMobileOpen(false)}
             className="mt-2 w-fit rounded-full bg-accent px-4 py-2 text-navy-deep"
           >
-            DONATE
+            HOW TO HELP
           </Link>
         </nav>
       )}
