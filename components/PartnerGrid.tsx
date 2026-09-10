@@ -1,16 +1,12 @@
 import type { Partner } from "@/data/partners";
-import { getAccentClasses } from "@/components/colors";
 
 export default function PartnerGrid({ partners }: { partners: Partner[] }) {
   return (
     <div className="flex flex-wrap gap-3">
       {partners.map((partner) => {
-        const accent = getAccentClasses(partner.accentColor);
         const content = (
           <>
-            <span
-              className={`flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-bold text-white ${accent.chip}`}
-            >
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-navy text-[10px] font-bold text-white">
               {partner.monogram}
             </span>
             {partner.name}
@@ -18,7 +14,7 @@ export default function PartnerGrid({ partners }: { partners: Partner[] }) {
         );
 
         const className =
-          "flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300";
+          "flex items-center gap-2 rounded-full border border-navy/15 bg-white px-4 py-2 text-sm font-semibold text-navy-deep";
 
         return partner.website ? (
           <a
@@ -26,7 +22,7 @@ export default function PartnerGrid({ partners }: { partners: Partner[] }) {
             href={partner.website}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${className} transition-colors hover:border-zinc-300 dark:hover:border-zinc-700`}
+            className={`${className} transition-colors hover:border-navy/40`}
           >
             {content}
           </a>

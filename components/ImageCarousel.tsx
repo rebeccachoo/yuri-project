@@ -15,7 +15,7 @@ export default function ImageCarousel({
 
   if (images.length === 0) {
     return (
-      <div className="flex aspect-video w-full items-center justify-center rounded-lg border border-dashed border-zinc-300 bg-zinc-50 text-center text-sm text-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-500">
+      <div className="flex aspect-video w-full items-center justify-center rounded-3xl border-4 border-accent/40 bg-white/5 text-center text-sm text-white/50">
         Photos of {label} coming soon
       </div>
     );
@@ -25,8 +25,8 @@ export default function ImageCarousel({
   const goNext = () => setIndex((i) => (i + 1) % images.length);
 
   return (
-    <div className="relative w-full overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800">
-      <div className="relative aspect-video w-full bg-zinc-100 dark:bg-zinc-900">
+    <div className="relative w-full overflow-hidden rounded-3xl border-4 border-accent/40">
+      <div className="relative aspect-video w-full bg-navy">
         <Image
           src={images[index].src}
           alt={images[index].alt}
@@ -42,7 +42,7 @@ export default function ImageCarousel({
             type="button"
             onClick={goPrev}
             aria-label={`Previous photo of ${label}`}
-            className="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-zinc-700 shadow hover:bg-white dark:bg-black/70 dark:text-zinc-200"
+            className="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-navy-deep shadow hover:bg-white"
           >
             ‹
           </button>
@@ -50,7 +50,7 @@ export default function ImageCarousel({
             type="button"
             onClick={goNext}
             aria-label={`Next photo of ${label}`}
-            className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-zinc-700 shadow hover:bg-white dark:bg-black/70 dark:text-zinc-200"
+            className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-navy-deep shadow hover:bg-white"
           >
             ›
           </button>

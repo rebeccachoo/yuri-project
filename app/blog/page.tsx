@@ -21,14 +21,18 @@ export default async function BlogPage(props: PageProps<"/blog">) {
   );
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-6 py-16">
-      <h1 className="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Blog</h1>
-      <p className="mt-2 max-w-2xl text-zinc-600 dark:text-zinc-400">
-        Interviews, guides, and updates from our work in sensory and social inclusion — filter by
-        category to find what you&apos;re looking for.
-      </p>
+    <div className="flex-1">
+      <div className="bg-navy">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <h1 className="text-4xl font-extrabold uppercase tracking-tight text-white">Blog</h1>
+          <p className="mt-2 max-w-2xl text-white/80">
+            Interviews, guides, and updates from our work in sensory and social inclusion —
+            filter by category to find what you&apos;re looking for.
+          </p>
+        </div>
+      </div>
 
-      <div className="mt-10">
+      <div className="mx-auto max-w-6xl px-6 py-12">
         <BlogBrowser posts={sortedPosts} initialCategory={initialCategory} />
       </div>
     </div>

@@ -28,20 +28,26 @@ const sections = [
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 py-16">
-      <h1 className="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
-        About Us
-      </h1>
+    <div className="flex-1">
+      <div className="bg-navy">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <h1 className="text-4xl font-extrabold uppercase tracking-tight text-white">
+            About Us
+          </h1>
+        </div>
+      </div>
 
-      <div className="mt-10 space-y-12">
-        {sections.map((section) => (
-          <section key={section.heading}>
-            <h2 className="text-xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
-              {section.heading}
-            </h2>
-            <p className="mt-2 text-zinc-500 italic dark:text-zinc-400">{section.body}</p>
-          </section>
-        ))}
+      <div className="mx-auto max-w-3xl px-6 py-16">
+        <div className="space-y-12">
+          {sections.map((section) => (
+            <section key={section.heading}>
+              <h2 className="text-xl font-extrabold uppercase tracking-tight text-navy-deep">
+                {section.heading}
+              </h2>
+              <p className="mt-2 italic text-navy-deep/50">{section.body}</p>
+            </section>
+          ))}
+        </div>
       </div>
     </div>
   );

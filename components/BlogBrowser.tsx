@@ -27,10 +27,10 @@ export default function BlogBrowser({
             key={cat}
             type="button"
             onClick={() => setCategory(cat)}
-            className={`rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors ${
+            className={`rounded-full border px-3.5 py-1.5 text-sm font-bold transition-colors ${
               category === cat
-                ? "border-sky-600 bg-sky-600 text-white"
-                : "border-zinc-300 bg-white text-zinc-600 hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400"
+                ? "border-accent bg-accent text-navy-deep"
+                : "border-navy/20 bg-white text-navy-deep/70 hover:border-navy/40"
             }`}
           >
             {cat}
@@ -38,7 +38,7 @@ export default function BlogBrowser({
         ))}
       </div>
 
-      <p className="mt-6 text-sm text-zinc-500 dark:text-zinc-400">
+      <p className="mt-6 text-sm text-navy-deep/60">
         {filtered.length} {filtered.length === 1 ? "article" : "articles"}
       </p>
 
@@ -49,7 +49,7 @@ export default function BlogBrowser({
           ))}
         </div>
       ) : (
-        <div className="mt-4 rounded-xl border border-dashed border-zinc-300 p-10 text-center text-sm text-zinc-500 dark:border-zinc-700 dark:text-zinc-400">
+        <div className="mt-4 rounded-2xl border border-dashed border-navy/20 p-10 text-center text-sm text-navy-deep/50">
           No articles in this category yet.
         </div>
       )}

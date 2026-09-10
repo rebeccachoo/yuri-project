@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a1a;
 }
 
 @theme inline {
@@ -10,13 +10,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-valley-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-navy: #27385b;
+  --color-navy-deep: #020341;
+  --color-cream: #f5e39b;
+  --color-accent: #e8a567;
+  --color-accent-blue: #4a6fa5;
 }
 
 body {

@@ -2,59 +2,62 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-10 sm:flex-row sm:items-start sm:justify-between">
+    <footer className="bg-navy-deep text-white">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:grid-cols-3">
         <div>
-          <p className="text-sm font-semibold text-zinc-950 dark:text-zinc-50">Every Kid Can</p>
-          <p className="mt-1 max-w-sm text-sm text-zinc-500 dark:text-zinc-400">
+          <p className="flex items-center gap-2 text-lg font-extrabold tracking-tight">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-bold text-navy-deep">
+              E
+            </span>
+            EVERY KID CAN
+          </p>
+          <p className="mt-3 max-w-xs text-sm text-white/60">
             A New Jersey-based, youth-led 501(c)(3) nonprofit standardizing disability inclusion
             through sensory and social inclusion.
           </p>
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
-            Stay in Touch
-          </p>
-          <ul className="mt-3 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="text-xs font-bold uppercase tracking-widest text-accent">Stay in Touch</p>
+          <ul className="mt-3 space-y-2 text-sm text-white/80">
             <li>
               <a
                 href="https://instagram.com/_everykidcan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-zinc-950 dark:hover:text-zinc-50"
+                className="hover:text-accent"
               >
                 Instagram: @_everykidcan
               </a>
             </li>
             <li>
-              <a
-                href="mailto:everykidcanplay@gmail.com"
-                className="hover:text-zinc-950 dark:hover:text-zinc-50"
-              >
-                Email: everykidcanplay@gmail.com
+              <a href="mailto:everykidcanplay@gmail.com" className="hover:text-accent">
+                everykidcanplay@gmail.com
               </a>
             </li>
             <li>Donate: Zelle</li>
           </ul>
         </div>
 
-        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-500 dark:text-zinc-400">
-          <Link href="/pillars" className="hover:text-zinc-950 dark:hover:text-zinc-50">
-            Our Pillars
-          </Link>
-          <Link href="/volunteer" className="hover:text-zinc-950 dark:hover:text-zinc-50">
-            Volunteer
-          </Link>
-          <Link href="/blog" className="hover:text-zinc-950 dark:hover:text-zinc-50">
-            Blog
-          </Link>
-          <Link href="/about" className="hover:text-zinc-950 dark:hover:text-zinc-50">
-            About Us
-          </Link>
-        </nav>
+        <div>
+          <p className="text-xs font-bold uppercase tracking-widest text-accent">Explore</p>
+          <nav className="mt-3 flex flex-col gap-2 text-sm text-white/80">
+            <Link href="/pillars" className="hover:text-accent">
+              Our Pillars
+            </Link>
+            <Link href="/volunteer" className="hover:text-accent">
+              Volunteer
+            </Link>
+            <Link href="/blog" className="hover:text-accent">
+              Blog
+            </Link>
+            <Link href="/about" className="hover:text-accent">
+              About Us
+            </Link>
+          </nav>
+        </div>
       </div>
-      <div className="border-t border-zinc-200 px-6 py-4 text-xs text-zinc-400 dark:border-zinc-800 dark:text-zinc-600">
+      <div className="border-t border-white/10 px-6 py-4 text-xs text-white/40">
         <p className="mx-auto max-w-6xl">© {new Date().getFullYear()} Every Kid Can. All rights reserved.</p>
       </div>
     </footer>
