@@ -62,7 +62,7 @@ export default function Navbar() {
             ABOUT US
           </Link>
           <Link
-            href="/#stay-in-touch"
+            href="/donate"
             className="rounded-full bg-accent px-4 py-2 text-navy-deep transition-colors hover:bg-cream"
           >
             DONATE
@@ -101,7 +101,7 @@ export default function Navbar() {
             ABOUT US
           </Link>
           <Link
-            href="/#stay-in-touch"
+            href="/donate"
             onClick={() => setMobileOpen(false)}
             className="mt-2 w-fit rounded-full bg-accent px-4 py-2 text-navy-deep"
           >

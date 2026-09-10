@@ -54,6 +54,8 @@ export const pillars: Pillar[] = [
         description:
           "We place donation boxes at community centers across New Jersey to collect sensory items from the public, which we then distribute through our Sensory Donations program.",
         images: [],
+        linkHref: "/donate",
+        linkLabel: "How our donation boxes work",
       },
     ],
   },
