@@ -114,6 +114,9 @@ export default function Home() {
             <h2 className="text-3xl font-extrabold uppercase tracking-tight text-navy-deep">
               Our Partners
             </h2>
+            <p className="mt-2 text-navy-deep/70">
+              Facilities and organizations we&apos;ve collaborated with.
+            </p>
           </Reveal>
           <Reveal delay={100} className="mt-8">
             <PartnerGrid partners={partners} />

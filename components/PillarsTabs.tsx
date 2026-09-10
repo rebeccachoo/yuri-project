@@ -26,7 +26,7 @@ export default function PillarsTabs({
             key={p.slug}
             type="button"
             onClick={() => setActiveSlug(p.slug)}
-            className={`rounded-full border px-4 py-2 text-sm font-bold transition-colors ${
+            className={`rounded-full cursor-pointer border px-4 py-2 text-sm font-bold transition-colors ${
               p.slug === activeSlug
                 ? "border-transparent bg-accent text-navy-deep"
                 : "border-white/30 bg-transparent text-white hover:border-white/60"
@@ -54,8 +54,12 @@ export default function PillarsTabs({
               <span className="w-fit rounded-full bg-accent/20 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-accent">
                 {pillar.navLabel}
               </span>
-              <h2 className="mt-3 text-xl font-bold text-white">{activity.title}</h2>
-              <p className="mt-2 text-sm text-white/70">{activity.description}</p>
+              <h2 className="mt-3 text-xl font-bold text-white">
+                {activity.title}
+              </h2>
+              <p className="mt-2 text-sm text-white/70">
+                {activity.description}
+              </p>
               {activity.linkHref && (
                 <Link
                   href={activity.linkHref}
