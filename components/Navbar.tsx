@@ -9,27 +9,27 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-navy">
+    <header className="sticky top-0 z-50 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
           href="/"
           onClick={() => setMobileOpen(false)}
-          className="flex items-center gap-2 text-lg font-extrabold tracking-tight text-white"
+          className="flex items-center gap-2 font-serif text-lg font-semibold tracking-tight text-mist"
         >
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-bold text-navy-deep">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-flame-start via-flame-mid to-flame-end text-sm font-bold text-ink">
             E
           </span>
-          <span className="hidden sm:inline">EVERY KID CAN</span>
+          <span className="hidden sm:inline">Every Kid Can</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm font-semibold tracking-wide text-white lg:flex">
+        <nav className="hidden items-center gap-7 text-sm font-medium tracking-wide text-mist/80 lg:flex">
           <div
             className="relative"
             onMouseEnter={() => setPillarsOpen(true)}
             onMouseLeave={() => setPillarsOpen(false)}
           >
-            <Link href="/pillars" className="flex items-center gap-1 transition-colors hover:text-accent">
-              OUR PILLARS
+            <Link href="/pillars" className="flex items-center gap-1 transition-colors hover:text-gold">
+              Our Pillars
               <svg
                 aria-hidden="true"
                 viewBox="0 0 12 8"
@@ -39,12 +39,12 @@ export default function Navbar() {
               </svg>
             </Link>
             {pillarsOpen && (
-              <div className="absolute left-0 top-full w-56 rounded-lg border border-white/10 bg-navy py-2 shadow-lg">
+              <div className="absolute left-0 top-full w-56 rounded-xl border border-white/10 bg-plum py-2 shadow-xl">
                 {pillars.map((pillar) => (
                   <Link
                     key={pillar.slug}
                     href={`/pillars?tab=${pillar.slug}`}
-                    className="block px-4 py-2 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-accent"
+                    className="block px-4 py-2 text-sm text-mist/70 hover:bg-white/5 hover:text-gold"
                   >
                     {pillar.navLabel}
                   </Link>
@@ -52,20 +52,20 @@ export default function Navbar() {
               </div>
             )}
           </div>
-          <Link href="/volunteer" className="transition-colors hover:text-accent">
-            VOLUNTEER
+          <Link href="/volunteer" className="transition-colors hover:text-gold">
+            Volunteer
           </Link>
-          <Link href="/blog" className="transition-colors hover:text-accent">
-            BLOG
+          <Link href="/blog" className="transition-colors hover:text-gold">
+            Blog
           </Link>
-          <Link href="/about" className="transition-colors hover:text-accent">
-            ABOUT US
+          <Link href="/about" className="transition-colors hover:text-gold">
+            About Us
           </Link>
           <Link
             href="/how-to-help"
-            className="rounded-full bg-accent px-4 py-2 text-navy-deep transition-colors hover:bg-cream"
+            className="rounded-full bg-linear-to-r from-flame-start via-flame-mid to-flame-end px-4 py-2 font-semibold text-ink transition-opacity hover:opacity-90"
           >
-            HOW TO HELP
+            How to Help
           </Link>
         </nav>
 
@@ -77,35 +77,35 @@ export default function Navbar() {
           className="flex h-9 w-9 shrink-0 flex-col items-center justify-center gap-1.5 lg:hidden"
         >
           <span
-            className={`h-0.5 w-6 rounded-full bg-white transition-transform ${mobileOpen ? "translate-y-2 rotate-45" : ""}`}
+            className={`h-0.5 w-6 rounded-full bg-mist transition-transform ${mobileOpen ? "translate-y-2 rotate-45" : ""}`}
           />
-          <span className={`h-0.5 w-6 rounded-full bg-white transition-opacity ${mobileOpen ? "opacity-0" : ""}`} />
+          <span className={`h-0.5 w-6 rounded-full bg-mist transition-opacity ${mobileOpen ? "opacity-0" : ""}`} />
           <span
-            className={`h-0.5 w-6 rounded-full bg-white transition-transform ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`}
+            className={`h-0.5 w-6 rounded-full bg-mist transition-transform ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`}
           />
         </button>
       </div>
 
       {mobileOpen && (
-        <nav className="flex flex-col gap-1 border-t border-white/10 px-6 py-4 text-sm font-semibold tracking-wide text-white lg:hidden">
-          <Link href="/pillars" className="py-2 hover:text-accent" onClick={() => setMobileOpen(false)}>
-            OUR PILLARS
+        <nav className="flex flex-col gap-1 border-t border-white/10 px-6 py-4 text-sm font-medium tracking-wide text-mist/80 lg:hidden">
+          <Link href="/pillars" className="py-2 hover:text-gold" onClick={() => setMobileOpen(false)}>
+            Our Pillars
           </Link>
-          <Link href="/volunteer" className="py-2 hover:text-accent" onClick={() => setMobileOpen(false)}>
-            VOLUNTEER
+          <Link href="/volunteer" className="py-2 hover:text-gold" onClick={() => setMobileOpen(false)}>
+            Volunteer
           </Link>
-          <Link href="/blog" className="py-2 hover:text-accent" onClick={() => setMobileOpen(false)}>
-            BLOG
+          <Link href="/blog" className="py-2 hover:text-gold" onClick={() => setMobileOpen(false)}>
+            Blog
           </Link>
-          <Link href="/about" className="py-2 hover:text-accent" onClick={() => setMobileOpen(false)}>
-            ABOUT US
+          <Link href="/about" className="py-2 hover:text-gold" onClick={() => setMobileOpen(false)}>
+            About Us
           </Link>
           <Link
             href="/how-to-help"
             onClick={() => setMobileOpen(false)}
-            className="mt-2 w-fit rounded-full bg-accent px-4 py-2 text-navy-deep"
+            className="mt-2 w-fit rounded-full bg-linear-to-r from-flame-start via-flame-mid to-flame-end px-4 py-2 font-semibold text-ink"
           >
-            HOW TO HELP
+            How to Help
           </Link>
         </nav>
       )}

@@ -2,20 +2,26 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import type { PillarImage } from "@/data/pillars";
+
+export interface CarouselImage {
+  src: string;
+  alt: string;
+}
 
 export default function ImageCarousel({
   images,
   label,
+  sizes = "(max-width: 768px) 100vw, 50vw",
 }: {
-  images: PillarImage[];
+  images: CarouselImage[];
   label: string;
+  sizes?: string;
 }) {
   const [index, setIndex] = useState(0);
 
   if (images.length === 0) {
     return (
-      <div className="flex aspect-video w-full items-center justify-center rounded-3xl border-4 border-accent/40 bg-white/5 text-center text-sm text-white/50">
+      <div className="flex aspect-video w-full items-center justify-center rounded-3xl border border-white/15 bg-white/5 text-center text-sm text-mist/50">
         Photos of {label} coming soon
       </div>
     );
@@ -25,14 +31,14 @@ export default function ImageCarousel({
   const goNext = () => setIndex((i) => (i + 1) % images.length);
 
   return (
-    <div className="relative w-full overflow-hidden rounded-3xl border-4 border-accent/40">
-      <div className="relative aspect-video w-full bg-navy">
+    <div className="relative w-full overflow-hidden rounded-3xl border border-white/15">
+      <div className="relative aspect-video w-full bg-plum">
         <Image
           src={images[index].src}
           alt={images[index].alt}
           fill
           className="object-cover"
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes={sizes}
         />
       </div>
 
@@ -42,7 +48,7 @@ export default function ImageCarousel({
             type="button"
             onClick={goPrev}
             aria-label={`Previous photo of ${label}`}
-            className="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-navy-deep shadow hover:bg-white"
+            className="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-ink shadow hover:bg-white"
           >
             ‹
           </button>
@@ -50,7 +56,7 @@ export default function ImageCarousel({
             type="button"
             onClick={goNext}
             aria-label={`Next photo of ${label}`}
-            className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-navy-deep shadow hover:bg-white"
+            className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-ink shadow hover:bg-white"
           >
             ›
           </button>

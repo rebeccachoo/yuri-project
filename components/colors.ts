@@ -43,16 +43,16 @@ const accentMap: Record<string, AccentClasses> = {
     bar: "bg-fuchsia-500",
   },
   accent: {
-    badge: "bg-accent/20 text-navy-deep",
-    chip: "bg-accent",
-    ring: "ring-accent/20",
-    bar: "bg-accent",
+    badge: "bg-orange-100 text-orange-800",
+    chip: "bg-orange-500",
+    ring: "ring-orange-500/20",
+    bar: "bg-orange-500",
   },
   navy: {
-    badge: "bg-navy/10 text-navy",
-    chip: "bg-navy",
-    ring: "ring-navy/20",
-    bar: "bg-navy",
+    badge: "bg-indigo-100 text-indigo-800",
+    chip: "bg-indigo-500",
+    ring: "ring-indigo-500/20",
+    bar: "bg-indigo-500",
   },
 };
 

@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { impactStats } from "@/data/impact";
+import { galleryImages } from "@/data/gallery";
 import { getPartners } from "@/lib/content/partners";
 import ImpactStats from "@/components/ImpactStats";
 import PartnerGrid from "@/components/PartnerGrid";
+import GalleryCarousel from "@/components/GalleryCarousel";
 import Reveal from "@/components/Reveal";
 
 export default async function Home() {
@@ -11,57 +13,70 @@ export default async function Home() {
 
   return (
     <div className="flex flex-1 flex-col">
-      <section className="relative isolate flex h-screen min-h-140 items-center overflow-hidden">
-        <Image
-          src="/images/hero.jpg"
-          alt="Every Kid Can volunteers performing music for veterans at a community event"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-linear-to-t from-navy-deep/90 via-navy-deep/50 to-navy-deep/20" />
-        <Reveal className="relative mx-auto flex w-full max-w-6xl flex-col items-start gap-6 px-6">
-          <h1 className="max-w-2xl text-5xl font-extrabold uppercase tracking-tight text-white sm:text-6xl">
-            Every Kid Can
-          </h1>
-          <p className="max-w-xl text-lg text-white/90">
-            Intent on standardizing disability inclusion statewide via sensory
-            and social inclusion.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/pillars"
-              className="rounded-full bg-accent px-6 py-3 text-sm font-bold text-navy-deep transition-colors hover:bg-cream"
-            >
-              Explore our pillars
-            </Link>
-            <Link
-              href="/volunteer"
-              className="rounded-full border border-white/70 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-white/10"
-            >
-              Volunteer with us
-            </Link>
-          </div>
-        </Reveal>
+      <section className="relative overflow-hidden pb-24 pt-20 sm:pt-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 lg:grid-cols-2">
+          <Reveal>
+            <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold">
+              501(c)(3) Youth-Led Nonprofit
+            </span>
+            <h1 className="mt-6 max-w-xl font-serif text-5xl font-semibold uppercase leading-tight tracking-tight text-mist sm:text-6xl">
+              WELCOME TO{" "}
+              <span className="bg-linear-to-r from-flame-start via-flame-mid to-flame-end bg-clip-text text-transparent">
+                EVERY KID CAN
+              </span>
+            </h1>
+            <p className="mt-6 max-w-lg text-lg text-mist/70">
+              EMPOWERING CHILDREN OF ALL ABILITIES
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/pillars"
+                className="rounded-full bg-linear-to-r from-flame-start via-flame-mid to-flame-end px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
+              >
+                Explore our pillars
+              </Link>
+              <Link
+                href="/volunteer"
+                className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-mist transition-colors hover:border-white/40"
+              >
+                Volunteer with us
+              </Link>
+            </div>
+          </Reveal>
+
+          <Reveal delay={150} className="relative mx-auto w-full max-w-sm">
+            <div className="absolute inset-0 -z-10 scale-110 rounded-full bg-linear-to-br from-flame-start/40 via-flame-mid/30 to-flame-end/20 blur-3xl" />
+            <div className="relative aspect-square overflow-hidden rounded-full border-4 border-white/10 shadow-2xl">
+              <Image
+                src="/images/hero.jpg"
+                alt="Every Kid Can volunteers performing music for veterans at a community event"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 768px) 320px, 384px"
+              />
+            </div>
+            <div className="absolute -bottom-6 -left-6 max-w-52 rounded-2xl border border-white/10 bg-plum p-4 shadow-xl">
+              <p className="font-serif text-2xl font-semibold text-mist">7,500+</p>
+              <p className="mt-1 text-xs text-mist/60">People with disabilities reached statewide.</p>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
-      <section className="relative overflow-hidden bg-navy">
-        <div className="pointer-events-none absolute -left-24 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-accent-blue/20 blur-3xl" />
-        <div className="pointer-events-none absolute -right-16 bottom-0 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-6 py-24 sm:grid-cols-2">
+      <section className="relative overflow-hidden">
+        <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 py-20 lg:grid-cols-2">
           <Reveal>
             <div className="flex items-center gap-3">
-              <span className="h-px w-10 bg-accent" />
-              <span className="text-xs font-bold uppercase tracking-widest text-accent">
+              <span className="h-px w-10 bg-gold" />
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold">
                 The Challenge
               </span>
             </div>
-            <h2 className="mt-4 text-4xl font-extrabold uppercase tracking-tight text-white sm:text-5xl">
+            <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-mist sm:text-5xl">
               The Barrier
             </h2>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist/70">
               New Jersey students with disabilities are included in general
               education classrooms at a rate below the national average. That
               gap doesn&apos;t just affect academics — it deepens social
@@ -71,8 +86,7 @@ export default async function Home() {
           </Reveal>
 
           <Reveal delay={150} className="relative">
-            <div className="absolute -inset-4 rounded-4xl border-2 border-accent/30" />
-            <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl shadow-2xl">
+            <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
               <Image
                 src="/images/barrier.jpg"
                 alt="A teacher helping a student in a wheelchair in a general education classroom"
@@ -81,8 +95,8 @@ export default async function Home() {
                 sizes="(max-width: 640px) 100vw, 50vw"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 max-w-56 rounded-2xl bg-cream p-4 shadow-xl sm:-left-10">
-              <p className="text-sm font-bold text-navy-deep">
+            <div className="absolute -bottom-6 -left-6 max-w-56 rounded-2xl border border-white/10 bg-plum p-4 shadow-xl sm:-left-10">
+              <p className="font-serif text-sm font-semibold text-mist">
                 Inclusion shouldn&apos;t be the exception.
               </p>
             </div>
@@ -90,13 +104,16 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="bg-cream">
+      <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20 text-center">
           <Reveal>
-            <h2 className="text-3xl font-extrabold uppercase tracking-tight text-navy-deep">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
               The Value of Inclusion
+            </span>
+            <h2 className="mx-auto mt-4 max-w-2xl font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
+              Every Kid Can is closing that gap, statewide.
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-navy-deep/80">
+            <p className="mx-auto mt-4 max-w-2xl text-mist/70">
               Every Kid Can is a New Jersey-based, youth-led 501(c)(3) nonprofit
               working to close that gap through sensory and social inclusion —
               donating sensory resources, building hands-on sensory boards,
@@ -104,21 +121,40 @@ export default async function Home() {
               to the cause statewide.
             </p>
           </Reveal>
-          <div className="mt-12">
+          <div className="mt-14">
             <ImpactStats stats={impactStats} />
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <Reveal className="text-center">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+              In Action
+            </span>
+            <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
+              Our Gallery
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-mist/70">
+              A look at our programs and events in action.
+            </p>
+          </Reveal>
+          <Reveal delay={150} className="mt-12">
+            <GalleryCarousel images={galleryImages} />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal>
-            <h2 className="text-3xl font-extrabold uppercase tracking-tight text-navy-deep">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
               Our Partners
+            </span>
+            <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
+              Facilities we&apos;ve collaborated with
             </h2>
-            <p className="mt-2 text-navy-deep/70">
-              Facilities and organizations we&apos;ve collaborated with.
-            </p>
           </Reveal>
           <Reveal delay={100} className="mt-8">
             <PartnerGrid partners={partners} />
@@ -126,10 +162,13 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="stay-in-touch" className="bg-navy-deep scroll-mt-20">
+      <section id="stay-in-touch" className="relative scroll-mt-20 overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal>
-            <h2 className="text-3xl font-extrabold uppercase tracking-tight text-white">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+              Get In Touch
+            </span>
+            <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
               Stay in Touch
             </h2>
           </Reveal>
@@ -139,35 +178,27 @@ export default async function Home() {
                 href="https://instagram.com/_everykidcan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block rounded-2xl bg-navy p-6 transition-colors hover:bg-accent"
+                className="group block rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-white/25 hover:bg-white/10"
               >
-                <p className="font-bold uppercase tracking-wide text-accent group-hover:text-navy-deep">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold">
                   Instagram
                 </p>
-                <p className="mt-2 text-white group-hover:text-navy-deep">
-                  @_everykidcan
-                </p>
+                <p className="mt-2 text-mist">@_everykidcan</p>
               </a>
             </Reveal>
             <Reveal delay={100}>
               <a
                 href="mailto:everykidcanplay@gmail.com"
-                className="group block rounded-2xl bg-accent-blue p-6 transition-colors hover:bg-accent"
+                className="group block rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-white/25 hover:bg-white/10"
               >
-                <p className="font-bold uppercase tracking-wide text-white group-hover:text-navy-deep">
-                  Email
-                </p>
-                <p className="mt-2 text-white group-hover:text-navy-deep">
-                  everykidcanplay@gmail.com
-                </p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold">Email</p>
+                <p className="mt-2 text-mist">everykidcanplay@gmail.com</p>
               </a>
             </Reveal>
             <Reveal delay={200}>
-              <div className="rounded-2xl bg-cream p-6">
-                <p className="font-bold uppercase tracking-wide text-navy-deep">
-                  Donate
-                </p>
-                <p className="mt-2 text-navy-deep/80">via Zelle</p>
+              <div className="rounded-2xl border border-white/10 bg-linear-to-br from-flame-start/20 via-flame-mid/15 to-flame-end/10 p-6">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold">Donate</p>
+                <p className="mt-2 text-mist">via Zelle</p>
               </div>
             </Reveal>
           </div>

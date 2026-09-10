@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
+import { Geist_Mono, Fraunces } from "next/font/google";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -15,6 +15,13 @@ const valleySans = localFont({
     { path: "./fonts/valley-sans/ValleySans-ExtraBold.ttf", weight: "800", style: "normal" },
   ],
   display: "swap",
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  axes: ["SOFT", "WONK", "opsz"],
 });
 
 const geistMono = Geist_Mono({
@@ -35,9 +42,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${valleySans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${valleySans.variable} ${fraunces.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-white text-navy-deep">
+      <body className="flex min-h-full flex-col bg-ink text-mist">
         <Navbar />
         <main className="flex flex-1 flex-col">{children}</main>
         <Footer />

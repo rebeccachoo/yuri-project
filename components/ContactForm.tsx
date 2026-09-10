@@ -24,7 +24,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="contact-name" className="text-sm font-bold text-navy-deep">
+        <label htmlFor="contact-name" className="text-sm font-semibold text-mist">
           Name
         </label>
         <input
@@ -33,12 +33,12 @@ export default function ContactForm() {
           required
           value={name}
           onChange={(event) => setName(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-navy/20 bg-white px-4 py-2.5 text-sm text-navy-deep placeholder:text-navy-deep/40 focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue"
+          className="mt-1 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-sm text-mist placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50"
         />
       </div>
 
       <div>
-        <label htmlFor="contact-email" className="text-sm font-bold text-navy-deep">
+        <label htmlFor="contact-email" className="text-sm font-semibold text-mist">
           Email
         </label>
         <input
@@ -47,12 +47,12 @@ export default function ContactForm() {
           required
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-navy/20 bg-white px-4 py-2.5 text-sm text-navy-deep placeholder:text-navy-deep/40 focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue"
+          className="mt-1 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-sm text-mist placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50"
         />
       </div>
 
       <div>
-        <label htmlFor="contact-message" className="text-sm font-bold text-navy-deep">
+        <label htmlFor="contact-message" className="text-sm font-semibold text-mist">
           Message
         </label>
         <textarea
@@ -61,17 +61,17 @@ export default function ContactForm() {
           rows={5}
           value={message}
           onChange={(event) => setMessage(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-navy/20 bg-white px-4 py-2.5 text-sm text-navy-deep placeholder:text-navy-deep/40 focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue"
+          className="mt-1 w-full rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-sm text-mist placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50"
         />
       </div>
 
       <button
         type="submit"
-        className="rounded-full bg-accent px-6 py-3 text-sm font-bold text-navy-deep transition-colors hover:bg-cream"
+        className="rounded-full bg-linear-to-r from-flame-start via-flame-mid to-flame-end px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
       >
         Send Message
       </button>
-      <p className="text-xs text-navy-deep/50">
+      <p className="text-xs text-mist/40">
         This opens your email app so you can send the message directly to us.
       </p>
     </form>

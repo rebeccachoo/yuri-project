@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getBlogPosts } from "@/lib/content/blog";
 import { blogCategories } from "@/data/blog-categories";
 import BlogBrowser from "@/components/BlogBrowser";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -24,15 +25,11 @@ export default async function BlogPage(props: PageProps<"/blog">) {
 
   return (
     <div className="flex-1">
-      <div className="bg-navy">
-        <div className="mx-auto max-w-6xl px-6 py-16">
-          <h1 className="text-4xl font-extrabold uppercase tracking-tight text-white">Blog</h1>
-          <p className="mt-2 max-w-2xl text-white/80">
-            Interviews, guides, and updates from our work in sensory and social inclusion —
-            filter by category to find what you&apos;re looking for.
-          </p>
-        </div>
-      </div>
+      <PageHeader
+        eyebrow="Stories & Updates"
+        title="Blog"
+        description="Interviews, guides, and updates from our work in sensory and social inclusion — filter by category to find what you're looking for."
+      />
 
       <div className="mx-auto max-w-6xl px-6 py-12">
         <BlogBrowser posts={sortedPosts} initialCategory={initialCategory} />

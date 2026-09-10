@@ -36,10 +36,10 @@ export default function VolunteerBrowser({
         value={query}
         onChange={(event) => setQuery(event.target.value)}
         placeholder="Search by organization, title, or location..."
-        className="w-full rounded-full border border-navy/20 bg-white px-5 py-2.5 text-sm text-navy-deep placeholder:text-navy-deep/40 focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue sm:max-w-sm"
+        className="w-full rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm text-mist placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50 sm:max-w-sm"
       />
 
-      <p className="mt-6 text-sm text-navy-deep/60">
+      <p className="mt-6 text-sm text-mist/50">
         {filtered.length} {filtered.length === 1 ? "opportunity" : "opportunities"} found
       </p>
 
@@ -50,7 +50,7 @@ export default function VolunteerBrowser({
           ))}
         </div>
       ) : (
-        <div className="mt-4 rounded-2xl border border-dashed border-navy/20 p-10 text-center text-sm text-navy-deep/50">
+        <div className="mt-4 rounded-2xl border border-dashed border-white/15 p-10 text-center text-sm text-mist/50">
           No opportunities match your search.
         </div>
       )}

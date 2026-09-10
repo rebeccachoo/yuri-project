@@ -15,15 +15,15 @@ export default function PartnerGrid({ partners }: { partners: Partner[] }) {
           />
         ) : (
           <>
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-navy text-[10px] font-bold text-white">
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-linear-to-br from-flame-start via-flame-mid to-flame-end text-[10px] font-bold text-ink">
               {partner.monogram}
             </span>
-            <span className="text-sm font-semibold text-navy-deep">{partner.name}</span>
+            <span className="text-sm font-semibold text-ink">{partner.name}</span>
           </>
         );
 
         const className =
-          "flex items-center gap-2 rounded-2xl border border-navy/15 bg-white px-5 py-3";
+          "flex items-center gap-2 rounded-2xl border border-transparent bg-white px-5 py-3 shadow-lg";
 
         return partner.website ? (
           <a
@@ -31,7 +31,7 @@ export default function PartnerGrid({ partners }: { partners: Partner[] }) {
             href={partner.website}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${className} transition-colors hover:border-navy/40`}
+            className={`${className} transition-opacity hover:opacity-90`}
           >
             {content}
           </a>

@@ -35,47 +35,47 @@ export default async function VolunteerDetailPage(
   }
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 py-16">
-      <Link href="/volunteer" className="text-sm font-bold text-accent-blue hover:underline">
+    <div className="mx-auto w-full max-w-3xl px-6 py-16 pt-28">
+      <Link href="/volunteer" className="text-sm font-semibold text-gold hover:underline">
         ← Volunteer Bulletin
       </Link>
 
-      <p className="mt-6 text-sm font-bold uppercase tracking-wide text-accent-blue">
+      <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-gold">
         {opportunity.organizationName}
       </p>
-      <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-navy-deep sm:text-4xl">
+      <h1 className="mt-1 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
         {opportunity.title}
       </h1>
 
-      <dl className="mt-6 grid grid-cols-1 gap-4 rounded-2xl bg-cream p-6 sm:grid-cols-3">
+      <dl className="mt-6 grid grid-cols-1 gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 sm:grid-cols-3">
         <div>
-          <dt className="text-xs font-bold uppercase tracking-wide text-navy-deep/60">
+          <dt className="text-xs font-semibold uppercase tracking-wide text-mist/50">
             Location
           </dt>
-          <dd className="mt-1 text-sm font-bold text-navy-deep">{opportunity.location}</dd>
+          <dd className="mt-1 text-sm font-semibold text-mist">{opportunity.location}</dd>
         </div>
         <div>
-          <dt className="text-xs font-bold uppercase tracking-wide text-navy-deep/60">Date</dt>
-          <dd className="mt-1 text-sm font-bold text-navy-deep">{opportunity.date}</dd>
+          <dt className="text-xs font-semibold uppercase tracking-wide text-mist/50">Date</dt>
+          <dd className="mt-1 text-sm font-semibold text-mist">{opportunity.date}</dd>
         </div>
         <div>
-          <dt className="text-xs font-bold uppercase tracking-wide text-navy-deep/60">
+          <dt className="text-xs font-semibold uppercase tracking-wide text-mist/50">
             Age Requirement
           </dt>
-          <dd className="mt-1 text-sm font-bold text-navy-deep">
+          <dd className="mt-1 text-sm font-semibold text-mist">
             {opportunity.ageRequirement}
           </dd>
         </div>
       </dl>
 
-      <p className="mt-8 text-navy-deep/80">{opportunity.description}</p>
+      <p className="mt-8 text-mist/70">{opportunity.description}</p>
 
       {opportunity.applyUrl && (
         <a
           href={opportunity.applyUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-block rounded-full bg-accent px-6 py-3 text-sm font-bold text-navy-deep transition-colors hover:bg-cream"
+          className="mt-8 inline-block rounded-full bg-linear-to-r from-flame-start via-flame-mid to-flame-end px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
         >
           Apply for this opportunity
         </a>
