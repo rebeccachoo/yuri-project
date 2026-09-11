@@ -3,6 +3,7 @@ import { Geist_Mono, Fraunces } from "next/font/google";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
 import "./globals.css";
 
 const valleySans = localFont({
@@ -58,14 +59,19 @@ export const metadata: Metadata = {
     "Every Kid Can is a New Jersey-based, youth-led 501(c)(3) nonprofit standardizing disability inclusion statewide through sensory and social inclusion.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   return (
     <html
       lang="en"
       className={`${valleySans.variable} ${fraunces.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-ink text-mist">
-        <Navbar />
+        <Navbar isAdmin={!!user} />
         <main className="flex flex-1 flex-col">{children}</main>
         <Footer />
       </body>

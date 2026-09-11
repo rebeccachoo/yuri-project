@@ -40,7 +40,8 @@ export default function VolunteerBrowser({
       />
 
       <p className="mt-6 text-sm text-mist/50">
-        {filtered.length} {filtered.length === 1 ? "opportunity" : "opportunities"} found
+        {filtered.length}{" "}
+        {filtered.length === 1 ? "opportunity" : "opportunities"} found
       </p>
 
       {filtered.length > 0 ? (

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function PillarsPage() {
   return (
     <div className="flex-1">
-      <div className="mx-auto w-full max-w-6xl px-6 py-16 pt-28">
+      <div className="mx-auto w-full max-w-6xl px-6 py-16 pt-12">
         <Suspense>
           <PillarsTabs pillars={pillars} />
         </Suspense>

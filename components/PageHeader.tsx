@@ -8,7 +8,7 @@ export default function PageHeader({
   description?: string;
 }) {
   return (
-    <div className="mx-auto max-w-6xl px-6 pb-8 pt-28">
+    <div className="mx-auto max-w-6xl px-6 pb-8 pt-12">
       {eyebrow && (
         <span className="text-xs font-semibold uppercase tracking-widest text-gold">
           {eyebrow}

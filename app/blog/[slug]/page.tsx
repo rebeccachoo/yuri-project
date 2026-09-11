@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getBlogPostBySlug, getBlogSlugs, getBlogPosts } from "@/lib/content/blog";
+import {
+  getBlogPostBySlug,
+  getBlogSlugs,
+  getBlogPosts,
+} from "@/lib/content/blog";
 import { getAccentClasses } from "@/components/colors";
 import BlogCard from "@/components/BlogCard";
 
@@ -11,7 +15,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  props: PageProps<"/blog/[slug]">
+  props: PageProps<"/blog/[slug]">,
 ): Promise<Metadata> {
   const { slug } = await props.params;
   const post = await getBlogPostBySlug(slug);
@@ -49,12 +53,17 @@ export default async function BlogDetailPage(props: PageProps<"/blog/[slug]">) {
     .slice(0, 3);
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 py-16 pt-28">
-      <Link href="/blog" className="text-sm font-semibold text-gold hover:underline">
+    <div className="mx-auto w-full max-w-3xl px-6 py-16 pt-12">
+      <Link
+        href="/blog"
+        className="text-sm mr-1 font-semibold text-gold hover:underline"
+      >
         ← All articles
       </Link>
 
-      <span className={`mt-6 inline-block w-fit rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-wide ${accent.badge}`}>
+      <span
+        className={`mt-6 inline-block w-fit rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-wide ${accent.badge}`}
+      >
         {post.category}
       </span>
 

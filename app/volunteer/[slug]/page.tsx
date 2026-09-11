@@ -35,7 +35,7 @@ export default async function VolunteerDetailPage(
   }
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 py-16 pt-28">
+    <div className="mx-auto w-full max-w-3xl px-6 py-16 pt-12">
       <Link href="/volunteer" className="text-sm font-semibold text-gold hover:underline">
         ← Volunteer Bulletin
       </Link>
@@ -55,7 +55,7 @@ export default async function VolunteerDetailPage(
           <dd className="mt-1 text-sm font-semibold text-mist">{opportunity.location}</dd>
         </div>
         <div>
-          <dt className="text-xs font-semibold uppercase tracking-wide text-mist/50">Date</dt>
+          <dt className="text-xs font-semibold uppercase tracking-wide text-mist/50">Time</dt>
           <dd className="mt-1 text-sm font-semibold text-mist">{opportunity.date}</dd>
         </div>
         <div>

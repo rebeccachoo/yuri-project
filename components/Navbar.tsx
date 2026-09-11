@@ -5,7 +5,7 @@ import { useState } from "react";
 import { pillars } from "@/data/pillars";
 import Image from "next/image";
 
-export default function Navbar() {
+export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
   const [pillarsOpen, setPillarsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -81,6 +81,11 @@ export default function Navbar() {
           <Link href="/contact" className="transition-colors hover:text-gold">
             Contact Us
           </Link>
+          {isAdmin && (
+            <Link href="/admin" className="transition-colors hover:text-gold">
+              Admin Dashboard
+            </Link>
+          )}
           <Link
             href="/how-to-help"
             className="rounded-full bg-gold px-4 py-2 font-semibold text-ink transition-opacity hover:opacity-90"
@@ -152,6 +157,15 @@ export default function Navbar() {
           >
             Contact Us
           </Link>
+          {isAdmin && (
+            <Link
+              href="/admin"
+              className="py-2 hover:text-gold"
+              onClick={() => setMobileOpen(false)}
+            >
+              Admin Dashboard
+            </Link>
+          )}
           <Link
             href="/how-to-help"
             onClick={() => setMobileOpen(false)}

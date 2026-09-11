@@ -26,7 +26,9 @@ function fromRow(row: VolunteerRow): VolunteerOpportunity {
   };
 }
 
-export async function getVolunteerOpportunities(): Promise<VolunteerOpportunity[]> {
+export async function getVolunteerOpportunities(): Promise<
+  VolunteerOpportunity[]
+> {
   const supabase = getSupabasePublicClient();
   const { data, error } = await supabase
     .from("volunteers")
@@ -42,7 +44,7 @@ export async function getVolunteerOpportunities(): Promise<VolunteerOpportunity[
 }
 
 export async function getVolunteerBySlug(
-  slug: string
+  slug: string,
 ): Promise<VolunteerOpportunity | undefined> {
   const supabase = getSupabasePublicClient();
   const { data, error } = await supabase
@@ -60,7 +62,10 @@ export async function getVolunteerSlugs(): Promise<string[]> {
   const { data, error } = await supabase.from("volunteers").select("slug");
 
   if (error) {
-    console.error("Failed to load volunteer slugs from Supabase:", error.message);
+    console.error(
+      "Failed to load volunteer slugs from Supabase:",
+      error.message,
+    );
     return [];
   }
 

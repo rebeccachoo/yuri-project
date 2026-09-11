@@ -15,7 +15,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-1 flex-col">
-      <section className="relative overflow-hidden pb-24 pt-20 sm:pt-28">
+      <section className="relative overflow-hidden pb-24 pt-12 sm:pt-16">
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 lg:grid-cols-2">
           <Reveal className="lg:order-2">
             <span className="inline-block rounded-full border border-ink/15 bg-plum px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold">

@@ -17,7 +17,7 @@ export default async function VolunteerPage() {
       <PageHeader
         eyebrow="Get Involved"
         title="Volunteer Bulletin"
-        description="Disability-inclusive volunteer opportunities from organizations across New Jersey. Search by organization, title, or location — everything below updates instantly."
+        description="The Every Kid Can Volunteer Bulletin connects youth volunteers with accessible opportunities to support and engage with individuals with disabilities in their communities. Designed to make volunteering across New Jersey easier to find and be more accessible, the bulletin brings together multiple opportunities in one easy to understand place so young people can easily discover new ways to get involved, build new connections, and make a lasting, meaningful impact on their community. "
       />
 
       <div className="mx-auto max-w-6xl px-6 py-12">
