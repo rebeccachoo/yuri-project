@@ -126,15 +126,12 @@ export default async function Home() {
                 About Every Kid Can
               </span>
               <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
-                Empowering Children Through Activity and Opportunity
+                Our Mission
               </h2>
               <p className="mt-4 text-mist/70">
-                Welcome to Every Kid Can! We are dedicated to providing
-                specialized packages and kits designed for children with
-                disabilities, ensuring they have access to the sports equipment
-                they need. Our mission is to empower every child to enjoy sports
-                and the benefits of physical activity. Join us in making
-                activities accessible for all kids!
+                Every Kid Can is a youth-led 501(c)(3) nonprofit intent on
+                standardizing disability inclusion statewide via sensory and
+                social inclusion.
               </p>
             </Reveal>
           </div>
@@ -154,11 +151,15 @@ export default async function Home() {
               The Barrier
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist/70">
-              New Jersey students with disabilities are included in general
-              education classrooms at a rate below the national average. That
-              gap doesn&apos;t just affect academics — it deepens social
-              isolation for kids who are already navigating a world that
-              isn&apos;t built with them in mind.
+              Despite legal requirements, New Jersey&apos;s (46%) disabled
+              student integration percentage in general education falls
+              behind national averages (68%), and fluctuates broadly between
+              districts in the absence of statewide standardization. Low
+              integration rates in schools widen existing social divides
+              between students with and without disabilities, and without
+              immediate action, the already-high percentage of disabled
+              students facing social isolation (70%) will only continue to
+              rise.
             </p>
           </Reveal>
 
@@ -185,6 +186,57 @@ export default async function Home() {
               </p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <Reveal className="text-center">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+              What We Focus On
+            </span>
+            <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
+              Our Two Pillars
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-mist/70">
+              Everything we do falls under one of two pillars, working
+              together toward the same goal.
+            </p>
+          </Reveal>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            <Reveal className="rounded-2xl border border-ink/10 bg-plum p-8 shadow-sm">
+              <span className="w-fit rounded-full bg-sky-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-sky-800">
+                Sensory Inclusion
+              </span>
+              <p className="mt-4 text-mist/70">
+                Recognizing how individuals process and regulate differently,
+                and making the tools and spaces that support this accessible
+                in everyday settings.
+              </p>
+              <Link
+                href="/pillars?tab=sensory-inclusion"
+                className="mt-4 inline-block text-sm font-semibold text-gold hover:underline"
+              >
+                Learn more →
+              </Link>
+            </Reveal>
+            <Reveal delay={150} className="rounded-2xl border border-ink/10 bg-plum p-8 shadow-sm">
+              <span className="w-fit rounded-full bg-violet-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-violet-800">
+                Social Inclusion
+              </span>
+              <p className="mt-4 text-mist/70">
+                Building real relationships between disabled and
+                non-disabled individuals to reduce stigma and break down the
+                barriers that keep these groups apart.
+              </p>
+              <Link
+                href="/pillars?tab=social-inclusion"
+                className="mt-4 inline-block text-sm font-semibold text-gold hover:underline"
+              >
+                Learn more →
+              </Link>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -261,7 +313,7 @@ export default async function Home() {
               },
               {
                 title: "CONTACT US!",
-                href: "/how-to-help",
+                href: "/contact",
                 icon: (
                   <>
                     <rect width="20" height="16" x="2" y="4" rx="2" />
@@ -366,15 +418,15 @@ export default async function Home() {
               </a>
             </Reveal>
             <Reveal delay={100}>
-              <a
-                href="mailto:everykidcanplay@gmail.com"
+              <Link
+                href="/contact"
                 className="group block rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm transition-colors hover:border-ink/20 hover:bg-plum-light"
               >
                 <p className="text-xs font-semibold uppercase tracking-widest text-gold">
-                  Email
+                  Contact Us
                 </p>
                 <p className="mt-2 text-mist">everykidcanplay@gmail.com</p>
-              </a>
+              </Link>
             </Reveal>
             <Reveal delay={200}>
               <div className="rounded-2xl border border-ink/10 bg-linear-to-br from-flame-start/25 via-flame-mid/20 to-flame-end/20 p-6 shadow-sm">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import PageHeader from "@/components/PageHeader";
+import ImageCarousel from "@/components/ImageCarousel";
 
 export const metadata: Metadata = {
   title: "Donation Boxes",
@@ -14,27 +15,31 @@ export default function DonatePage() {
     <div className="flex-1">
       <PageHeader
         title="Our Donation Boxes"
-        description="A two-way relationship between our community and the people we serve."
+        description="Note: The starred and yellow colored boxes are boxes that are still active and accepting donations at their respective locations."
       />
 
       <section>
         <div className="mx-auto max-w-3xl px-6 py-16">
           <Reveal>
-            <h2 className="font-serif text-xl font-semibold tracking-tight text-mist">
-              The Story
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+              About Our Donation Boxes
+            </span>
+            <h2 className="mt-4 font-serif text-xl font-semibold tracking-tight text-mist">
+              How It Works
             </h2>
             <p className="mt-4 text-mist/70">
               It starts with a donation box in a New Jersey community center.
               Someone drops in a fidget toy, a pair of noise-reducing
               headphones, a tactile puzzle — small things that make a big
-              difference for a kid who needs them. We collect what&apos;s
-              given, and we give it back out: to schools, libraries, and
-              facilities across the state that could use it most.
+              difference for a kid who needs them. We collect what&apos;s given,
+              and we give it back out: to schools, libraries, and facilities
+              across the state that could use it most.
             </p>
             <p className="mt-4 text-mist/70">
-              It&apos;s a cycle, not a transaction. The community gives to
-              us, and we give to the community — the boxes are just where it
-              starts.
+              It&apos;s a cycle, not a transaction. The community gives to us,
+              and we give to the community — the boxes are just where it starts.
+              And it isn&apos;t just one of our pillars: every box touches both
+              Sensory and Social Inclusion.
             </p>
           </Reveal>
         </div>
@@ -42,57 +47,59 @@ export default function DonatePage() {
 
       <section>
         <div className="mx-auto max-w-6xl px-6 py-16">
-          <Reveal className="text-center">
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
-              How It Works
+          <Reveal>
+            <span className="w-fit rounded-full bg-sky-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-sky-800">
+              Sensory Inclusion
             </span>
             <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
-              One Program, Two Pillars
+              Sensory Impact
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-mist/70">
-              Our donation boxes aren&apos;t just a Sensory Inclusion project
-              — they touch everything we do.
+            <p className="mt-4 max-w-2xl text-mist/70">
+              Most of what comes out of our donation boxes are sensory items —
+              fidgets, weighted items, noise-reducing headphones, and tactile
+              tools. These go directly into our{" "}
+              <Link
+                href="/pillars?tab=sensory-inclusion"
+                className="font-semibold text-gold hover:underline"
+              >
+                Sensory Donations and Sensory Boards
+              </Link>{" "}
+              programs, reaching schools, libraries, and community facilities
+              across New Jersey.
             </p>
           </Reveal>
+          <Reveal delay={100} className="mt-8">
+            <ImageCarousel images={[]} label="Sensory Impact" />
+          </Reveal>
+        </div>
+      </section>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            <Reveal className="rounded-2xl border border-ink/10 bg-plum p-8 shadow-sm">
-              <span className="w-fit rounded-full bg-sky-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-sky-800">
-                Sensory Inclusion
-              </span>
-              <h3 className="mt-4 text-xl font-semibold text-mist">What we collect</h3>
-              <p className="mt-2 text-mist/60">
-                Most of what comes out of our donation boxes are sensory
-                items — fidgets, weighted items, noise-reducing headphones,
-                and tactile tools. These go directly into our{" "}
-                <Link
-                  href="/pillars?tab=sensory-inclusion"
-                  className="font-semibold text-gold hover:underline"
-                >
-                  Sensory Donations and Sensory Boards
-                </Link>{" "}
-                programs.
-              </p>
-            </Reveal>
-
-            <Reveal delay={150} className="rounded-2xl border border-ink/10 bg-plum p-8 shadow-sm">
-              <span className="w-fit rounded-full bg-violet-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-violet-800">
-                Social Inclusion
-              </span>
-              <h3 className="mt-4 text-xl font-semibold text-mist">How we deliver it</h3>
-              <p className="mt-2 text-mist/60">
-                Dropping off a box of donations isn&apos;t the end of it for
-                us. We host donation events with the organizations we
-                support, using the items alongside the people who receive
-                them and connecting our{" "}
-                <Link href="/volunteer" className="font-semibold text-gold hover:underline">
-                  volunteers
-                </Link>{" "}
-                directly with the community — building real relationships
-                along the way, not just a delivery.
-              </p>
-            </Reveal>
-          </div>
+      <section>
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <Reveal>
+            <span className="w-fit rounded-full bg-violet-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-violet-800">
+              Social Inclusion
+            </span>
+            <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
+              Social Impact
+            </h2>
+            <p className="mt-4 max-w-2xl text-mist/70">
+              Dropping off a box of donations isn&apos;t the end of it for us.
+              We host donation events with the organizations we support, using
+              the items alongside the people who receive them and connecting our{" "}
+              <Link
+                href="/volunteer"
+                className="font-semibold text-gold hover:underline"
+              >
+                volunteers
+              </Link>{" "}
+              directly with the community — building real relationships along
+              the way, not just a delivery.
+            </p>
+          </Reveal>
+          <Reveal delay={100} className="mt-8">
+            <ImageCarousel images={[]} label="Social Impact" />
+          </Reveal>
         </div>
       </section>
 
@@ -125,13 +132,17 @@ export default function DonatePage() {
                 href="mailto:everykidcanplay@gmail.com"
                 className="group block rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm transition-colors hover:border-ink/20 hover:bg-plum-light"
               >
-                <p className="text-xs font-semibold uppercase tracking-widest text-gold">Email</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                  Email
+                </p>
                 <p className="mt-2 text-mist">everykidcanplay@gmail.com</p>
               </a>
             </Reveal>
             <Reveal delay={200}>
               <div className="rounded-2xl border border-ink/10 bg-linear-to-br from-flame-start/25 via-flame-mid/20 to-flame-end/20 p-6 shadow-sm">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gold">Donate</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                  Donate
+                </p>
                 <p className="mt-2 text-mist">via Zelle</p>
               </div>
             </Reveal>

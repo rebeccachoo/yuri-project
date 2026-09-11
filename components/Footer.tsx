@@ -43,7 +43,7 @@ export default function Footer() {
           <p className="text-xs font-semibold uppercase tracking-widest text-gold">Explore</p>
           <nav className="mt-3 flex flex-col gap-2 text-sm text-mist/70">
             <Link href="/pillars" className="hover:text-gold">
-              Our Pillars
+              Our Purpose
             </Link>
             <Link href="/volunteer" className="hover:text-gold">
               Volunteer
@@ -53,6 +53,12 @@ export default function Footer() {
             </Link>
             <Link href="/about" className="hover:text-gold">
               About Us
+            </Link>
+            <Link href="/donate" className="hover:text-gold">
+              Donations
+            </Link>
+            <Link href="/contact" className="hover:text-gold">
+              Contact Us
             </Link>
             <Link href="/how-to-help" className="hover:text-gold">
               How to Help

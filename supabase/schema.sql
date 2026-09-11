@@ -78,6 +78,29 @@ create policy "Public can read partners"
   using (true);
 
 -- =========================================================
+-- newsletter_subscribers
+-- =========================================================
+create table if not exists public.newsletter_subscribers (
+  id uuid primary key default gen_random_uuid(),
+  email text unique not null,
+  created_at timestamptz not null default now()
+);
+
+alter table public.newsletter_subscribers enable row level security;
+
+create policy "Public can subscribe to the newsletter"
+  on public.newsletter_subscribers for insert
+  with check (true);
+
+create policy "Public can unsubscribe from the newsletter"
+  on public.newsletter_subscribers for delete
+  using (true);
+-- No select/update policy: visitors can add or remove their own row by
+-- email (the app code always filters delete by email — see
+-- unsubscribeFromNewsletter) but can't read the list back; only the
+-- service_role key (admin) can view/manage it directly.
+
+-- =========================================================
 -- keep updated_at current on every update
 -- =========================================================
 create or replace function public.set_updated_at()

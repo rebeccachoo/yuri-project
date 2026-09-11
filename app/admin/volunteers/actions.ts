@@ -26,7 +26,9 @@ export async function createVolunteer(formData: FormData) {
   const { error } = await supabase.from("volunteers").insert(fields);
 
   if (error) {
-    redirect(`/admin/volunteers/new?error=${encodeURIComponent(error.message)}`);
+    redirect(
+      `/admin/volunteers/new?error=${encodeURIComponent(error.message)}`,
+    );
   }
 
   revalidatePath("/volunteer");
@@ -39,10 +41,15 @@ export async function updateVolunteer(id: string, formData: FormData) {
 
   const fields = readVolunteerFields(formData);
   const supabase = getSupabaseAdminClient();
-  const { error } = await supabase.from("volunteers").update(fields).eq("id", id);
+  const { error } = await supabase
+    .from("volunteers")
+    .update(fields)
+    .eq("id", id);
 
   if (error) {
-    redirect(`/admin/volunteers/${id}/edit?error=${encodeURIComponent(error.message)}`);
+    redirect(
+      `/admin/volunteers/${id}/edit?error=${encodeURIComponent(error.message)}`,
+    );
   }
 
   revalidatePath("/volunteer");

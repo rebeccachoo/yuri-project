@@ -38,7 +38,7 @@ export default function Navbar() {
               href="/pillars"
               className="flex items-center gap-1 transition-colors hover:text-gold"
             >
-              Our Pillars
+              Our Purpose
               <svg
                 aria-hidden="true"
                 viewBox="0 0 12 8"
@@ -75,11 +75,17 @@ export default function Navbar() {
           <Link href="/about" className="transition-colors hover:text-gold">
             About Us
           </Link>
+          <Link href="/donate" className="transition-colors hover:text-gold">
+            Donations
+          </Link>
+          <Link href="/contact" className="transition-colors hover:text-gold">
+            Contact Us
+          </Link>
           <Link
             href="/how-to-help"
             className="rounded-full bg-gold px-4 py-2 font-semibold text-ink transition-opacity hover:opacity-90"
           >
-            Donation
+            How To Help
           </Link>
         </nav>
 
@@ -109,7 +115,7 @@ export default function Navbar() {
             className="py-2 hover:text-gold"
             onClick={() => setMobileOpen(false)}
           >
-            Our Pillars
+            Our Purpose
           </Link>
           <Link
             href="/volunteer"
@@ -133,11 +139,25 @@ export default function Navbar() {
             About Us
           </Link>
           <Link
+            href="/donate"
+            className="py-2 hover:text-gold"
+            onClick={() => setMobileOpen(false)}
+          >
+            Donations
+          </Link>
+          <Link
+            href="/contact"
+            className="py-2 hover:text-gold"
+            onClick={() => setMobileOpen(false)}
+          >
+            Contact Us
+          </Link>
+          <Link
             href="/how-to-help"
             onClick={() => setMobileOpen(false)}
             className="mt-2 w-fit rounded-full bg-gold px-4 py-2 font-semibold text-ink"
           >
-            Donation
+            How To Help
           </Link>
         </nav>
       )}

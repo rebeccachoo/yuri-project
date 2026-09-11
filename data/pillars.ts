@@ -31,7 +31,7 @@ export const pillars: Pillar[] = [
     title: "Sensory Inclusion",
     subtitle: "Our work spans Sensory Donations, Boards, & Drives.",
     description:
-      "Our Sensory Inclusion pillar focuses on making sensory resources accessible across New Jersey — donating items directly to institutions, building hands-on sensory boards, and running community drives to keep the pipeline of resources going.",
+      "Sensory inclusion means recognizing how individuals process and regulate differently, and making the tools and spaces that support this accessible in public, everyday settings.",
     accentColor: "sky",
     activities: [
       {
@@ -57,6 +57,20 @@ export const pillars: Pillar[] = [
         linkHref: "/donate",
         linkLabel: "How our donation boxes work",
       },
+      {
+        slug: "sensory-board-policy-brief",
+        title: "Sensory Board Policy Brief",
+        description:
+          "An ongoing policy project pushing for statewide standards around sensory-inclusive spaces in New Jersey schools and public facilities.",
+        images: [],
+      },
+      {
+        slug: "our-survey",
+        title: "Our Survey",
+        description:
+          "We're running a community survey to better understand sensory needs across New Jersey — the results will guide where we focus next.",
+        images: [],
+      },
     ],
   },
   {
@@ -65,7 +79,7 @@ export const pillars: Pillar[] = [
     title: "Social Inclusion",
     subtitle: "Our work spans Social Opportunities, Interviews, and Policies.",
     description:
-      "Our Social Inclusion pillar works to open up social, educational, and civic spaces for kids with disabilities to fully participate alongside their peers.",
+      "Social inclusion means building real relationships between disabled and non-disabled individuals — not just community among people with disabilities — in order to reduce stigma and break down the barriers that keep these groups apart.",
     accentColor: "violet",
     activities: [
       {

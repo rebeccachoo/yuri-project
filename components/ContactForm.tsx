@@ -1,24 +1,39 @@
 "use client";
 
-import { useState } from "react";
-
-const CONTACT_EMAIL = "everykidcanplay@gmail.com";
+import { useState, useTransition } from "react";
+import { sendContactMessage } from "@/app/contact/actions";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [sent, setSent] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
+    setError(null);
 
-    const subject = `Message from ${name || "the website"}`;
-    const body = `${message}\n\n— ${name}${email ? ` (${email})` : ""}`;
-    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+    startTransition(async () => {
+      const result = await sendContactMessage(name, email, message);
+      if (result.error) {
+        setError(result.error);
+        return;
+      }
+      setSent(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+    });
+  }
 
-    window.location.href = mailtoUrl;
+  if (sent) {
+    return (
+      <p className="text-sm font-semibold text-gold">
+        Thanks for reaching out! We&apos;ll get back to you soon.
+      </p>
+    );
   }
 
   return (
@@ -33,7 +48,8 @@ export default function ContactForm() {
           required
           value={name}
           onChange={(event) => setName(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-ink/15 bg-plum px-4 py-2.5 text-sm text-mist shadow-sm placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50"
+          disabled={isPending}
+          className="mt-1 w-full rounded-lg border border-ink/15 bg-plum px-4 py-2.5 text-sm text-mist shadow-sm placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50 disabled:opacity-60"
         />
       </div>
 
@@ -47,7 +63,8 @@ export default function ContactForm() {
           required
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-ink/15 bg-plum px-4 py-2.5 text-sm text-mist shadow-sm placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50"
+          disabled={isPending}
+          className="mt-1 w-full rounded-lg border border-ink/15 bg-plum px-4 py-2.5 text-sm text-mist shadow-sm placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50 disabled:opacity-60"
         />
       </div>
 
@@ -61,19 +78,19 @@ export default function ContactForm() {
           rows={5}
           value={message}
           onChange={(event) => setMessage(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-ink/15 bg-plum px-4 py-2.5 text-sm text-mist shadow-sm placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50"
+          disabled={isPending}
+          className="mt-1 w-full rounded-lg border border-ink/15 bg-plum px-4 py-2.5 text-sm text-mist shadow-sm placeholder:text-mist/40 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/50 disabled:opacity-60"
         />
       </div>
 
       <button
         type="submit"
-        className="rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
+        disabled={isPending}
+        className="rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90 disabled:opacity-60"
       >
-        Send Message
+        {isPending ? "Sending…" : "Send Message"}
       </button>
-      <p className="text-xs text-mist/40">
-        This opens your email app so you can send the message directly to us.
-      </p>
+      {error && <p className="text-sm text-red-400">{error}</p>}
     </form>
   );
 }

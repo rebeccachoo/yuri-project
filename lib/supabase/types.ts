@@ -42,3 +42,9 @@ export interface PartnerRow {
   created_at: string;
   updated_at: string;
 }
+
+export interface NewsletterSubscriberRow {
+  id: string;
+  email: string;
+  created_at: string;
+}
