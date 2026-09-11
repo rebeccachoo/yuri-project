@@ -23,6 +23,7 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
             width={60}
             height={60}
             loading="eager"
+            className="h-15 w-15"
           />
 
           <span className="hidden sm:inline">Every Kid Can</span>

@@ -54,12 +54,12 @@ export default async function Home() {
             <div className="animate-blob-drift absolute inset-0 -z-10 scale-110 bg-linear-to-br from-flame-start/40 via-flame-mid/30 to-flame-end/20 blur-3xl" />
             <div className="animate-blob-drift relative aspect-square overflow-hidden border border-white/25 shadow-2xl">
               <Image
-                src="/images/hero.jpg"
+                src="/images/ekc_hero.png"
                 alt="Every Kid Can volunteers performing music for veterans at a community event"
                 fill
                 priority
                 className="object-cover"
-                sizes="(max-width: 768px) 320px, 384px"
+                sizes="(max-width: 640px) 100vw, 512px"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 max-w-52 rounded-2xl border border-ink/10 bg-plum p-4 shadow-xl">
@@ -85,7 +85,7 @@ export default async function Home() {
                   alt="Every Kid Can logo — two children riding a winged, smiling star"
                   width={390}
                   height={414}
-                  className="w-full"
+                  className="h-auto w-full"
                 />
               </div>
               <div className="mt-10 grid gap-8 sm:grid-cols-3">
