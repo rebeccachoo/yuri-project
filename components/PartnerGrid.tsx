@@ -18,7 +18,9 @@ export default function PartnerGrid({ partners }: { partners: Partner[] }) {
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-linear-to-br from-flame-start via-flame-mid to-flame-end text-[10px] font-bold text-ink">
               {partner.monogram}
             </span>
-            <span className="text-sm font-semibold text-slate-800">{partner.name}</span>
+            <span className="text-sm font-semibold text-slate-800">
+              {partner.name}
+            </span>
           </>
         );
 

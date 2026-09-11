@@ -120,6 +120,43 @@ export default async function Home() {
       </section>
 
       <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 py-20 text-center">
+          <Reveal>
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+              The Value of Inclusion
+            </span>
+            <h2 className="mx-auto mt-4 max-w-2xl font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
+              Every Kid Can is closing that gap, statewide.
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-mist/70">
+              “Every Kid Can is a youth-led, New Jersey based 501(c)(3)
+              nonprofit organization that practices sensory and social inclusion
+              in order to promote disability integration statewide. ”
+            </p>
+          </Reveal>
+          <div className="mt-14">
+            <ImpactStats stats={impactStats} />
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <Reveal>
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+              Our Partners
+            </span>
+            <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
+              Facilities/Organizations Collaborated With
+            </h2>
+          </Reveal>
+          <Reveal delay={100} className="mt-8">
+            <PartnerGrid partners={partners} />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <Reveal>
@@ -184,7 +221,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden">
+      {/* <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal className="text-center">
             <span className="text-xs font-semibold uppercase tracking-widest text-gold">
@@ -236,28 +273,7 @@ export default async function Home() {
             </Reveal>
           </div>
         </div>
-      </section>
-
-      <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-6 py-20 text-center">
-          <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
-              The Value of Inclusion
-            </span>
-            <h2 className="mx-auto mt-4 max-w-2xl font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
-              Every Kid Can is closing that gap, statewide.
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-mist/70">
-              “Every Kid Can is a youth-led, New Jersey based 501(c)(3)
-              nonprofit organization that practices sensory and social inclusion
-              in order to promote disability integration statewide. ”
-            </p>
-          </Reveal>
-          <div className="mt-14">
-            <ImpactStats stats={impactStats} />
-          </div>
-        </div>
-      </section>
+      </section> */}
 
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20">
@@ -366,22 +382,6 @@ export default async function Home() {
           </Reveal>
           <Reveal delay={150} className="mt-12">
             <GalleryCarousel images={galleryImages} />
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
-              Our Partners
-            </span>
-            <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
-              Facilities we&apos;ve collaborated with
-            </h2>
-          </Reveal>
-          <Reveal delay={100} className="mt-8">
-            <PartnerGrid partners={partners} />
           </Reveal>
         </div>
       </section>
