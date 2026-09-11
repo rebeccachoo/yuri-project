@@ -42,32 +42,46 @@ export default function PillarsTabs({ pillars }: { pillars: Pillar[] }) {
         {pillar.title}
       </h1>
       <p className="mt-2 text-lg text-gold">{pillar.subtitle}</p>
+      {pillar.introHeading && (
+        <h2 className="mt-8 font-serif text-2xl font-semibold tracking-tight text-mist sm:text-3xl">
+          {pillar.introHeading}
+        </h2>
+      )}
       <p className="mt-4 max-w-3xl text-mist/70">{pillar.description}</p>
 
-      <div className="mt-12 space-y-12">
-        {pillar.activities.map((activity, index) => (
-          <div
-            key={activity.slug}
-            className="grid gap-8 rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm sm:grid-cols-2 sm:items-center"
-          >
-            <ImageCarousel images={activity.images} label={activity.title} />
-            <div>
-              <span className="font-serif text-2xl italic text-plum-muted">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h2 className="mt-1 text-xl font-semibold text-mist">{activity.title}</h2>
-              <p className="mt-2 text-sm text-mist/60">{activity.description}</p>
-              {activity.linkHref && (
-                <Link
-                  href={activity.linkHref}
-                  className="mt-4 inline-block text-sm font-semibold text-gold hover:underline"
-                >
-                  {activity.linkLabel} →
-                </Link>
-              )}
+      <div className="mt-12">
+        {pillar.activities.map((activity, index) => {
+          const reversed = index % 2 === 1;
+          const tinted = index % 2 === 1;
+          return (
+            <div
+              key={activity.slug}
+              className={`relative left-1/2 right-1/2 mx-[-50vw] w-screen ${
+                tinted ? "bg-plum" : ""
+              }`}
+            >
+              <div className="mx-auto grid max-w-6xl gap-8 px-6 py-16 sm:grid-cols-2 sm:items-center">
+                <div className={`order-2 ${reversed ? "sm:order-1" : "sm:order-2"}`}>
+                  <ImageCarousel images={activity.images} label={activity.title} />
+                </div>
+                <div className={`order-1 ${reversed ? "sm:order-2" : "sm:order-1"}`}>
+                  <h2 className="font-serif text-2xl font-bold uppercase tracking-tight text-mist sm:text-3xl">
+                    {activity.title}
+                  </h2>
+                  <p className="mt-4 text-mist/70">{activity.description}</p>
+                  {activity.linkHref && (
+                    <Link
+                      href={activity.linkHref}
+                      className="mt-4 inline-block text-sm font-semibold text-gold hover:underline"
+                    >
+                      {activity.linkLabel} →
+                    </Link>
+                  )}
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

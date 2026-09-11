@@ -16,18 +16,18 @@ export default function AboutPage() {
     <div className="flex-1">
       <PageHeader title="About Us" />
 
-      <div className="mx-auto max-w-3xl px-6 py-8">
+      {/* <div className="mx-auto max-w-3xl px-6 py-8">
         <section>
           <h2 className="font-serif text-xl font-semibold tracking-tight text-mist">
             Our Story
           </h2>
-          {/* TODO(content): fill in once Yuri provides the real content. */}
+
           <p className="mt-2 italic text-mist/40">Content coming soon.</p>
         </section>
-      </div>
+      </div> */}
 
       <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="mx-auto max-w-6xl px-6 pb-16 pt-5">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest text-gold">
@@ -74,7 +74,7 @@ export default function AboutPage() {
       </section>
 
       <section>
-        <div className="mx-auto max-w-6xl px-6 py-16 text-center">
+        <div className="mx-auto max-w-6xl px-6 pt-16 pb-20 text-center">
           <h2 className="font-serif text-xl font-semibold tracking-tight text-mist">
             Our Impact
           </h2>
@@ -84,7 +84,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-3xl px-6 py-16">
+      {/* <div className="mx-auto max-w-3xl px-6 py-16">
         <section>
           <h2 className="font-serif text-xl font-semibold tracking-tight text-mist">
             Awards
@@ -108,7 +108,7 @@ export default function AboutPage() {
             <p className="mt-2 italic text-mist/40">Content coming soon.</p>
           )}
         </section>
-      </div>
+      </div> */}
     </div>
   );
 }
