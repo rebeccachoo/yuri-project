@@ -21,7 +21,9 @@ export default function PageHeader({
       >
         {title}
       </h1>
-      {description && <p className="mt-4 max-w-2xl text-mist/70">{description}</p>}
+      {description && (
+        <p className="mt-4 max-w-2xl text-mist/70">{description}</p>
+      )}
     </div>
   );
 }

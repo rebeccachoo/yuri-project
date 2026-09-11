@@ -8,11 +8,31 @@ import "./globals.css";
 const valleySans = localFont({
   variable: "--font-valley-sans",
   src: [
-    { path: "./fonts/valley-sans/ValleySans-Regular.ttf", weight: "400", style: "normal" },
-    { path: "./fonts/valley-sans/ValleySans-Medium.ttf", weight: "500", style: "normal" },
-    { path: "./fonts/valley-sans/ValleySans-SemiBold.ttf", weight: "600", style: "normal" },
-    { path: "./fonts/valley-sans/ValleySans-Bold.ttf", weight: "700", style: "normal" },
-    { path: "./fonts/valley-sans/ValleySans-ExtraBold.ttf", weight: "800", style: "normal" },
+    {
+      path: "./fonts/valley-sans/ValleySans-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/valley-sans/ValleySans-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/valley-sans/ValleySans-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/valley-sans/ValleySans-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/valley-sans/ValleySans-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
+    },
   ],
   display: "swap",
 });
