@@ -27,8 +27,9 @@ export default async function Home() {
                 EVERY KID CAN
               </span>
             </h1>
-            <p className="mt-6 max-w-lg text-lg text-mist/70">
-              EMPOWERING CHILDREN OF ALL ABILITIES
+            <p className="mt-3 max-w-lg text-lg text-mist/70">
+              Intent on standardizing disability statewide via sensory and
+              social inclusion.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -152,14 +153,13 @@ export default async function Home() {
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist/70">
               Despite legal requirements, New Jersey&apos;s (46%) disabled
-              student integration percentage in general education falls
-              behind national averages (68%), and fluctuates broadly between
-              districts in the absence of statewide standardization. Low
-              integration rates in schools widen existing social divides
-              between students with and without disabilities, and without
-              immediate action, the already-high percentage of disabled
-              students facing social isolation (70%) will only continue to
-              rise.
+              student integration percentage in general education falls behind
+              national averages (68%), and fluctuates broadly between districts
+              in the absence of statewide standardization. Low integration rates
+              in schools widen existing social divides between students with and
+              without disabilities, and without immediate action, the
+              already-high percentage of disabled students facing social
+              isolation (70%) will only continue to rise.
             </p>
           </Reveal>
 
@@ -199,8 +199,8 @@ export default async function Home() {
               Our Two Pillars
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-mist/70">
-              Everything we do falls under one of two pillars, working
-              together toward the same goal.
+              Everything we do falls under one of two pillars, working together
+              toward the same goal.
             </p>
           </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -210,8 +210,8 @@ export default async function Home() {
               </span>
               <p className="mt-4 text-mist/70">
                 Recognizing how individuals process and regulate differently,
-                and making the tools and spaces that support this accessible
-                in everyday settings.
+                and making the tools and spaces that support this accessible in
+                everyday settings.
               </p>
               <Link
                 href="/pillars?tab=sensory-inclusion"
@@ -220,14 +220,17 @@ export default async function Home() {
                 Learn more →
               </Link>
             </Reveal>
-            <Reveal delay={150} className="rounded-2xl border border-ink/10 bg-plum p-8 shadow-sm">
+            <Reveal
+              delay={150}
+              className="rounded-2xl border border-ink/10 bg-plum p-8 shadow-sm"
+            >
               <span className="w-fit rounded-full bg-violet-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-violet-800">
                 Social Inclusion
               </span>
               <p className="mt-4 text-mist/70">
-                Building real relationships between disabled and
-                non-disabled individuals to reduce stigma and break down the
-                barriers that keep these groups apart.
+                Building real relationships between disabled and non-disabled
+                individuals to reduce stigma and break down the barriers that
+                keep these groups apart.
               </p>
               <Link
                 href="/pillars?tab=social-inclusion"
