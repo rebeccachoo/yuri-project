@@ -15,23 +15,35 @@ export default async function Home() {
 
   return (
     <div className="flex flex-1 flex-col">
-      <section className="relative overflow-hidden pb-24 pt-12 sm:pt-16">
-        <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 lg:grid-cols-2">
-          <Reveal className="lg:order-2">
-            <span className="inline-block rounded-full border border-ink/15 bg-plum px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold">
+      <section className="relative isolate -mt-23 flex h-screen min-h-130 w-full items-center overflow-hidden">
+        <Image
+          src="/images/ekc_hero.png"
+          alt="Every Kid Can volunteers performing music for veterans at a community event"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-base/40" />
+        <div className="bg-glow absolute inset-0" />
+        <div className="absolute inset-0 bg-linear-to-t from-base via-base/65 to-transparent" />
+
+        <div className="relative mx-auto w-full max-w-6xl px-6 ">
+          <Reveal>
+            <span className="inline-block rounded-full border border-white/20 bg-base/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold backdrop-blur-sm">
               501(c)(3) Youth-Led Nonprofit
             </span>
-            <h1 className="mt-6 max-w-xl font-serif text-5xl font-semibold uppercase leading-tight tracking-tight text-mist sm:text-6xl">
+            <h1 className="mt-6 max-w-2xl font-serif text-5xl font-semibold uppercase leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
               WELCOME TO{" "}
               <span className="bg-linear-to-r from-[#8b98ac] via-[#a7b6ca] to-[#e0ab9f] bg-clip-text text-transparent">
                 EVERY KID CAN
               </span>
             </h1>
-            <p className="mt-3 max-w-lg text-lg text-mist/70">
+            <p className="mt-4 max-w-lg text-lg text-white/80">
               Intent on standardizing disability statewide via sensory and
               social inclusion.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 href="/pillars"
                 className="rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
@@ -40,34 +52,67 @@ export default async function Home() {
               </Link>
               <Link
                 href="/volunteer"
-                className="rounded-full border border-ink/20 px-6 py-3 text-sm font-semibold text-mist transition-colors hover:border-ink/40"
+                className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/60"
               >
                 Volunteer with us
               </Link>
             </div>
-          </Reveal>
 
-          <Reveal
-            delay={150}
-            className="relative mx-auto w-full max-w-lg lg:order-1"
-          >
-            <div className="animate-blob-drift absolute inset-0 -z-10 scale-110 bg-linear-to-br from-flame-start/40 via-flame-mid/30 to-flame-end/20 blur-3xl" />
-            <div className="animate-blob-drift relative aspect-square overflow-hidden border border-white/25 shadow-2xl">
-              <Image
-                src="/images/ekc_hero.png"
-                alt="Every Kid Can volunteers performing music for veterans at a community event"
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 640px) 100vw, 512px"
-              />
-            </div>
-            <div className="absolute -bottom-6 -right-6 max-w-52 rounded-2xl border border-ink/10 bg-plum p-4 shadow-xl">
-              <p className="font-serif text-2xl font-semibold text-mist">
+            {/* <div className="mt-8 w-fit rounded-2xl border border-white/15 bg-base/70 p-4 shadow-xl backdrop-blur-sm sm:absolute sm:bottom-10 sm:right-6 sm:mt-0 lg:right-10">
+              <p className="font-serif text-2xl font-semibold text-white">
                 7,500+
               </p>
-              <p className="mt-1 text-xs text-mist/60">
+              <p className="mt-1 max-w-52 text-xs text-white/70">
                 People with disabilities reached statewide.
+              </p>
+            </div> */}
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden">
+        <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 py-20 lg:grid-cols-2">
+          <Reveal>
+            <div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-gold" />
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+                The Challenge
+              </span>
+            </div>
+            <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-mist sm:text-5xl">
+              The Barrier
+            </h2>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist/70">
+              Despite legal requirements, only 46% of New Jersey students with
+              disabilities are integrated into general education, compared to
+              68% nationally, with rates fluctuating between districts. Low
+              integration places limits on meaningful interaction between
+              students with and without disabilities, which contribute to social
+              isolation among the 70% of disabled students already experiencing
+              it.
+            </p>
+          </Reveal>
+
+          <Reveal delay={150} className="relative mx-auto w-full max-w-lg">
+            <div
+              className="animate-blob-drift absolute inset-0 -z-10 scale-110 bg-linear-to-br from-flame-start/40 via-flame-mid/30 to-flame-end/20 blur-3xl"
+              style={{ animationDelay: "-3s, -2s" }}
+            />
+            <div
+              className="animate-blob-drift relative aspect-square w-full overflow-hidden border border-white/25 shadow-2xl"
+              style={{ animationDelay: "-3s, -2s" }}
+            >
+              <Image
+                src="/images/barrier.jpg"
+                alt="A teacher helping a student in a wheelchair in a general education classroom"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+            <div className="absolute -bottom-6 -left-6 max-w-56 rounded-2xl border border-ink/10 bg-plum p-4 shadow-xl sm:-left-10">
+              <p className="font-serif text-sm font-semibold text-mist">
+                Inclusion shouldn&apos;t be the exception.
               </p>
             </div>
           </Reveal>
@@ -140,56 +185,6 @@ export default async function Home() {
       </section>
 
       <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 py-20 lg:grid-cols-2">
-          <Reveal>
-            <div className="flex items-center gap-3">
-              <span className="h-px w-10 bg-gold" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-gold">
-                The Challenge
-              </span>
-            </div>
-            <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-mist sm:text-5xl">
-              The Barrier
-            </h2>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist/70">
-              Despite legal requirements, New Jersey&apos;s (46%) disabled
-              student integration percentage in general education falls behind
-              national averages (68%), and fluctuates broadly between districts
-              in the absence of statewide standardization. Low integration rates
-              in schools widen existing social divides between students with and
-              without disabilities, and without immediate action, the
-              already-high percentage of disabled students facing social
-              isolation (70%) will only continue to rise.
-            </p>
-          </Reveal>
-
-          <Reveal delay={150} className="relative mx-auto w-full max-w-lg">
-            <div
-              className="animate-blob-drift absolute inset-0 -z-10 scale-110 bg-linear-to-br from-flame-start/40 via-flame-mid/30 to-flame-end/20 blur-3xl"
-              style={{ animationDelay: "-3s, -2s" }}
-            />
-            <div
-              className="animate-blob-drift relative aspect-square w-full overflow-hidden border border-white/25 shadow-2xl"
-              style={{ animationDelay: "-3s, -2s" }}
-            >
-              <Image
-                src="/images/barrier.jpg"
-                alt="A teacher helping a student in a wheelchair in a general education classroom"
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 100vw, 50vw"
-              />
-            </div>
-            <div className="absolute -bottom-6 -left-6 max-w-56 rounded-2xl border border-ink/10 bg-plum p-4 shadow-xl sm:-left-10">
-              <p className="font-serif text-sm font-semibold text-mist">
-                Inclusion shouldn&apos;t be the exception.
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal className="text-center">
             <span className="text-xs font-semibold uppercase tracking-widest text-gold">
@@ -253,11 +248,9 @@ export default async function Home() {
               Every Kid Can is closing that gap, statewide.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-mist/70">
-              Every Kid Can is a New Jersey-based, youth-led 501(c)(3) nonprofit
-              working to close that gap through sensory and social inclusion —
-              donating sensory resources, building hands-on sensory boards,
-              running community drives, and connecting volunteers and advocates
-              to the cause statewide.
+              “Every Kid Can is a youth-led, New Jersey based 501(c)(3)
+              nonprofit organization that practices sensory and social inclusion
+              in order to promote disability integration statewide. ”
             </p>
           </Reveal>
           <div className="mt-14">

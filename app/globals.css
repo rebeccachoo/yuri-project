@@ -30,20 +30,35 @@
   --color-accent-blue: #4a6fa5;
 }
 
-body {
-  color: var(--color-mist);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  background-color: var(--color-base);
-  background-image:
+:root {
+  /* Single source of truth for the site's atmospheric glow — reused by
+     `body` and by `.bg-glow` (an overlay that lets full-bleed photo
+     sections, like the home hero, blend into the same glow pattern
+     instead of hard-blocking it and creating a visible seam). */
+  --bg-glow:
     radial-gradient(62% 52% at 10% 6%, rgba(62, 83, 117, 0.42), rgba(62, 83, 117, 0.12) 45%, rgba(34, 40, 62, 0) 78%),
     radial-gradient(56% 48% at 92% 4%, rgba(119, 142, 173, 0.32), rgba(119, 142, 173, 0.1) 45%, rgba(34, 40, 62, 0) 76%),
     radial-gradient(60% 52% at 88% 92%, rgba(50, 65, 95, 0.34), rgba(50, 65, 95, 0.08) 45%, rgba(34, 40, 62, 0) 78%),
     radial-gradient(46% 38% at 6% 96%, rgba(199, 123, 114, 0.16), rgba(199, 123, 114, 0.05) 45%, rgba(34, 40, 62, 0) 70%);
+}
+
+body {
+  color: var(--color-mist);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background-color: var(--color-base);
+  background-image: var(--bg-glow);
   /* Pin the gradient to the viewport instead of stretching it across the
      whole (much taller) scrollable page — otherwise the glow only shows up
      near the very top/bottom and the middle of every page reads as flat.
      A fixed viewport-sized backdrop keeps it identical everywhere,
      including right behind the header. */
+  background-attachment: fixed;
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+}
+
+.bg-glow {
+  background-image: var(--bg-glow);
   background-attachment: fixed;
   background-size: 100% 100vh;
   background-repeat: no-repeat;

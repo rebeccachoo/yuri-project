@@ -24,23 +24,37 @@ export default function AboutPage() {
           {/* TODO(content): fill in once Yuri provides the real content. */}
           <p className="mt-2 italic text-mist/40">Content coming soon.</p>
         </section>
-
-        <section className="mt-12">
-          <h2 className="font-serif text-xl font-semibold tracking-tight text-mist">
-            Our Mission
-          </h2>
-          <p className="mt-4 text-mist/70">
-            Every Kid Can is a 501(c)(3) youth-led organization focused on
-            empowering individuals with disabilities. By mobilizing community
-            resources and donations, we work to remove physical, social, and
-            financial barriers to participation in everyday activities. Our
-            mission is rooted in reducing stigma, promoting inclusion, and
-            ensuring every child has the opportunity to thrive. Join us in
-            making a difference and helping every child discover their
-            potential!
-          </p>
-        </section>
       </div>
+
+      <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+                Our Mission
+              </span>
+              <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight tracking-tight text-mist sm:text-4xl">
+                Empowering every child to thrive — no exceptions.
+              </h2>
+            </div>
+            <div className="relative rounded-2xl border border-ink/10 bg-plum p-8 shadow-sm sm:p-10">
+              <span className="absolute -top-5 left-8 flex h-10 w-10 items-center justify-center rounded-full bg-linear-to-br from-flame-start via-flame-mid to-flame-end font-serif text-lg font-bold text-ink shadow-lg">
+                E
+              </span>
+              <p className="text-mist/70">
+                Every Kid Can is a 501(c)(3) youth-led organization focused on
+                empowering individuals with disabilities. By mobilizing
+                community resources and donations, we work to remove physical,
+                social, and financial barriers to participation in everyday
+                activities. Our mission is rooted in reducing stigma, promoting
+                inclusion, and ensuring every child has the opportunity to
+                thrive. Join us in making a difference and helping every child
+                discover their potential!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section>
         <div className="mx-auto max-w-6xl px-6 py-16">

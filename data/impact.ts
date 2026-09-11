@@ -7,7 +7,8 @@ export interface ImpactStat {
 // "Volunteers Connected" totals are not finalized yet — confirm the real
 // numbers with Yuri before launch, then replace the placeholder values.
 export const impactStats: ImpactStat[] = [
-  { label: "Items donated", value: "100+" },
-  { label: "Centers Partnered With", value: "15+" },
-  { label: "Money raised in donations", value: "$900" },
+  { label: "Raised", value: "$15,700" },
+  { label: "Donations Collected", value: "825" },
+  { label: "People with Disabilities Reached", value: "7,500" },
+  { label: "Volunteers Connected", value: "x" },
 ];
