@@ -145,8 +145,8 @@ export default function GalleryCarousel({ images }: { images: CarouselImage[] })
               alt={images[selectedIndex].alt}
               width={1600}
               height={1200}
-              className="h-auto max-h-[90vh] w-auto max-w-[90vw] object-contain"
-              sizes="90vw"
+              className="h-auto max-h-screen w-auto max-w-[100vw] object-contain"
+              sizes="100vw"
               onClick={(event) => event.stopPropagation()}
             />
           </div>,
