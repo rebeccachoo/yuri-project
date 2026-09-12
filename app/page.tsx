@@ -221,7 +221,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal className="text-center">
             <span className="text-xs font-semibold uppercase tracking-widest text-gold">
@@ -273,7 +273,7 @@ export default async function Home() {
             </Reveal>
           </div>
         </div>
-      </section> */}
+      </section>
 
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20">

@@ -140,18 +140,15 @@ export default function GalleryCarousel({ images }: { images: CarouselImage[] })
               </>
             )}
 
-            <div
-              className="relative h-full w-full"
+            <Image
+              src={images[selectedIndex].src}
+              alt={images[selectedIndex].alt}
+              width={1600}
+              height={1200}
+              className="h-auto max-h-[90vh] w-auto max-w-[90vw] object-contain"
+              sizes="90vw"
               onClick={(event) => event.stopPropagation()}
-            >
-              <Image
-                src={images[selectedIndex].src}
-                alt={images[selectedIndex].alt}
-                fill
-                className="object-contain"
-                sizes="100vw"
-              />
-            </div>
+            />
           </div>,
           document.body
         )}

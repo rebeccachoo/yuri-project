@@ -18,7 +18,10 @@ export default function ContactPage() {
       />
 
       <section>
-        <div className="mx-auto max-w-3xl px-6 py-16">
+        <div
+          className="mx-auto max-w-3xl px-6 pt-6 pb-20"
+          // style={{ border: "1px solid red" }}
+        >
           <Reveal>
             <ContactForm />
           </Reveal>

@@ -26,7 +26,10 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          onClick={() => setMobileOpen(false)}
+          onClick={() => {
+            setMobileOpen(false);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           className="flex flex-row items-center gap-2 font-serif text-lg font-semibold tracking-tight text-mist"
         >
           <Image
@@ -41,7 +44,7 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
           <span className="hidden sm:inline">Every Kid Can</span>
         </Link>
 
-        <nav className="hidden items-center gap-7 text-sm font-medium tracking-wide text-mist/80 lg:flex">
+        <nav className="hidden items-center gap-7 text-sm font-bold tracking-wide text-white lg:flex">
           <div
             className="relative"
             onMouseEnter={() => setPillarsOpen(true)}
@@ -127,7 +130,7 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
       </div>
 
       {mobileOpen && (
-        <nav className="flex flex-col gap-1 border-t border-ink/10 bg-base px-6 py-4 text-sm font-medium tracking-wide text-mist/80 lg:hidden">
+        <nav className="flex flex-col gap-1 border-t border-ink/10 bg-base px-6 py-4 text-sm font-bold tracking-wide text-white lg:hidden">
           <Link
             href="/pillars"
             className="py-2 hover:text-gold"

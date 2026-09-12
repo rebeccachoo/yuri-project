@@ -39,7 +39,10 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="contact-name" className="text-sm font-semibold text-mist">
+        <label
+          htmlFor="contact-name"
+          className="text-sm font-semibold text-mist"
+        >
           Name
         </label>
         <input
@@ -54,7 +57,10 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="contact-email" className="text-sm font-semibold text-mist">
+        <label
+          htmlFor="contact-email"
+          className="text-sm font-semibold text-mist"
+        >
           Email
         </label>
         <input
@@ -69,7 +75,10 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="contact-message" className="text-sm font-semibold text-mist">
+        <label
+          htmlFor="contact-message"
+          className="text-sm font-semibold text-mist"
+        >
           Message
         </label>
         <textarea
@@ -86,7 +95,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90 disabled:opacity-60"
+        className="rounded-full cursor-pointer bg-gold px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90 disabled:opacity-60"
       >
         {isPending ? "Sending…" : "Send Message"}
       </button>
