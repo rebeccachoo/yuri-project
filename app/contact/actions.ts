@@ -7,7 +7,7 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export async function sendContactMessage(
   name: string,
   email: string,
-  message: string
+  message: string,
 ): Promise<{ error?: string }> {
   const trimmedName = name.trim();
   const trimmedEmail = email.trim();
