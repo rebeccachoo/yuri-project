@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 export default function PageHeader({
   eyebrow,
   title,
@@ -8,7 +10,7 @@ export default function PageHeader({
   description?: string;
 }) {
   return (
-    <div className="mx-auto max-w-6xl px-6 pb-8 pt-12">
+    <Reveal className="mx-auto max-w-6xl px-6 pb-8 pt-12">
       {eyebrow && (
         <span className="text-xs font-semibold uppercase tracking-widest text-gold">
           {eyebrow}
@@ -24,6 +26,6 @@ export default function PageHeader({
       {description && (
         <p className="mt-4 max-w-2xl text-mist/70">{description}</p>
       )}
-    </div>
+    </Reveal>
   );
 }

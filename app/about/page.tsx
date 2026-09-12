@@ -5,6 +5,7 @@ import { awards } from "@/data/awards";
 import TeamMemberCard from "@/components/TeamMemberCard";
 import ImpactStats from "@/components/ImpactStats";
 import PageHeader from "@/components/PageHeader";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -28,7 +29,7 @@ export default function AboutPage() {
 
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 pb-16 pt-5">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
+          <Reveal className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest text-gold">
                 Our Mission
@@ -52,22 +53,26 @@ export default function AboutPage() {
                 discover their potential!
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section>
         <div className="mx-auto max-w-6xl px-6 py-16">
-          <h2 className="font-serif text-xl font-semibold tracking-tight text-mist">
-            Our Team
-          </h2>
-          <p className="mt-2 max-w-2xl text-mist/60">
-            Every Kid Can is led by a youth team, each directing one of our
-            program areas.
-          </p>
+          <Reveal>
+            <h2 className="font-serif text-xl font-semibold tracking-tight text-mist">
+              Our Team
+            </h2>
+            <p className="mt-2 max-w-2xl text-mist/60">
+              Every Kid Can is led by a youth team, each directing one of our
+              program areas.
+            </p>
+          </Reveal>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {teamMembers.map((member) => (
-              <TeamMemberCard key={member.slug} member={member} />
+            {teamMembers.map((member, index) => (
+              <Reveal key={member.slug} delay={Math.min(index, 5) * 80}>
+                <TeamMemberCard member={member} />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -75,12 +80,14 @@ export default function AboutPage() {
 
       <section>
         <div className="mx-auto max-w-6xl px-6 pt-16 pb-20 text-center">
-          <h2 className="font-serif text-xl font-semibold tracking-tight text-mist">
-            Our Impact
-          </h2>
-          <div className="mt-8">
-            <ImpactStats stats={impactStats} />
-          </div>
+          <Reveal>
+            <h2 className="font-serif text-xl font-semibold tracking-tight text-mist">
+              Our Impact
+            </h2>
+            <div className="mt-8">
+              <ImpactStats stats={impactStats} />
+            </div>
+          </Reveal>
         </div>
       </section>
 

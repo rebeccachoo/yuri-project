@@ -34,7 +34,13 @@ export default function Reveal({
   return (
     <div
       ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
+      // +120ms baseline on top of the caller's stagger delay: content that's
+      // already in view on page load (e.g. a short results list with only
+      // one card) would otherwise fire the IntersectionObserver instantly,
+      // making a delay={0} fade happen too fast to notice. This guarantees
+      // every Reveal has a perceptible pause before it animates in,
+      // regardless of scroll position.
+      style={{ transitionDelay: `${delay + 120}ms` }}
       className={`transition-all duration-700 ease-out ${
         visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       } ${className}`}

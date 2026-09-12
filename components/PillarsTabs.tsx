@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { Pillar } from "@/data/pillars";
 import ImageCarousel from "@/components/ImageCarousel";
+import Reveal from "@/components/Reveal";
 
 export default function PillarsTabs({ pillars }: { pillars: Pillar[] }) {
   const router = useRouter();
@@ -38,16 +39,18 @@ export default function PillarsTabs({ pillars }: { pillars: Pillar[] }) {
         ))}
       </div>
 
-      <h1 className="mt-8 font-serif text-4xl font-semibold tracking-tight text-mist sm:text-5xl">
-        {pillar.title}
-      </h1>
-      <p className="mt-2 text-lg text-gold">{pillar.subtitle}</p>
-      {pillar.introHeading && (
-        <h2 className="mt-8 font-serif text-2xl font-semibold tracking-tight text-mist sm:text-3xl">
-          {pillar.introHeading}
-        </h2>
-      )}
-      <p className="mt-4 max-w-3xl text-mist/70">{pillar.description}</p>
+      <Reveal>
+        <h1 className="mt-8 font-serif text-4xl font-semibold tracking-tight text-mist sm:text-5xl">
+          {pillar.title}
+        </h1>
+        <p className="mt-2 text-lg text-gold">{pillar.subtitle}</p>
+        {pillar.introHeading && (
+          <h2 className="mt-8 font-serif text-2xl font-semibold tracking-tight text-mist sm:text-3xl">
+            {pillar.introHeading}
+          </h2>
+        )}
+        <p className="mt-4 max-w-3xl text-mist/70">{pillar.description}</p>
+      </Reveal>
 
       <div className="mt-12">
         {pillar.activities.map((activity, index) => {
@@ -60,7 +63,10 @@ export default function PillarsTabs({ pillars }: { pillars: Pillar[] }) {
                 tinted ? "bg-plum" : ""
               }`}
             >
-              <div className="mx-auto grid max-w-6xl gap-8 px-6 py-16 sm:grid-cols-2 sm:items-center">
+              <Reveal
+                delay={Math.min(index, 3) * 100}
+                className="mx-auto grid max-w-6xl gap-8 px-6 py-16 sm:grid-cols-2 sm:items-center"
+              >
                 <div className={`order-2 ${reversed ? "sm:order-1" : "sm:order-2"}`}>
                   <ImageCarousel images={activity.images} label={activity.title} />
                 </div>
@@ -78,7 +84,7 @@ export default function PillarsTabs({ pillars }: { pillars: Pillar[] }) {
                     </Link>
                   )}
                 </div>
-              </div>
+              </Reveal>
             </div>
           );
         })}
