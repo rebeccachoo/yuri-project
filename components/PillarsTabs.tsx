@@ -68,7 +68,31 @@ export default function PillarsTabs({ pillars }: { pillars: Pillar[] }) {
                 className="mx-auto grid max-w-6xl gap-8 px-6 py-16 sm:grid-cols-2 sm:items-center"
               >
                 <div className={`order-2 ${reversed ? "sm:order-1" : "sm:order-2"}`}>
-                  <ImageCarousel images={activity.images} label={activity.title} />
+                  {activity.resources ? (
+                    <div className="space-y-3">
+                      {activity.resources.map((resource) => (
+                        <a
+                          key={resource.title}
+                          href={resource.href}
+                          target={resource.href.startsWith("#") ? undefined : "_blank"}
+                          rel={resource.href.startsWith("#") ? undefined : "noopener noreferrer"}
+                          className="flex items-center justify-between gap-4 rounded-2xl border border-ink/10 bg-plum p-5 shadow-sm transition-colors hover:border-ink/20 hover:shadow-md"
+                        >
+                          <div>
+                            <p className="text-xs font-semibold uppercase tracking-widest text-gold-text">
+                              {resource.label}
+                            </p>
+                            <p className="mt-1 font-semibold text-mist">{resource.title}</p>
+                          </div>
+                          <span aria-hidden="true" className="shrink-0 text-lg text-mist/40">
+                            →
+                          </span>
+                        </a>
+                      ))}
+                    </div>
+                  ) : (
+                    <ImageCarousel images={activity.images} label={activity.title} />
+                  )}
                 </div>
                 <div className={`order-1 ${reversed ? "sm:order-2" : "sm:order-1"}`}>
                   <h2 className="font-serif text-2xl font-bold uppercase tracking-tight text-mist sm:text-3xl">

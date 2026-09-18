@@ -3,6 +3,12 @@ export interface PillarImage {
   alt: string;
 }
 
+export interface PillarResourceLink {
+  label: string;
+  title: string;
+  href: string;
+}
+
 export interface PillarActivity {
   slug: string;
   title: string;
@@ -12,6 +18,9 @@ export interface PillarActivity {
   images: PillarImage[];
   linkHref?: string;
   linkLabel?: string;
+  // When set, PillarsTabs shows this resource-link list instead of the
+  // image carousel for this activity.
+  resources?: PillarResourceLink[];
 }
 
 export interface Pillar {
@@ -95,6 +104,23 @@ export const pillars: Pillar[] = [
         description:
           "Every Kid Can's policy work pushes for systemic change alongside grassroots action, advocating for the accessibility and inclusion measures that individual volunteering alone can't fix. Because lasting inclusion requires both community effort and institutional accountability, we believe policy advocacy is essential to building a truly accessible system for every student. (Through petitions and original policy research, including our brief on expanding sensory tool access in New Jersey classrooms, we push state and local leaders to make sensory and social inclusion a standard part of public education, not a privilege determined by district funding.)",
         images: [],
+        resources: [
+          {
+            label: "Policy Brief",
+            title: "Every Kid Can's Policy Brief",
+            href: "https://docs.google.com/document/d/1tuQiWudIzjUKT-AOE4E8wE8WB281LlaXyem_h-kvEU4/edit?usp=sharing",
+          },
+          {
+            label: "Current Legislation",
+            title: "Current Disability Legislation (NJ)",
+            href: "https://docs.google.com/document/d/13WiOBIaNUr7t1Rcg4iwCRyW7IyPO7mfkmC5xUB04suA/edit?usp=sharing",
+          },
+          {
+            label: "Petitions",
+            title: "NJ Relevant Petitions for Disability Legislation",
+            href: "https://docs.google.com/document/d/180jKoyKxq-TtsUct4QqAmpRNfEoL0MOE5O6NM1d7nNw/edit?usp=sharing",
+          },
+        ],
       },
     ],
   },
