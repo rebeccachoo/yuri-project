@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { pillars } from "@/data/pillars";
 import Image from "next/image";
 
 export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
+  const pathname = usePathname();
   const [pillarsOpen, setPillarsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -19,6 +21,19 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Only the Home page has a dark hero photo sitting under the nav — every
+  // other page's content starts directly on the light page body, so white
+  // text there would be illegible. White nav text only applies on Home
+  // while unscrolled (over the hero); everywhere else it's the dark `mist`
+  // tone from the very top.
+  const overHero = pathname === "/" && !scrolled;
+  const navTextClass = overHero ? "text-white" : "text-mist";
+  // The top-level desktop links sit directly on whatever's behind navTextClass
+  // (dark hero scrim or light page), so their hover color needs the same
+  // split: bright gold reads on the dark scrim, but washes out on the light
+  // page/white dropdown, where the deepened `gold-text` is needed instead.
+  const navHoverGoldClass = overHero ? "hover:text-gold" : "hover:text-gold-text";
+
   return (
     <header
       className={`sticky top-0 z-50 ${scrolled ? "backdrop-blur-sm" : ""}`}
@@ -30,7 +45,7 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
             setMobileOpen(false);
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="flex flex-row items-center gap-2 font-serif text-lg font-semibold tracking-tight text-mist"
+          className={`flex flex-row items-center gap-2 font-serif text-lg font-semibold tracking-tight transition-colors ${navTextClass}`}
         >
           <Image
             src="/images/ekc_logo.png"
@@ -44,7 +59,9 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
           <span className="hidden sm:inline">Every Kid Can</span>
         </Link>
 
-        <nav className="hidden items-center gap-7 text-sm font-bold tracking-wide text-white lg:flex">
+        <nav
+          className={`hidden items-center gap-7 text-sm font-bold tracking-wide transition-colors lg:flex ${navTextClass}`}
+        >
           <div
             className="relative"
             onMouseEnter={() => setPillarsOpen(true)}
@@ -52,7 +69,7 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
           >
             <Link
               href="/pillars"
-              className="flex items-center gap-1 transition-colors hover:text-gold"
+              className={`flex items-center gap-1 transition-colors ${navHoverGoldClass}`}
             >
               Our Purpose
               <svg
@@ -74,7 +91,7 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
                   <Link
                     key={pillar.slug}
                     href={`/pillars?tab=${pillar.slug}`}
-                    className="block px-4 py-2 text-sm text-mist/70 hover:bg-ink/5 hover:text-gold"
+                    className="block px-4 py-2 text-sm text-mist/70 hover:bg-ink/5 hover:text-gold-text"
                   >
                     {pillar.navLabel}
                   </Link>
@@ -82,32 +99,32 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
               </div>
             )}
           </div>
-          <Link href="/volunteer" className="transition-colors hover:text-gold">
+          <Link href="/volunteer" className={`transition-colors ${navHoverGoldClass}`}>
             Volunteer
           </Link>
-          <Link href="/blog" className="transition-colors hover:text-gold">
+          <Link href="/blog" className={`transition-colors ${navHoverGoldClass}`}>
             Blog
           </Link>
-          <Link href="/about" className="transition-colors hover:text-gold">
+          <Link href="/about" className={`transition-colors ${navHoverGoldClass}`}>
             About Us
           </Link>
-          <Link href="/donate" className="transition-colors hover:text-gold">
+          {/* <Link href="/donate" className="transition-colors hover:text-gold-text">
             Donations
-          </Link>
-          <Link href="/contact" className="transition-colors hover:text-gold">
+          </Link> */}
+          <Link href="/contact" className={`transition-colors ${navHoverGoldClass}`}>
             Contact Us
           </Link>
           {isAdmin && (
-            <Link href="/admin" className="transition-colors hover:text-gold">
+            <Link href="/admin" className={`transition-colors ${navHoverGoldClass}`}>
               Admin Dashboard
             </Link>
           )}
-          <Link
+          {/* <Link
             href="/how-to-help"
             className="rounded-full bg-gold px-4 py-2 font-semibold text-ink transition-opacity hover:opacity-90"
           >
             How To Help
-          </Link>
+          </Link> */}
         </nav>
 
         <button
@@ -118,57 +135,57 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
           className="flex h-9 w-9 shrink-0 flex-col items-center justify-center gap-1.5 lg:hidden"
         >
           <span
-            className={`h-0.5 w-6 rounded-full bg-mist transition-transform ${mobileOpen ? "translate-y-2 rotate-45" : ""}`}
+            className={`h-0.5 w-6 rounded-full transition-transform ${overHero ? "bg-white" : "bg-mist"} ${mobileOpen ? "translate-y-2 rotate-45" : ""}`}
           />
           <span
-            className={`h-0.5 w-6 rounded-full bg-mist transition-opacity ${mobileOpen ? "opacity-0" : ""}`}
+            className={`h-0.5 w-6 rounded-full transition-opacity ${overHero ? "bg-white" : "bg-mist"} ${mobileOpen ? "opacity-0" : ""}`}
           />
           <span
-            className={`h-0.5 w-6 rounded-full bg-mist transition-transform ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`}
+            className={`h-0.5 w-6 rounded-full transition-transform ${overHero ? "bg-white" : "bg-mist"} ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`}
           />
         </button>
       </div>
 
       {mobileOpen && (
-        <nav className="flex flex-col gap-1 border-t border-ink/10 bg-base px-6 py-4 text-sm font-bold tracking-wide text-white lg:hidden">
+        <nav className="flex flex-col gap-1 border-t border-ink/10 bg-base px-6 py-4 text-sm font-bold tracking-wide text-mist lg:hidden">
           <Link
             href="/pillars"
-            className="py-2 hover:text-gold"
+            className="py-2 hover:text-gold-text"
             onClick={() => setMobileOpen(false)}
           >
             Our Purpose
           </Link>
           <Link
             href="/volunteer"
-            className="py-2 hover:text-gold"
+            className="py-2 hover:text-gold-text"
             onClick={() => setMobileOpen(false)}
           >
             Volunteer
           </Link>
           <Link
             href="/blog"
-            className="py-2 hover:text-gold"
+            className="py-2 hover:text-gold-text"
             onClick={() => setMobileOpen(false)}
           >
             Blog
           </Link>
           <Link
             href="/about"
-            className="py-2 hover:text-gold"
+            className="py-2 hover:text-gold-text"
             onClick={() => setMobileOpen(false)}
           >
             About Us
           </Link>
-          <Link
+          {/* <Link
             href="/donate"
-            className="py-2 hover:text-gold"
+            className="py-2 hover:text-gold-text"
             onClick={() => setMobileOpen(false)}
           >
             Donations
-          </Link>
+          </Link> */}
           <Link
             href="/contact"
-            className="py-2 hover:text-gold"
+            className="py-2 hover:text-gold-text"
             onClick={() => setMobileOpen(false)}
           >
             Contact Us
@@ -176,19 +193,19 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
           {isAdmin && (
             <Link
               href="/admin"
-              className="py-2 hover:text-gold"
+              className="py-2 hover:text-gold-text"
               onClick={() => setMobileOpen(false)}
             >
               Admin Dashboard
             </Link>
           )}
-          <Link
+          {/* <Link
             href="/how-to-help"
             onClick={() => setMobileOpen(false)}
             className="mt-2 w-fit rounded-full bg-gold px-4 py-2 font-semibold text-ink"
           >
             How To Help
-          </Link>
+          </Link> */}
         </nav>
       )}
     </header>

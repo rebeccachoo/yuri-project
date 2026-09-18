@@ -20,7 +20,6 @@ export default function BlogFormFields({ post }: { post?: BlogPostRow }) {
         options={blogCategories}
         required
       />
-      <TextArea label="Excerpt" name="excerpt" defaultValue={post?.excerpt} rows={2} required />
       <TextArea
         label="Content (one paragraph per line)"
         name="content"

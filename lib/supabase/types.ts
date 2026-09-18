@@ -12,6 +12,8 @@ export interface VolunteerRow {
   age_requirement: string;
   description: string;
   apply_url: string | null;
+  region: string;
+  county: string;
   created_at: string;
   updated_at: string;
 }

@@ -43,7 +43,7 @@ export default function PillarsTabs({ pillars }: { pillars: Pillar[] }) {
         <h1 className="mt-8 font-serif text-4xl font-semibold tracking-tight text-mist sm:text-5xl">
           {pillar.title}
         </h1>
-        <p className="mt-2 text-lg text-gold">{pillar.subtitle}</p>
+        <p className="mt-2 text-lg text-gold-text">{pillar.subtitle}</p>
         {pillar.introHeading && (
           <h2 className="mt-8 font-serif text-2xl font-semibold tracking-tight text-mist sm:text-3xl">
             {pillar.introHeading}
@@ -78,7 +78,7 @@ export default function PillarsTabs({ pillars }: { pillars: Pillar[] }) {
                   {activity.linkHref && (
                     <Link
                       href={activity.linkHref}
-                      className="mt-4 inline-block text-sm font-semibold text-gold hover:underline"
+                      className="mt-4 inline-block text-sm font-semibold text-gold-text hover:underline"
                     >
                       {activity.linkLabel} →
                     </Link>

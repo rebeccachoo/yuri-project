@@ -24,18 +24,17 @@ export default async function Home() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-base/40" />
-        <div className="bg-glow absolute inset-0" />
-        <div className="absolute inset-0 bg-linear-to-t from-base via-base/65 to-transparent" />
+        <div className="absolute inset-0 bg-hero-scrim/40" />
+        <div className="absolute inset-0 bg-linear-to-t from-hero-scrim via-hero-scrim/65 to-transparent" />
 
         <div className="relative mx-auto w-full max-w-6xl px-6 ">
           <Reveal>
-            <span className="inline-block rounded-full border border-white/20 bg-base/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold backdrop-blur-sm">
+            <span className="inline-block rounded-full border border-white/20 bg-hero-scrim/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold backdrop-blur-sm">
               501(c)(3) Youth-Led Nonprofit
             </span>
             <h1 className="mt-6 max-w-2xl font-serif text-5xl font-semibold uppercase leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
               WELCOME TO{" "}
-              <span className="bg-linear-to-r from-[#8b98ac] via-[#a7b6ca] to-[#e0ab9f] bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-flame-start via-flame-mid to-flame-end bg-clip-text text-transparent">
                 EVERY KID CAN
               </span>
             </h1>
@@ -58,7 +57,7 @@ export default async function Home() {
               </Link>
             </div>
 
-            {/* <div className="mt-8 w-fit rounded-2xl border border-white/15 bg-base/70 p-4 shadow-xl backdrop-blur-sm sm:absolute sm:bottom-10 sm:right-6 sm:mt-0 lg:right-10">
+            {/* <div className="mt-8 w-fit rounded-2xl border border-white/15 bg-hero-scrim/70 p-4 shadow-xl backdrop-blur-sm sm:absolute sm:bottom-10 sm:right-6 sm:mt-0 lg:right-10">
               <p className="font-serif text-2xl font-semibold text-white">
                 7,500+
               </p>
@@ -71,18 +70,19 @@ export default async function Home() {
       </section>
 
       <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 py-20 lg:grid-cols-2">
+        <div className="mx-auto max-w-3xl px-6 py-20 text-center">
           <Reveal>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center gap-3">
               <span className="h-px w-10 bg-gold" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                 The Challenge
               </span>
+              <span className="h-px w-10 bg-gold" />
             </div>
             <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-mist sm:text-5xl">
               The Barrier
             </h2>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist/70">
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-mist/70">
               Despite legal requirements, only 46% of New Jersey students with
               disabilities are integrated into general education, compared to
               68% nationally, with rates fluctuating between districts. Low
@@ -92,37 +92,13 @@ export default async function Home() {
               it.
             </p>
           </Reveal>
-
-          <Reveal delay={150} className="relative mx-auto w-full max-w-lg">
-            <div
-              className="animate-blob-drift absolute inset-0 -z-10 scale-110 bg-linear-to-br from-flame-start/40 via-flame-mid/30 to-flame-end/20 blur-3xl"
-              style={{ animationDelay: "-3s, -2s" }}
-            />
-            <div
-              className="animate-blob-drift relative aspect-square w-full overflow-hidden border border-white/25 shadow-2xl"
-              style={{ animationDelay: "-3s, -2s" }}
-            >
-              <Image
-                src="/images/barrier.jpg"
-                alt="A teacher helping a student in a wheelchair in a general education classroom"
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 100vw, 50vw"
-              />
-            </div>
-            <div className="absolute -bottom-6 -left-6 max-w-56 rounded-2xl border border-ink/10 bg-plum p-4 shadow-xl sm:-left-10">
-              <p className="font-serif text-sm font-semibold text-mist">
-                Inclusion shouldn&apos;t be the exception.
-              </p>
-            </div>
-          </Reveal>
         </div>
       </section>
 
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20 text-center">
           <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
               The Value of Inclusion
             </span>
             <h2 className="mx-auto mt-4 max-w-2xl font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
@@ -143,7 +119,7 @@ export default async function Home() {
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
               Our Partners
             </span>
             <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
@@ -156,7 +132,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden">
+      {/* <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <Reveal>
@@ -172,7 +148,7 @@ export default async function Home() {
               </div>
               <div className="mt-10 grid gap-8 sm:grid-cols-3">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                     The Wings
                   </p>
                   <p className="mt-2 text-sm text-mist/70">
@@ -181,7 +157,7 @@ export default async function Home() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                     The Children
                   </p>
                   <p className="mt-2 text-sm text-mist/70">
@@ -190,7 +166,7 @@ export default async function Home() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                     The Star
                   </p>
                   <p className="mt-2 text-sm text-mist/70">
@@ -205,7 +181,7 @@ export default async function Home() {
               delay={150}
               className="rounded-2xl border border-ink/10 bg-plum p-8 shadow-sm sm:p-10"
             >
-              <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                 About Every Kid Can
               </span>
               <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
@@ -219,12 +195,12 @@ export default async function Home() {
             </Reveal>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal className="text-center">
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
               What We Focus On
             </span>
             <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
@@ -247,7 +223,7 @@ export default async function Home() {
               </p>
               <Link
                 href="/pillars?tab=sensory-inclusion"
-                className="mt-4 inline-block text-sm font-semibold text-gold hover:underline"
+                className="mt-4 inline-block text-sm font-semibold text-gold-text hover:underline"
               >
                 Learn more →
               </Link>
@@ -266,7 +242,7 @@ export default async function Home() {
               </p>
               <Link
                 href="/pillars?tab=social-inclusion"
-                className="mt-4 inline-block text-sm font-semibold text-gold hover:underline"
+                className="mt-4 inline-block text-sm font-semibold text-gold-text hover:underline"
               >
                 Learn more →
               </Link>
@@ -275,10 +251,10 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden">
+      {/* <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal className="text-center">
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
               Take Action
             </span>
             <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
@@ -348,7 +324,7 @@ export default async function Home() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     aria-hidden="true"
-                    className="h-7 w-7 text-gold"
+                    className="h-7 w-7 text-gold-text"
                   >
                     {item.icon}
                   </svg>
@@ -365,12 +341,12 @@ export default async function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="relative overflow-hidden">
+      {/* <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal className="text-center">
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
               In Action
             </span>
             <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
@@ -384,7 +360,7 @@ export default async function Home() {
             <GalleryCarousel images={galleryImages} />
           </Reveal>
         </div>
-      </section>
+      </section> */}
 
       <section
         id="stay-in-touch"
@@ -392,7 +368,7 @@ export default async function Home() {
       >
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
               Get In Touch
             </span>
             <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
@@ -407,7 +383,7 @@ export default async function Home() {
                 rel="noopener noreferrer"
                 className="group block rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm transition-colors hover:border-ink/20 hover:bg-plum-light"
               >
-                <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                   Instagram
                 </p>
                 <p className="mt-2 text-mist">@_everykidcan</p>
@@ -418,7 +394,7 @@ export default async function Home() {
                 href="/contact"
                 className="group block rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm transition-colors hover:border-ink/20 hover:bg-plum-light"
               >
-                <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                   Contact Us
                 </p>
                 <p className="mt-2 text-mist">everykidcanplay@gmail.com</p>
@@ -426,7 +402,7 @@ export default async function Home() {
             </Reveal>
             <Reveal delay={200}>
               <div className="rounded-2xl border border-ink/10 bg-linear-to-br from-flame-start/25 via-flame-mid/20 to-flame-end/20 p-6 shadow-sm">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                   Donate
                 </p>
                 <p className="mt-2 text-mist">via Zelle</p>

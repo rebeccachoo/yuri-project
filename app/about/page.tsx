@@ -31,7 +31,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-6 pb-16 pt-5">
           <Reveal className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                 Our Mission
               </span>
               <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight tracking-tight text-mist sm:text-4xl">

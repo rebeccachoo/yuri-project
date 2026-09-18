@@ -12,7 +12,7 @@ export default function PageHeader({
   return (
     <Reveal className="mx-auto max-w-6xl px-6 pb-8 pt-12">
       {eyebrow && (
-        <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+        <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
           {eyebrow}
         </span>
       )}

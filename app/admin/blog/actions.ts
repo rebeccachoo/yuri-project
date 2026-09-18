@@ -5,6 +5,12 @@ import { redirect } from "next/navigation";
 import { requireAdminSession, slugify } from "@/lib/require-admin";
 import { getSupabaseAdminClient } from "@/lib/supabase/admin";
 
+function deriveExcerpt(content: string[]): string {
+  const firstParagraph = content[0] ?? "";
+  if (firstParagraph.length <= 160) return firstParagraph;
+  return `${firstParagraph.slice(0, 159).trimEnd()}…`;
+}
+
 function readBlogFields(formData: FormData) {
   const contentRaw = String(formData.get("content") ?? "");
   const content = contentRaw
@@ -16,7 +22,7 @@ function readBlogFields(formData: FormData) {
     slug: slugify(String(formData.get("slug") ?? "")),
     title: String(formData.get("title") ?? "").trim(),
     category: String(formData.get("category") ?? "").trim(),
-    excerpt: String(formData.get("excerpt") ?? "").trim(),
+    excerpt: deriveExcerpt(content),
     content,
     author: String(formData.get("author") ?? "").trim(),
     date: String(formData.get("date") ?? "").trim(),

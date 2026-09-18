@@ -5,21 +5,29 @@
   --font-serif: var(--font-fraunces);
   --font-mono: var(--font-geist-mono);
 
-  /* Dark, atmospheric nonprofit palette — deep indigo base with denim
-     blue / dusty blue glows and a muted coral warm accent. Token names
-     kept from earlier themes (ink, plum, mist, gold, flame-*) so
-     components don't need per-file color-name changes, only the hex
+  /* Bright, cheerful children/youth-nonprofit palette — light sky-blue
+     base (Blue 200/300/400 family) with a joyful bumblebee-yellow accent.
+     Token names kept from earlier themes (ink, plum, mist, gold, flame-*)
+     so components don't need per-file color-name changes, only the hex
      values shift. */
-  --color-base: #22283e; /* page base — deep indigo */
-  --color-ink: #f5f6f8; /* primary (near-white) text / text-on-bright-button */
-  --color-mist: #e6e9ef; /* body copy base (soft cool off-white) */
-  --color-plum: #2b3550; /* solid card / dropdown surface — lifted indigo */
-  --color-plum-light: #37456b; /* secondary surface, slightly lighter */
-  --color-plum-muted: #778ead; /* decorative numerals — dusty denim blue */
-  --color-gold: #c77b72; /* eyebrow labels, small accents (muted coral) */
-  --color-flame-start: #3e5375; /* denim blue */
-  --color-flame-mid: #778ead; /* dusty blue */
-  --color-flame-end: #c77b72; /* muted coral */
+  --color-base: #eaf6ff; /* page base — Light Blue */
+  --color-ink: #1f3347; /* primary dark text / text-on-bright-button */
+  --color-mist: #33526b; /* body copy base (softer slate-blue) */
+  --color-plum: #ffffff; /* solid card / dropdown surface — white */
+  --color-plum-light: #f2faff; /* secondary surface, faint blue tint */
+  --color-plum-muted: #8fc7ec; /* decorative numerals — Blue 300 */
+  --color-gold: #f2a900; /* bumblebee yellow — used as a FILL (buttons,
+     badges, dividers) where contrast comes from the dark --color-ink text
+     sitting on top, and on the hero's dark scrim where a bright yellow is
+     needed to read. */
+  --color-gold-text: #9c6b00; /* deepened amber for gold used as bare TEXT
+     directly on the light base/white cards (eyebrow labels, "Learn more"
+     links) — the bright bumblebee yellow above has ~1.9:1 contrast there,
+     this reaches ~4.2:1. */
+  --color-flame-start: #8ed0f7; /* Blue 300 — light blue */
+  --color-flame-mid: #4fa8e0; /* Blue 400 — medium blue */
+  --color-flame-end: #ffc93c; /* joyful/bumblebee yellow */
+  --color-hero-scrim: #16283b; /* fixed dark navy for hero photo legibility — intentionally decoupled from --color-base so it stays dark even though the page theme is now light */
 
   /* Kept only for /admin (internal dashboard, deliberately not part of the
      public-site redesign) — not used anywhere on the public site anymore. */
@@ -36,10 +44,10 @@
      sections, like the home hero, blend into the same glow pattern
      instead of hard-blocking it and creating a visible seam). */
   --bg-glow:
-    radial-gradient(62% 52% at 10% 6%, rgba(62, 83, 117, 0.42), rgba(62, 83, 117, 0.12) 45%, rgba(34, 40, 62, 0) 78%),
-    radial-gradient(56% 48% at 92% 4%, rgba(119, 142, 173, 0.32), rgba(119, 142, 173, 0.1) 45%, rgba(34, 40, 62, 0) 76%),
-    radial-gradient(60% 52% at 88% 92%, rgba(50, 65, 95, 0.34), rgba(50, 65, 95, 0.08) 45%, rgba(34, 40, 62, 0) 78%),
-    radial-gradient(46% 38% at 6% 96%, rgba(199, 123, 114, 0.16), rgba(199, 123, 114, 0.05) 45%, rgba(34, 40, 62, 0) 70%);
+    radial-gradient(62% 52% at 8% 6%, rgba(142, 208, 247, 0.6), rgba(142, 208, 247, 0.2) 45%, rgba(234, 246, 255, 0) 78%),
+    radial-gradient(56% 48% at 94% 8%, rgba(79, 168, 224, 0.42), rgba(79, 168, 224, 0.13) 45%, rgba(234, 246, 255, 0) 76%),
+    radial-gradient(60% 52% at 90% 92%, rgba(143, 199, 236, 0.5), rgba(143, 199, 236, 0.14) 45%, rgba(234, 246, 255, 0) 78%),
+    radial-gradient(48% 40% at 6% 94%, rgba(255, 201, 60, 0.32), rgba(255, 201, 60, 0.09) 45%, rgba(234, 246, 255, 0) 72%);
 }
 
 body {

@@ -42,7 +42,8 @@ export default async function AdminVolunteersPage() {
             <div>
               <p className="font-bold text-navy-deep">{item.title}</p>
               <p className="text-sm text-navy-deep/60">
-                {item.organization_name} · /volunteer/{item.slug}
+                {item.organization_name} · {item.region} / {item.county} ·{" "}
+                /volunteer/{item.slug}
               </p>
             </div>
             <div className="flex items-center gap-4">

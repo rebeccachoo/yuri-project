@@ -1,5 +1,6 @@
 import type { VolunteerRow } from "@/lib/supabase/types";
-import { Field, TextArea, SubmitButton } from "@/components/admin/FormFields";
+import { volunteerRegions } from "@/data/volunteer-regions";
+import { Field, TextArea, Select, SubmitButton } from "@/components/admin/FormFields";
 
 export default function VolunteerFormFields({
   volunteer,
@@ -24,6 +25,19 @@ export default function VolunteerFormFields({
         label="Slug (URL — letters, numbers, hyphens only)"
         name="slug"
         defaultValue={volunteer?.slug}
+        required
+      />
+      <Select
+        label="Region"
+        name="region"
+        defaultValue={volunteer?.region}
+        options={volunteerRegions}
+        required
+      />
+      <Field
+        label="County"
+        name="county"
+        defaultValue={volunteer?.county}
         required
       />
       <Field

@@ -19,6 +19,8 @@ create table if not exists public.volunteers (
   age_requirement text not null,
   description text not null,
   apply_url text,
+  region text not null default '',
+  county text not null default '',
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );

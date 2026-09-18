@@ -15,6 +15,8 @@ function readVolunteerFields(formData: FormData) {
     age_requirement: String(formData.get("ageRequirement") ?? "").trim(),
     description: String(formData.get("description") ?? "").trim(),
     apply_url: String(formData.get("applyUrl") ?? "").trim() || null,
+    region: String(formData.get("region") ?? "").trim(),
+    county: String(formData.get("county") ?? "").trim(),
   };
 }
 

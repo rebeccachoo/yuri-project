@@ -11,6 +11,8 @@ export interface VolunteerOpportunity {
   ageRequirement: string;
   description: string;
   applyUrl?: string;
+  region: string;
+  county: string;
 }
 
 function fromRow(row: VolunteerRow): VolunteerOpportunity {
@@ -23,6 +25,8 @@ function fromRow(row: VolunteerRow): VolunteerOpportunity {
     ageRequirement: row.age_requirement,
     description: row.description,
     applyUrl: row.apply_url ?? undefined,
+    region: row.region,
+    county: row.county,
   };
 }
 
@@ -33,7 +37,7 @@ export async function getVolunteerOpportunities(): Promise<
   const { data, error } = await supabase
     .from("volunteers")
     .select("*")
-    .order("created_at", { ascending: false });
+    .order("created_at", { ascending: true });
 
   if (error) {
     console.error("Failed to load volunteers from Supabase:", error.message);

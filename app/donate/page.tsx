@@ -21,7 +21,7 @@ export default function DonatePage() {
       <section>
         <div className="mx-auto max-w-3xl px-6 py-16">
           <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
               About Our Donation Boxes
             </span>
             <h2 className="mt-4 font-serif text-xl font-semibold tracking-tight text-mist">
@@ -60,7 +60,7 @@ export default function DonatePage() {
               tools. These go directly into our{" "}
               <Link
                 href="/pillars?tab=sensory-inclusion"
-                className="font-semibold text-gold hover:underline"
+                className="font-semibold text-gold-text hover:underline"
               >
                 Sensory Donations and Sensory Boards
               </Link>{" "}
@@ -89,7 +89,7 @@ export default function DonatePage() {
               the items alongside the people who receive them and connecting our{" "}
               <Link
                 href="/volunteer"
-                className="font-semibold text-gold hover:underline"
+                className="font-semibold text-gold-text hover:underline"
               >
                 volunteers
               </Link>{" "}
@@ -106,7 +106,7 @@ export default function DonatePage() {
       <section id="give" className="scroll-mt-20">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
               Give &amp; Connect
             </span>
             <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
@@ -121,7 +121,7 @@ export default function DonatePage() {
                 rel="noopener noreferrer"
                 className="group block rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm transition-colors hover:border-ink/20 hover:bg-plum-light"
               >
-                <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                   Instagram
                 </p>
                 <p className="mt-2 text-mist">@_everykidcan</p>
@@ -132,7 +132,7 @@ export default function DonatePage() {
                 href="mailto:everykidcanplay@gmail.com"
                 className="group block rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm transition-colors hover:border-ink/20 hover:bg-plum-light"
               >
-                <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                   Email
                 </p>
                 <p className="mt-2 text-mist">everykidcanplay@gmail.com</p>
@@ -140,7 +140,7 @@ export default function DonatePage() {
             </Reveal>
             <Reveal delay={200}>
               <div className="rounded-2xl border border-ink/10 bg-linear-to-br from-flame-start/25 via-flame-mid/20 to-flame-end/20 p-6 shadow-sm">
-                <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+                <p className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                   Donate
                 </p>
                 <p className="mt-2 text-mist">via Zelle</p>

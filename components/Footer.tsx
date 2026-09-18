@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-ink/10 bg-plum text-mist">
+    <footer className="border-t border-ink/10 bg-plum text-black">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:grid-cols-3">
         <div>
           <p className="flex items-center gap-2 font-serif text-lg font-semibold tracking-tight">
@@ -11,27 +11,32 @@ export default function Footer() {
             </span>
             Every Kid Can
           </p>
-          <p className="mt-3 max-w-xs text-sm text-mist/50">
-            A New Jersey-based, youth-led 501(c)(3) nonprofit standardizing disability inclusion
-            through sensory and social inclusion.
+          <p className="mt-3 max-w-xs text-sm text-black/70">
+            A New Jersey-based, youth-led 501(c)(3) nonprofit standardizing
+            disability inclusion through sensory and social inclusion.
           </p>
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-gold">Stay in Touch</p>
-          <ul className="mt-3 space-y-2 text-sm text-mist/70">
+          <p className="text-xs font-semibold uppercase tracking-widest text-gold-text">
+            Stay in Touch
+          </p>
+          <ul className="mt-3 space-y-2 text-sm text-black/80">
             <li>
               <a
                 href="https://instagram.com/_everykidcan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gold"
+                className="hover:text-gold-text"
               >
                 Instagram: @_everykidcan
               </a>
             </li>
             <li>
-              <a href="mailto:everykidcanplay@gmail.com" className="hover:text-gold">
+              <a
+                href="mailto:everykidcanplay@gmail.com"
+                className="hover:text-gold-text"
+              >
                 everykidcanplay@gmail.com
               </a>
             </li>
@@ -40,36 +45,40 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-gold">Explore</p>
-          <nav className="mt-3 flex flex-col gap-2 text-sm text-mist/70">
-            <Link href="/pillars" className="hover:text-gold">
+          <p className="text-xs font-semibold uppercase tracking-widest text-gold-text">
+            Explore
+          </p>
+          <nav className="mt-3 flex flex-col gap-2 text-sm text-black/80">
+            <Link href="/pillars" className="hover:text-gold-text">
               Our Purpose
             </Link>
-            <Link href="/volunteer" className="hover:text-gold">
+            <Link href="/volunteer" className="hover:text-gold-text">
               Volunteer
             </Link>
-            <Link href="/blog" className="hover:text-gold">
+            <Link href="/blog" className="hover:text-gold-text">
               Blog
             </Link>
-            <Link href="/about" className="hover:text-gold">
+            <Link href="/about" className="hover:text-gold-text">
               About Us
             </Link>
-            <Link href="/donate" className="hover:text-gold">
+            <Link href="/donate" className="hover:text-gold-text">
               Donations
             </Link>
-            <Link href="/contact" className="hover:text-gold">
+            <Link href="/contact" className="hover:text-gold-text">
               Contact Us
             </Link>
-            <Link href="/how-to-help" className="hover:text-gold">
+            {/* <Link href="/how-to-help" className="hover:text-gold-text">
               How to Help
-            </Link>
+            </Link> */}
           </nav>
         </div>
       </div>
-      <div className="border-t border-ink/10 px-6 py-4 text-xs text-mist/40">
+      <div className="border-t border-ink/10 px-6 py-4 text-xs text-black/60">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2">
-          <p>© {new Date().getFullYear()} Every Kid Can. All rights reserved.</p>
-          <Link href="/admin" className="hover:text-mist/60">
+          <p>
+            © {new Date().getFullYear()} Every Kid Can. All rights reserved.
+          </p>
+          <Link href="/admin" className="hover:text-black">
             Admin Log In
           </Link>
         </div>

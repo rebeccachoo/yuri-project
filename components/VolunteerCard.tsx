@@ -8,7 +8,7 @@ export default function VolunteerCard({
 }) {
   return (
     <div className="flex flex-col rounded-2xl border border-ink/10 bg-plum p-6 shadow-sm">
-      <p className="text-xs font-semibold uppercase tracking-wide text-gold">
+      <p className="text-xs font-semibold uppercase tracking-wide text-gold-text">
         {opportunity.organizationName}
       </p>
       <h3 className="mt-1 text-lg font-semibold text-mist">

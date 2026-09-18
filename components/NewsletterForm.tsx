@@ -38,7 +38,7 @@ export default function NewsletterForm() {
 
   if (done) {
     return (
-      <p className="mt-6 text-sm font-semibold text-gold">
+      <p className="mt-6 text-sm font-semibold text-gold-text">
         {mode === "subscribe"
           ? "You're on the list! We'll be in touch."
           : "You've been unsubscribed."}
@@ -83,7 +83,7 @@ export default function NewsletterForm() {
       <button
         type="button"
         onClick={switchMode}
-        className="mt-3 text-xs font-semibold text-mist/50 hover:text-gold hover:underline"
+        className="mt-3 text-xs font-semibold text-mist/50 hover:text-gold-text hover:underline"
       >
         {mode === "subscribe"
           ? "Want to unsubscribe instead?"

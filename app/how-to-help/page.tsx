@@ -29,7 +29,7 @@ export default function HowToHelpPage() {
               costs, and community events across New Jersey.
             </p>
             <div className="mt-6 w-fit rounded-2xl border border-ink/10 bg-linear-to-br from-flame-start/25 via-flame-mid/20 to-flame-end/20 p-6 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-widest text-gold">
+              <p className="text-xs font-semibold uppercase tracking-widest text-gold-text">
                 Donate
               </p>
               <p className="mt-2 text-mist">via Zelle</p>
@@ -38,7 +38,7 @@ export default function HowToHelpPage() {
               Curious what your donation supports?{" "}
               <Link
                 href="/donate"
-                className="font-semibold text-gold hover:underline"
+                className="font-semibold text-gold-text hover:underline"
               >
                 See how our donation boxes work
               </Link>

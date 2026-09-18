@@ -57,7 +57,7 @@ export default async function BlogDetailPage(props: PageProps<"/blog/[slug]">) {
     <div className="mx-auto w-full max-w-3xl px-6 py-16 pt-12">
       <Link
         href="/blog"
-        className="text-sm mr-1 font-semibold text-gold hover:underline"
+        className="text-sm mr-1 font-semibold text-gold-text hover:underline"
       >
         ← All articles
       </Link>

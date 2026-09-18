@@ -7,7 +7,7 @@ export default function TeamMemberCard({ member }: { member: TeamMember }) {
         {member.name.charAt(0)}
       </span>
       <p className="mt-4 text-lg font-semibold text-mist">{member.name}</p>
-      <p className="mt-1 text-sm font-semibold text-gold">{member.role}</p>
+      <p className="mt-1 text-sm font-semibold text-gold-text">{member.role}</p>
     </div>
   );
 }

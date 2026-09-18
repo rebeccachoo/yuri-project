@@ -37,12 +37,12 @@ export default async function VolunteerDetailPage(
 
   return (
     <div className="mx-auto w-full max-w-3xl px-6 py-16 pt-12">
-      <Link href="/volunteer" className="text-sm font-semibold text-gold hover:underline">
+      <Link href="/volunteer" className="text-sm font-semibold text-gold-text hover:underline">
         ← Volunteer Bulletin
       </Link>
 
       <Reveal>
-        <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-gold">
+        <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-gold-text">
           {opportunity.organizationName}
         </p>
         <h1 className="mt-1 font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
