@@ -97,7 +97,7 @@ export default function VolunteerBrowser({
                       {countyGroup.items.map((opportunity, index) => (
                         <Reveal
                           key={opportunity.slug}
-                          delay={Math.min(index, 5) * 80}
+                          delay={Math.min(index, 5) * 40}
                         >
                           <VolunteerCard opportunity={opportunity} />
                         </Reveal>
