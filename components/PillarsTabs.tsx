@@ -54,11 +54,8 @@ export default function PillarsTabs({ pillars }: { pillars: Pillar[] }) {
 
       <div className="mt-12">
         {pillar.activities.map((activity, index) => {
-          const isGallery =
-            pillar.slug === "sensory-inclusion" ||
-            activity.slug === "interviews" ||
-            activity.slug === "social-opportunities";
-          const reversed = index % 2 === 1;
+          const isGallery = !activity.resources;
+          const reversed = activity.slug !== "sensory-boards" && index % 2 === 1;
           const tinted = index % 2 === 1;
           return (
             <div
@@ -69,9 +66,9 @@ export default function PillarsTabs({ pillars }: { pillars: Pillar[] }) {
             >
               <Reveal
                 delay={Math.min(index, 3) * 100}
-                className={`mx-auto grid max-w-6xl gap-8 px-6 py-16 ${isGallery ? "grid-cols-1" : "sm:grid-cols-2 sm:items-center"}`}
+                className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 py-16 lg:grid-cols-2 lg:items-center lg:gap-12"
               >
-                <div className={`order-2 min-w-0 ${!isGallery && reversed ? "sm:order-1" : "sm:order-2"}`}>
+                <div className={`order-2 min-w-0 ${reversed ? "lg:order-1" : "lg:order-2"}`}>
                   {activity.resources ? (
                     <div className="space-y-3">
                       {activity.resources.map((resource) => (
@@ -100,14 +97,15 @@ export default function PillarsTabs({ pillars }: { pillars: Pillar[] }) {
                       label={activity.title}
                       fit={isGallery ? "contain" : "cover"}
                       variant={isGallery ? "gallery" : "default"}
+                      sizes="(max-width: 1023px) calc(100vw - 80px), (max-width: 1280px) calc(50vw - 80px), 560px"
                     />
                   )}
                 </div>
-                <div className={`order-1 ${isGallery ? "max-w-3xl" : reversed ? "sm:order-2" : "sm:order-1"}`}>
-                  <h2 className={`font-serif font-bold uppercase tracking-tight text-mist ${isGallery ? "text-3xl sm:text-5xl" : "text-2xl sm:text-3xl"}`}>
+                <div className={`order-1 min-w-0 ${reversed ? "lg:order-2" : "lg:order-1"}`}>
+                  <h2 className="font-serif text-3xl font-bold uppercase tracking-tight text-mist sm:text-4xl">
                     {activity.title}
                   </h2>
-                  <p className="mt-4 text-mist/70">{activity.description}</p>
+                  <p className="mt-4 leading-relaxed text-mist/70">{activity.description}</p>
                   {activity.linkHref && (
                     <Link
                       href={activity.linkHref}

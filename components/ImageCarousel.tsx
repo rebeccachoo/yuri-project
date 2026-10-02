@@ -41,13 +41,13 @@ export default function ImageCarousel({
         aria-label={`${label} photo gallery`}
         className="min-w-0 overflow-hidden rounded-3xl border border-ink/10 bg-white/80 p-2 shadow-xl shadow-ink/5 sm:p-4"
       >
-        <div className="relative h-[min(65svh,36rem)] min-h-80 overflow-hidden rounded-2xl bg-ink sm:h-[min(75svh,44rem)] sm:min-h-112">
+        <div className="relative h-[min(65svh,30rem)] min-h-72 overflow-hidden rounded-2xl bg-ink">
           <Image
             src={images[index].src}
             alt={images[index].alt}
             fill
             className="object-contain"
-            sizes="(max-width: 1152px) calc(100vw - 64px), 1056px"
+            sizes={sizes}
           />
         </div>
         <div className="flex items-center justify-between gap-4 px-2 py-4 sm:px-1">
