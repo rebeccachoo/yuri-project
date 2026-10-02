@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireAdminSession, slugify } from "@/lib/require-admin";
 import { getSupabaseAdminClient } from "@/lib/supabase/admin";
+import { isPartnerLogoPath, partnerLogoError } from "@/lib/partner-logo";
 
 function readPartnerFields(formData: FormData) {
   return {
@@ -20,6 +21,9 @@ export async function createPartner(formData: FormData) {
   await requireAdminSession();
 
   const fields = readPartnerFields(formData);
+  if (fields.logo && !isPartnerLogoPath(fields.logo)) {
+    redirect(`/admin/partners/new?error=${encodeURIComponent(partnerLogoError)}`);
+  }
   const supabase = getSupabaseAdminClient();
   const { error } = await supabase.from("partners").insert(fields);
 
@@ -36,6 +40,9 @@ export async function updatePartner(id: string, formData: FormData) {
   await requireAdminSession();
 
   const fields = readPartnerFields(formData);
+  if (fields.logo && !isPartnerLogoPath(fields.logo)) {
+    redirect(`/admin/partners/${id}/edit?error=${encodeURIComponent(partnerLogoError)}`);
+  }
   const supabase = getSupabaseAdminClient();
   const { error } = await supabase.from("partners").update(fields).eq("id", id);
 

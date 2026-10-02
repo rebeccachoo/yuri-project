@@ -21,17 +21,8 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Only the Home page has a dark hero photo sitting under the nav — every
-  // other page's content starts directly on the light page body, so white
-  // text there would be illegible. White nav text only applies on Home
-  // while unscrolled (over the hero); everywhere else it's the dark `mist`
-  // tone from the very top.
   const overHero = pathname === "/" && !scrolled;
-  const navTextClass = overHero ? "text-white" : "text-mist";
-  // The top-level desktop links sit directly on whatever's behind navTextClass
-  // (dark hero scrim or light page), so their hover color needs the same
-  // split: bright gold reads on the dark scrim, but washes out on the light
-  // page/white dropdown, where the deepened `gold-text` is needed instead.
+  const navTextClass = overHero ? "text-white" : "text-ink";
   const navHoverGoldClass = overHero ? "hover:text-gold" : "hover:text-gold-text";
 
   return (
@@ -103,7 +94,7 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
             Volunteer
           </Link>
           <Link href="/blog" className={`transition-colors ${navHoverGoldClass}`}>
-            Blog
+            Interviews
           </Link>
           <Link href="/about" className={`transition-colors ${navHoverGoldClass}`}>
             About Us
@@ -135,13 +126,13 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
           className="flex h-9 w-9 shrink-0 flex-col items-center justify-center gap-1.5 lg:hidden"
         >
           <span
-            className={`h-0.5 w-6 rounded-full transition-transform ${overHero ? "bg-white" : "bg-mist"} ${mobileOpen ? "translate-y-2 rotate-45" : ""}`}
+            className={`h-0.5 w-6 rounded-full transition-transform ${overHero ? "bg-white" : "bg-ink"} ${mobileOpen ? "translate-y-2 rotate-45" : ""}`}
           />
           <span
-            className={`h-0.5 w-6 rounded-full transition-opacity ${overHero ? "bg-white" : "bg-mist"} ${mobileOpen ? "opacity-0" : ""}`}
+            className={`h-0.5 w-6 rounded-full transition-opacity ${overHero ? "bg-white" : "bg-ink"} ${mobileOpen ? "opacity-0" : ""}`}
           />
           <span
-            className={`h-0.5 w-6 rounded-full transition-transform ${overHero ? "bg-white" : "bg-mist"} ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`}
+            className={`h-0.5 w-6 rounded-full transition-transform ${overHero ? "bg-white" : "bg-ink"} ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`}
           />
         </button>
       </div>
@@ -167,7 +158,7 @@ export default function Navbar({ isAdmin = false }: { isAdmin?: boolean }) {
             className="py-2 hover:text-gold-text"
             onClick={() => setMobileOpen(false)}
           >
-            Blog
+            Interviews
           </Link>
           <Link
             href="/about"

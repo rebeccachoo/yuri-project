@@ -3,7 +3,12 @@
 // can import it without pulling in the server-only Supabase client.
 export const volunteerRegions = [
   "Northwest",
+  "Northeast",
+  "North-Central",
   "West-Central",
+  "East-Central",
+  "South-Central",
+  "Southwest",
   "Shore Region",
   "Southern Tip",
   "South-West",

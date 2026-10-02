@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import { teamMembers } from "@/data/team";
-import { impactStats } from "@/data/impact";
-import { awards } from "@/data/awards";
+import FeaturedTeamMember from "@/components/FeaturedTeamMember";
 import TeamMemberCard from "@/components/TeamMemberCard";
-import ImpactStats from "@/components/ImpactStats";
 import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about Every Kid Can's story, mission, team, and impact.",
+  description: "Meet the youth team behind Every Kid Can.",
 };
 
 export default function AboutPage() {
@@ -27,67 +25,35 @@ export default function AboutPage() {
         </section>
       </div> */}
 
-      <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-6 pb-16 pt-5">
-          <Reveal className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16">
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-gold-text">
-                Our Mission
-              </span>
-              <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight tracking-tight text-mist sm:text-4xl">
-                Empowering every child to thrive — no exceptions.
-              </h2>
-            </div>
-            <div className="relative rounded-2xl border border-ink/10 bg-plum p-8 shadow-sm sm:p-10">
-              <span className="absolute -top-5 left-8 flex h-10 w-10 items-center justify-center rounded-full bg-linear-to-br from-flame-start via-flame-mid to-flame-end font-serif text-lg font-bold text-ink shadow-lg">
-                E
-              </span>
-              <p className="text-mist/70">
-                Every Kid Can is a 501(c)(3) youth-led organization focused on
-                empowering individuals with disabilities. By mobilizing
-                community resources and donations, we work to remove physical,
-                social, and financial barriers to participation in everyday
-                activities. Our mission is rooted in reducing stigma, promoting
-                inclusion, and ensuring every child has the opportunity to
-                thrive. Join us in making a difference and helping every child
-                discover their potential!
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       <section>
         <div className="mx-auto max-w-6xl px-6 py-16">
-          <Reveal>
-            <h2 className="font-serif text-xl font-semibold tracking-tight text-mist">
-              Our Team
+          <Reveal className="grid gap-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-start lg:gap-16">
+            <h2 className="font-serif text-3xl font-semibold tracking-tight text-mist sm:text-4xl">
+              Meet the Team
             </h2>
-            <p className="mt-2 max-w-2xl text-mist/60">
-              Every Kid Can is led by a youth team, each directing one of our
-              program areas.
+            <p className="max-w-2xl text-base leading-relaxed text-mist/80">
+              Every Kid Can&apos;s executive team is fully student-led,
+              reflecting our commitment to empower youth to drive change in
+              disability advocacy. Together, they oversee our sensory and social
+              inclusion initiatives, partnerships, and interview series,
+              ensuring every effort is thoughtful, effective, and rooted in
+              genuine understanding.
             </p>
           </Reveal>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {teamMembers.map((member, index) => (
+          <div className="mt-12 grid items-start gap-8 md:grid-cols-3">
+            {teamMembers.slice(0, 3).map((member, index) => (
+              <Reveal key={member.slug} delay={index * 80}>
+                <FeaturedTeamMember member={member} />
+              </Reveal>
+            ))}
+          </div>
+          <div className="mt-8 grid items-start gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {teamMembers.slice(3).map((member, index) => (
               <Reveal key={member.slug} delay={Math.min(index, 5) * 80}>
                 <TeamMemberCard member={member} />
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="mx-auto max-w-6xl px-6 pt-16 pb-20 text-center">
-          <Reveal>
-            <h2 className="font-serif text-xl font-semibold tracking-tight text-mist">
-              Our Impact
-            </h2>
-            <div className="mt-8">
-              <ImpactStats stats={impactStats} />
-            </div>
-          </Reveal>
         </div>
       </section>
 

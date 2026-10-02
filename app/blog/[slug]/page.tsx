@@ -59,7 +59,7 @@ export default async function BlogDetailPage(props: PageProps<"/blog/[slug]">) {
         href="/blog"
         className="text-sm mr-1 font-semibold text-gold-text hover:underline"
       >
-        ← All articles
+        ← All interviews
       </Link>
 
       <Reveal>

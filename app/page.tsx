@@ -17,15 +17,14 @@ export default async function Home() {
     <div className="flex flex-1 flex-col">
       <section className="relative isolate -mt-23 flex h-screen min-h-130 w-full items-center overflow-hidden">
         <Image
-          src="/images/ekc_hero.png"
-          alt="Every Kid Can volunteers performing music for veterans at a community event"
+          src="/images/home-hero-collage.webp"
+          alt="Collage of Every Kid Can volunteers, community activities, handmade sensory boards, and toy donations"
           fill
           priority
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-hero-scrim/40" />
-        <div className="absolute inset-0 bg-linear-to-t from-hero-scrim via-hero-scrim/65 to-transparent" />
+        <div aria-hidden="true" className="absolute inset-0 bg-[#22283f]/66" />
 
         <div className="relative mx-auto w-full max-w-6xl px-6 ">
           <Reveal>
@@ -34,24 +33,24 @@ export default async function Home() {
             </span>
             <h1 className="mt-6 max-w-2xl font-serif text-5xl font-semibold uppercase leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
               WELCOME TO{" "}
-              <span className="bg-linear-to-r from-flame-start via-flame-mid to-flame-end bg-clip-text text-transparent">
+              <span className="block bg-linear-to-r from-flame-start via-flame-mid to-flame-end bg-clip-text text-transparent">
                 EVERY KID CAN
               </span>
             </h1>
-            <p className="mt-4 max-w-lg text-lg text-white/80">
-              Intent on standardizing disability statewide via sensory and
-              social inclusion.
+            <p className="mt-4 max-w-lg text-lg text-white/85">
+              Advancing disability inclusion statewide through social connection
+              and sensory accessibility
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 href="/pillars"
-                className="rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
+                className="rounded-full bg-[#ffdc57] px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-[#ffe580] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 Explore our pillars
               </Link>
               <Link
                 href="/volunteer"
-                className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/60"
+                className="rounded-full bg-[#4395df] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#337fc5] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 Volunteer with us
               </Link>

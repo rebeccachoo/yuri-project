@@ -1,13 +1,28 @@
 import type { TeamMember } from "@/data/team";
+import Image from "next/image";
 
 export default function TeamMemberCard({ member }: { member: TeamMember }) {
   return (
-    <div className="flex flex-col items-center rounded-2xl border border-ink/10 bg-plum p-6 text-center shadow-sm">
-      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br from-flame-start via-flame-mid to-flame-end font-serif text-xl font-semibold text-ink">
-        {member.name.charAt(0)}
-      </span>
-      <p className="mt-4 text-lg font-semibold text-mist">{member.name}</p>
-      <p className="mt-1 text-sm font-semibold text-gold-text">{member.role}</p>
+    <div className="overflow-hidden rounded-3xl border border-ink/10 bg-plum shadow-sm">
+      <div className="relative flex aspect-square items-center justify-center bg-linear-to-br from-flame-start/45 via-plum-light to-gold/25">
+        {member.photo ? (
+          <Image
+            src={member.photo}
+            alt={member.name}
+            fill
+            sizes="(max-width: 639px) calc(100vw - 48px), (max-width: 1023px) 50vw, (max-width: 1152px) 25vw, 252px"
+            className="object-cover"
+          />
+        ) : (
+          <span aria-hidden="true" className="font-serif text-7xl font-semibold text-ink/70">
+            {member.name.charAt(0)}
+          </span>
+        )}
+      </div>
+      <div className="p-6">
+        <h3 className="font-serif text-2xl font-semibold text-ink">{member.name}</h3>
+        <p className="mt-2 text-sm font-semibold text-gold-text">{member.role}</p>
+      </div>
     </div>
   );
 }

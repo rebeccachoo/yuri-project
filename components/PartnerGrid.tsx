@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Partner } from "@/lib/content/partners";
+import { isPartnerLogoPath } from "@/lib/partner-logo";
 
 export default function PartnerGrid({ partners }: { partners: Partner[] }) {
   return (
@@ -10,7 +11,7 @@ export default function PartnerGrid({ partners }: { partners: Partner[] }) {
         // square icon — `object-contain` inside a fixed box scales each down
         // to fit without stretching or cropping, so the row of chips lines
         // up evenly instead of following each logo's native aspect ratio.
-        const content = partner.logo ? (
+        const content = partner.logo && isPartnerLogoPath(partner.logo) ? (
           <div className="relative h-24 w-48">
             <Image
               src={partner.logo}

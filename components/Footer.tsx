@@ -56,7 +56,7 @@ export default function Footer() {
               Volunteer
             </Link>
             <Link href="/blog" className="hover:text-gold-text">
-              Blog
+              Interviews
             </Link>
             <Link href="/about" className="hover:text-gold-text">
               About Us

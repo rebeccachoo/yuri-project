@@ -14,7 +14,7 @@ export default function PartnerFormFields({ partner }: { partner?: PartnerRow })
       />
       <Field label="Website (optional)" name="website" defaultValue={partner?.website ?? ""} />
       <Field
-        label="Logo path or URL (optional — e.g. /images/partners/bccls.png)"
+        label="Logo image path (optional — e.g. /images/partners/bccls.png; not a website URL)"
         name="logo"
         defaultValue={partner?.logo ?? ""}
       />
