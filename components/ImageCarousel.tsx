@@ -73,9 +73,9 @@ export default function ImageCarousel({
               onClick={() => setIndex(i)}
               aria-label={`View photo ${i + 1}: ${image.alt}`}
               aria-pressed={i === index}
-              className={`relative h-20 w-24 shrink-0 cursor-pointer overflow-hidden rounded-xl transition-opacity focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink sm:h-24 sm:w-32 ${i === index ? "ring-2 ring-gold ring-offset-2" : "opacity-60 hover:opacity-100"}`}
+              className={`relative h-12 w-16 shrink-0 cursor-pointer overflow-hidden rounded-lg transition-opacity focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink sm:h-14 sm:w-20 ${i === index ? "ring-2 ring-gold ring-offset-2" : "opacity-60 hover:opacity-100"}`}
             >
-              <Image src={image.src} alt="" fill sizes="128px" className="object-cover" />
+              <Image src={image.src} alt="" fill sizes="(max-width: 639px) 64px, 80px" className="object-cover" />
             </button>
           ))}
         </div>

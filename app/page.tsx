@@ -17,7 +17,7 @@ export default async function Home() {
     <div className="flex flex-1 flex-col">
       <section className="relative isolate -mt-23 flex h-screen min-h-130 w-full items-center overflow-hidden">
         <Image
-          src="/images/home-hero-collage.webp"
+          src="/images/home-hero-collage.jpg"
           alt="Collage of Every Kid Can volunteers, community activities, handmade sensory boards, and toy donations"
           fill
           priority

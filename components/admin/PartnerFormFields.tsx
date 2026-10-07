@@ -1,6 +1,7 @@
 import type { PartnerRow } from "@/lib/supabase/types";
 import { accentColorNames } from "@/components/colors";
-import { Field, Select, SubmitButton } from "@/components/admin/FormFields";
+import { Field, Select } from "@/components/admin/FormFields";
+import PartnerLogoUpload, { PartnerSubmitButton } from "@/components/admin/PartnerLogoUpload";
 
 export default function PartnerFormFields({ partner }: { partner?: PartnerRow }) {
   return (
@@ -13,11 +14,7 @@ export default function PartnerFormFields({ partner }: { partner?: PartnerRow })
         required
       />
       <Field label="Website (optional)" name="website" defaultValue={partner?.website ?? ""} />
-      <Field
-        label="Logo image path (optional — e.g. /images/partners/bccls.png; not a website URL)"
-        name="logo"
-        defaultValue={partner?.logo ?? ""}
-      />
+      <PartnerLogoUpload currentLogo={partner?.logo} />
       <Field
         label="Monogram (shown when there's no logo, e.g. BC)"
         name="monogram"
@@ -31,7 +28,7 @@ export default function PartnerFormFields({ partner }: { partner?: PartnerRow })
         options={accentColorNames}
         required
       />
-      <SubmitButton />
+      <PartnerSubmitButton />
     </div>
   );
 }
