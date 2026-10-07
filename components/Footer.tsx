@@ -40,7 +40,10 @@ export default function Footer() {
                 everykidcanplay@gmail.com
               </a>
             </li>
-            <li>Donate: Zelle</li>
+            <li>
+              Donate: Zelle{" "}
+              <span className="text-blue-600">everykidcanplay@gmail.com</span>
+            </li>
           </ul>
         </div>
 

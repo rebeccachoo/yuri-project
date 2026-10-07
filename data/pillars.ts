@@ -516,56 +516,56 @@ export const pillars: Pillar[] = [
           "Our Interview Series sits down with professionals, educators, and advocates who work alongside people with disabilities every day. Through these conversations, we uncover the barriers, both visible and invisible, that stand in the way of true inclusion, and gather real, practical advice for youth on how to show up as genuine allies. Our goal is to turn these perspectives into resources that help young people engage with confidence, empathy, and respect.",
         images: [
           {
-            src: "/images/interviews/interview-01.jpg",
+            src: "/images/interviews/web/interview-01-jpg.webp",
             alt: "Group displaying sensory boards and donated resources indoors",
           },
           {
-            src: "/images/interviews/interview-02.jpg",
-            alt: "Group standing with a donation box in a hallway",
-          },
-          {
-            src: "/images/interviews/interview-03.jpg",
+            src: "/images/interviews/web/interview-02-jpeg.webp",
             alt: "Group photo with sensory boards and a box of resources",
           },
           {
-            src: "/images/interviews/interview-04.jpg",
+            src: "/images/interviews/web/interview-03-heic.webp",
             alt: "Group gathered behind a box of donated games",
           },
           {
-            src: "/images/interviews/interview-05.jpg",
+            src: "/images/interviews/web/interview-04-jpeg.webp",
             alt: "Group displaying a donation box filled with games in an office",
           },
           {
-            src: "/images/interviews/interview-06.jpg",
+            src: "/images/interviews/web/interview-05-jpeg.webp",
             alt: "Group standing behind donated resources on a cart",
           },
           {
-            src: "/images/interviews/interview-07.jpg",
-            alt: "Group gathered around a colorful activity table outdoors",
-          },
-          {
-            src: "/images/interviews/interview-08.jpg",
-            alt: "Two people beside a box of resources in a colorful classroom",
-          },
-          {
-            src: "/images/interviews/interview-09.jpg",
-            alt: "Two people holding a donation box in a hallway",
-          },
-          {
-            src: "/images/interviews/interview-10.jpg",
-            alt: "Two people posing in an indoor seating area",
-          },
-          {
-            src: "/images/interviews/interview-11.jpg",
-            alt: "Three people posing with a box of donated resources",
-          },
-          {
-            src: "/images/interviews/interview-12.jpg",
+            src: "/images/interviews/web/interview-06-heic.webp",
             alt: "Three people holding a donation box outdoors",
           },
           {
-            src: "/images/interviews/interview-13.jpg",
+            src: "/images/interviews/web/interview-07-jpg.webp",
+            alt: "Three people posing with a box of donated resources",
+          },
+          {
+            src: "/images/interviews/web/interview-08-heic.webp",
+            alt: "Two people posing in an indoor seating area",
+          },
+          {
+            src: "/images/interviews/web/interview-09-heic.webp",
+            alt: "Two people holding a donation box in a hallway",
+          },
+          {
+            src: "/images/interviews/web/interview-10-heic.webp",
+            alt: "Two people beside a box of resources in a colorful classroom",
+          },
+          {
+            src: "/images/interviews/web/interview-11-heic.webp",
+            alt: "Group gathered around a colorful activity table outdoors",
+          },
+          {
+            src: "/images/interviews/web/interview-12-png.webp",
             alt: "Three participants in an online video interview",
+          },
+          {
+            src: "/images/interviews/web/interview-13-jpeg.webp",
+            alt: "Three people standing beside a donation bag in a hallway",
           },
         ],
         linkHref: "/blog?category=Interviews",
